@@ -1,0 +1,79 @@
+{
+	"mieff": "mieff",
+	"поиск": "поиск",
+	"ваше имя": "ваше имя",
+	"день": "день",
+	"месяц": "месяц",
+	"год": "год",
+	"ждем ответа...": "ждем ответа...",
+	"отправить": "отправить",
+	"некорректный email": "некорректный email",
+	"спасибо за подписку": "спасибо за подписку",
+	"ошибка": "ошибка",
+	"Отправляя форму, вы даете свое согласие на обработку персональных данных. ": "Отправляя форму, вы даете свое согласие на обработку персональных данных. ",
+	"Подробнее...": "Подробнее...",
+	"actor": {
+		"one": "actor",
+		"other": "actor"
+	},
+	"director": {
+		"one": "director",
+		"other": "director"
+	},
+	"artist": {
+		"one": "artist",
+		"other": "artist"
+	},
+	"author": {
+		"one": "author",
+		"other": "author"
+	},
+	"composer": {
+		"one": "composer",
+		"other": "composer"
+	},
+	"choreographer": {
+		"one": "choreographer",
+		"other": "choreographer"
+	},
+	"management": {
+		"one": "management",
+		"other": "management"
+	},
+	"consul": {
+		"one": "consul",
+		"other": "consul"
+	},
+	"gen_information": {
+		"one": "gen_information",
+		"other": "gen_information"
+	},
+	"off_information": {
+		"one": "off_information",
+		"other": "off_information"
+	},
+	"st_information": {
+		"one": "st_information",
+		"other": "st_information"
+	},
+	"off_tv": {
+		"one": "off_tv",
+		"other": "off_tv"
+	},
+	"off_radio": {
+		"one": "off_radio",
+		"other": "off_radio"
+	},
+	"off_social": {
+		"one": "off_social",
+		"other": "off_social"
+	},
+	"info_support": {
+		"one": "info_support",
+		"other": "info_support"
+	},
+	"lifestyle": {
+		"one": "lifestyle",
+		"other": "lifestyle"
+	}
+}

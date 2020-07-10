@@ -1,0 +1,16 @@
+extends layout
+
+block header_meta
+	- var content_title= 'mieff'
+	- var content_description = event.i18n.s_title.get(locale)
+	- var content_images = [event.poster]
+
+block header_include
+	- var include_libs_css = ['swiper.min.css']
+	- var include_css = ['event.css']
+	- var include_libs_js = ['swiper.min.js']
+	- var include_js = ['event.js']
+
+
+block content
+	h1 Event!

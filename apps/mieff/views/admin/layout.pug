@@ -1,0 +1,21 @@
+doctype html
+html
+	head
+		include header
+	body
+		.main_block
+			.header_block
+				.menu_block
+					.logo
+						a(href='/') MIEFF
+						span= ' | '
+						a(href='/admin') STARGAZER
+					a(href='/admin/users') ПОЛЬЗОВАТЕЛИ
+					a(href='/admin/posts') НОВОСТИ
+					a(href='/admin/events') СОБЫТИЯ
+					a(href='/admin/members') КОМАНДА
+					a(href='/admin/partners') ПАРТНЕРЫ
+				.sub_menu_block
+					block sub_menu
+			.content_block
+				block content

@@ -1,0 +1,23 @@
+{
+	"partners_types": [
+		"gen_information",
+		"off_information",
+		"st_information",
+		"off_tv",
+		"off_radio",
+		"off_social",
+		"info_support",
+		"lifestyle"
+	],
+
+	"members_roles": {
+		"actor": { "male": "actor", "female": "actresse" },
+		"director": { "male": "director", "female": "director" },
+		"artist": { "male": "artist", "female": "artist" },
+		"author": { "male": "author", "female": "author" },
+		"composer": { "male": "composer", "female": "composer" },
+		"choreographer": { "male": "choreographer", "female": "choreographer" },
+		"management": { "male": "management", "female": "management" },
+		"consul": { "male": "consul", "female": "consul"}
+	}
+}

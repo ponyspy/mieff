@@ -1,0 +1,71 @@
+extends ../layout
+include ../_forms.pug
+include _forms.pug
+
+block header_meta
+	- var content_title= 'РЕДАКТИРОВАТЬ СОБЫТИЕ'
+
+block header_include
+	- var include_libs_css = ['pickmeup.min.css', 'font-awesome.css', 'wysiwyg-editor.min.css']
+	- var include_css = ['add.css']
+	- var include_libs_js = ['jquery.pickmeup.min.js', 'wysiwyg.min.js', 'wysiwyg-editor.min.js', 'jquery-ui.min.js', 'jquery.filedrop.js']
+	- var include_js = ['upload.js', 'editor.js', 'add.js', 'a_events.js', 'aa_events.js', 'aa_forms.js']
+
+block sub_menu
+	a.sub_item.back_link(href='/admin/events') Назад
+	span.sub_item.toggle_eng Перевод
+	a.sub_item(href='/events/' + event._short_id, target='_blank') Превью
+	.sub_right_block
+		input.form_cancel(type='submit', value='Отменить')
+		input.form_submit(type='submit', value='Сохранить')
+
+block content
+	.form_block
+		.title= content_title
+		form(action='', method="post", enctype="multipart/form-data")
+			.form_title Название:
+			+form_text_single('title', event)
+			.form_title Подзаголовок:
+			+form_text_single('s_title', event)
+			.form_title Синоним:
+			span= 'https://' + host + '/events/'
+			input(type='text', name='sym', value=event.sym, placeholder=event._short_id)
+			.form_title Описание:
+			+form_text_multi('description', event)
+			.form_title Продолжительность:
+			+form_text_single('duration', event)
+			.form_title Площадка:
+			+form_text_single('place', event)
+			.form_title Возраст:
+			select(name='age')
+				each age, i in new Array(22)
+					option(value=i, selected=(event.age == i))= i + '+'
+			.form_title Идентификатор intickets:
+			input(type='text', name='w_alias', value=event.w_alias)
+			if event.w_alias && event.w_alias != ''
+				input(type='button', onclick='window.open("' + static_keys.intickets_widget_uri + '/node/' + event.w_alias + '", "_blank")', value='>')
+			.form_title Расписание:
+			+form_schedule(event.schedule)
+			.form_title Партнеры:
+			+form_partners(event.partners)
+			.form_title Участники:
+			+form_members(event.members)
+			.form_title Комментарии:
+			+form_comments(event.comments)
+			.form_title Пресса:
+			+form_publications(event.publications)
+			.form_title Видео YouTube / Vimeo:
+			input(type='text', name='video', value=(event.video && event.video.provider) ? (event.video.provider == 'youtube' ? 'https://youtu.be/' + event.video.id : 'https://vimeo.com/' + event.video.id) : '')
+			.form_title Обложка:
+			+form_single_file('poster', event)(accept='image/jpeg,image/png,image/gif')
+			.form_title Обложка [при наведении]:
+			+form_single_file('poster_hover', event)(accept='image/jpeg,image/png,image/gif')
+			.form_title Изображения:
+			+form_images_upload(event.images)
+			.form_title Статус:
+			select(name='status')
+				option(value='base') Обычный
+				option(value='hidden', selected= event.status == 'hidden' && 'hidden') Скрытый
+			.form_title Дата публикации:
+			+form_date('date', event.date)
+

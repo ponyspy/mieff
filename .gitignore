@@ -1,0 +1,13 @@
+/node_modules*
+/db*
+/_maket_*
+/_sublime_*
+/public/build*
+/public/stuff*
+/public/cdn*
+/public/robots.txt
+/public/ppa_ru.pdf
+/public/ppa_en.pdf
+/dump.tar
+/keys.json
+.DS_Store

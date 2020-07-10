@@ -1,0 +1,18 @@
+extends layout
+
+block header_meta
+	- var content_title= 'MIEFF'
+
+block header_include
+	- var include_css = ['add.css', 'stargazer.css']
+	- var include_js = ['stargazer.js']
+
+block sub_menu
+	a.sub_item.back_link(href='/auth/logout') Выход
+	span.separator |
+	a.sub_item(href='admin/users/edit/' + session.user_id)= session.login
+	.sub_right_block
+		a(href='/admin/dump') дамп
+
+block content
+	pre.ascii(data-font=font)!=data

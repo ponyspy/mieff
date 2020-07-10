@@ -1,0 +1,19 @@
+{
+	"apps": [
+		{
+			"name": "mieff",
+			"script": "./apps/mieff/app.js",
+			"exec_mode": "fork",
+			"watch": ["apps/mieff/app.js", "apps/mieff/models", "apps/mieff/routes", "locales/ru.json", "locales/en.json"],
+			"min_uptime": "300s",
+			"autorestart": false,
+			"max_restarts": 1,
+			"restart_delay" : 2000,
+			"kill_timeout": 1600,
+			"env": {
+				"PORT": 3000,
+				"NODE_ENV": "development"
+			}
+		},
+	]
+}

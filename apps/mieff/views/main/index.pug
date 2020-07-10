@@ -1,0 +1,17 @@
+extends layout
+
+block header_meta
+	- var content_title= __('mieff')
+	- var content_description= ''
+	- var content_images = ''
+	- var content_subs = true
+
+block header_include
+	- var include_libs_css = ['swiper.min.css']
+	- var include_css = ['main.css']
+	- var include_libs_js = ['swiper.min.js', 'js.cookie.js']
+	- var include_js = ['main.js']
+
+
+block content
+	h1 Main!
