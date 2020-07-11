@@ -57,66 +57,6 @@ mixin form_members(groups)
 
 		input.add_group(type='button', value='+ Добавить группу')
 
-//- Comments form
-
-mixin form_comments(comments)
-	.block_items
-		each comment in (comments && comments.length) ? comments : [{ hidden: true, title: [ {lg: 'ru', value: ''}, {lg: 'en', value: ''} ], description: [ {lg: 'ru', value: ''}, {lg: 'en', value: ''} ] }]
-			.block_item.comment(class= comment.hidden ? 'hidden' : '', style=comment.hidden ? 'display: none;': '')
-				.comment_options
-					input.rm_block(type='button', value='−')
-					input.up_block(type='button', value='▲')
-					input.down_block(type='button', value='▼')
-				br
-				.comment_title
-					input.ru(type="text", value=comment.title.filter(function(locale) { return locale.lg == 'ru' })[0].value)
-					input.en(type="text", disabled, value=comment.title.filter(function(locale) { return locale.lg == 'en' })[0].value)
-				br
-				.comment_member
-					select
-						each member in members
-							- var status_list = { 'hidden': '[*] ', 'special': '[!] ' }
-							option(value=member._id, selected=comment.member == member._id.toString())= (member.status != 'base' ? status_list[member.status] : '') + member.i18n.name.get('ru')
-					input.list_sort_tg(type='button', value='⦿')
-					input.list_sort(type='text', style='display: none; font-size: 9pt;')
-				br
-				.comment_description
-					textarea.ru.editor=comment.description.filter(function(locale) { return locale.lg == 'ru' })[0].value
-					textarea.en.editor(disabled)=comment.description.filter(function(locale) { return locale.lg == 'en' })[0].value
-				br(style='clear: both;')
-				div ------------
-				br
-
-		input.add_comment(type='button', value='+ Добавить комментарий')
-
-//- Publications form
-
-mixin form_publications(publications)
-	.block_items
-		each publication in (publications && publications.length) ? publications : [{ hidden: true, link: '', title: [ {lg: 'ru', value: ''}, {lg: 'en', value: ''} ], description: [ {lg: 'ru', value: ''}, {lg: 'en', value: ''} ] }]
-			.block_item.publication(class= publication.hidden ? 'hidden' : '', style=publication.hidden ? 'display: none;': '')
-				.publication_options
-					input.rm_block(type='button', value='−')
-					input.up_block(type='button', value='▲')
-					input.down_block(type='button', value='▼')
-				br
-				.publication_title
-					input.ru(type="text", value=publication.title.filter(function(locale) { return locale.lg == 'ru' })[0].value)
-					input.en(type="text", disabled, value=publication.title.filter(function(locale) { return locale.lg == 'en' })[0].value)
-				br
-				.publication_link
-					input.link(type="text", value=publication.link, placeholder='https://cnn.com')
-					input.link_open(type='button', value='>')
-				br
-				.publication_description
-					textarea.ru.editor=publication.description.filter(function(locale) { return locale.lg == 'ru' })[0].value
-					textarea.en.editor(disabled)=publication.description.filter(function(locale) { return locale.lg == 'en' })[0].value
-				br(style='clear: both;')
-				div ------------
-				br
-
-		input.add_publication(type='button', value='+ Добавить публикацию')
-
 //- Schedule form
 
 mixin form_schedule(schedule)
@@ -154,3 +94,4 @@ mixin form_schedule(schedule)
 				br
 				br
 		input.add_date(type='button', value='+ Добавить дату')
+

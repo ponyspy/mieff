@@ -72,66 +72,6 @@ $(function() {
 										.appendTo('form');
 		});
 
-		// -- Comments
-
-		$('.block_item.comment').not('.hidden').toArray().forEach(function(comment, i) {
-			$('<input />').attr('type', 'hidden')
-										.attr('name', 'comments' + '[' + i + ']' + '[title][ru]')
-										.attr('value', $(comment).find('.comment_title input.ru').val())
-										.appendTo('form');
-
-			$('<input />').attr('type', 'hidden')
-										.attr('name', 'comments' + '[' + i + ']' + '[title][en]')
-										.attr('value', $(comment).find('.comment_title input.en').val())
-										.appendTo('form');
-
-			$('<input />').attr('type', 'hidden')
-										.attr('name', 'comments' + '[' + i + ']' + '[description][ru]')
-										.attr('value', $(comment).find('.comment_description textarea.ru').val())
-										.appendTo('form');
-
-			$('<input />').attr('type', 'hidden')
-										.attr('name', 'comments' + '[' + i + ']' + '[description][en]')
-										.attr('value', $(comment).find('.comment_description textarea.en').val())
-										.appendTo('form');
-
-			$('<input />').attr('type', 'hidden')
-										.attr('name', 'comments' + '[' + i + ']' + '[member]')
-										.attr('value', $(comment).find('.comment_member select').val())
-										.appendTo('form');
-
-		});
-
-		// -- Publications
-
-		$('.block_item.publication').not('.hidden').toArray().forEach(function(publication, i) {
-			$('<input />').attr('type', 'hidden')
-										.attr('name', 'publications' + '[' + i + ']' + '[title][ru]')
-										.attr('value', $(publication).find('.publication_title input.ru').val())
-										.appendTo('form');
-
-			$('<input />').attr('type', 'hidden')
-										.attr('name', 'publications' + '[' + i + ']' + '[title][en]')
-										.attr('value', $(publication).find('.publication_title input.en').val())
-										.appendTo('form');
-
-			$('<input />').attr('type', 'hidden')
-										.attr('name', 'publications' + '[' + i + ']' + '[description][ru]')
-										.attr('value', $(publication).find('.publication_description textarea.ru').val())
-										.appendTo('form');
-
-			$('<input />').attr('type', 'hidden')
-										.attr('name', 'publications' + '[' + i + ']' + '[description][en]')
-										.attr('value', $(publication).find('.publication_description textarea.en').val())
-										.appendTo('form');
-
-			$('<input />').attr('type', 'hidden')
-										.attr('name', 'publications' + '[' + i + ']' + '[link]')
-										.attr('value', $(publication).find('.link').val())
-										.appendTo('form');
-
-		});
-
 
 		this.submit();
 	});

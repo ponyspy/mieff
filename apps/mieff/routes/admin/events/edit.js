@@ -76,22 +76,6 @@ module.exports = function(Model, Params) {
 				};
 			}) : [];
 
-			event.comments = post.comments ? post.comments.map(function(comment) {
-				return {
-					title: [{ 'lg':'ru', 'value': comment.title.ru }, { 'lg':'en', 'value': comment.title.en }],
-					description: [{ 'lg':'ru', 'value': comment.description.ru }, { 'lg':'en', 'value': comment.description.en }],
-					member: comment.member
-				};
-			}) : [];
-
-			event.publications = post.publications ? post.publications.map(function(publication) {
-				return {
-					title: [{ 'lg':'ru', 'value': publication.title.ru }, { 'lg':'en', 'value': publication.title.en }],
-					description: [{ 'lg':'ru', 'value': publication.description.ru }, { 'lg':'en', 'value': publication.description.en }],
-					link: publication.link
-				};
-			}) : [];
-
 			if (youtubeId(post.video)) {
 				event.video = {
 					provider: 'youtube',
@@ -112,14 +96,8 @@ module.exports = function(Model, Params) {
 				checkNested(post, [locale, 'title'])
 					&& event.setPropertyLocalised('title', post[locale].title, locale);
 
-				checkNested(post, [locale, 's_title'])
-					&& event.setPropertyLocalised('s_title', post[locale].s_title, locale);
-
 				checkNested(post, [locale, 'duration'])
 					&& event.setPropertyLocalised('duration', post[locale].duration, locale);
-
-				checkNested(post, [locale, 'place'])
-					&& event.setPropertyLocalised('place', post[locale].place, locale);
 
 				checkNested(post, [locale, 'description'])
 					&& event.setPropertyLocalised('description', post[locale].description, locale);

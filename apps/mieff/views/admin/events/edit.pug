@@ -25,8 +25,6 @@ block content
 		form(action='', method="post", enctype="multipart/form-data")
 			.form_title Название:
 			+form_text_single('title', event)
-			.form_title Подзаголовок:
-			+form_text_single('s_title', event)
 			.form_title Синоним:
 			span= 'https://' + host + '/events/'
 			input(type='text', name='sym', value=event.sym, placeholder=event._short_id)
@@ -40,20 +38,12 @@ block content
 			select(name='age')
 				each age, i in new Array(22)
 					option(value=i, selected=(event.age == i))= i + '+'
-			.form_title Идентификатор intickets:
-			input(type='text', name='w_alias', value=event.w_alias)
-			if event.w_alias && event.w_alias != ''
-				input(type='button', onclick='window.open("' + static_keys.intickets_widget_uri + '/node/' + event.w_alias + '", "_blank")', value='>')
 			.form_title Расписание:
 			+form_schedule(event.schedule)
 			.form_title Партнеры:
 			+form_partners(event.partners)
 			.form_title Участники:
 			+form_members(event.members)
-			.form_title Комментарии:
-			+form_comments(event.comments)
-			.form_title Пресса:
-			+form_publications(event.publications)
 			.form_title Видео YouTube / Vimeo:
 			input(type='text', name='video', value=(event.video && event.video.provider) ? (event.video.provider == 'youtube' ? 'https://youtu.be/' + event.video.id : 'https://vimeo.com/' + event.video.id) : '')
 			.form_title Обложка:
