@@ -42,9 +42,6 @@ module.exports = function(Model, Params) {
 
 			post_item.status = post.status;
 			post_item.date = moment(post.date.date + 'T' + post.date.time.hours + ':' + post.date.time.minutes);
-			post_item.style = post.style;
-			post_item.holder = post.holder;
-			post_item.view = post.view;
 			post_item.sym = post.sym ? post.sym : undefined;
 
 			var locales = post.en ? ['ru', 'en'] : ['ru'];
@@ -52,12 +49,6 @@ module.exports = function(Model, Params) {
 			locales.forEach(function(locale) {
 				checkNested(post, [locale, 'title'])
 					&& post_item.setPropertyLocalised('title', post[locale].title, locale);
-
-				checkNested(post, [locale, 's_title'])
-					&& post_item.setPropertyLocalised('s_title', post[locale].s_title, locale);
-
-				checkNested(post, [locale, 'intro'])
-					&& post_item.setPropertyLocalised('intro', post[locale].intro, locale);
 
 			});
 

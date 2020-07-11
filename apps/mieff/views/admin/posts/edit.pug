@@ -2,7 +2,7 @@ extends ../layout
 include ../_forms.pug
 
 block header_meta
-	- var content_title= 'РЕДАКТИРОВАТЬ ЗАПИСЬ'
+	- var content_title= 'РЕДАКТИРОВАТЬ НОВОСТЬ'
 
 block header_include
 	- var include_libs_css = ['pickmeup.min.css', 'font-awesome.css', 'wysiwyg-editor.min.css']
@@ -23,8 +23,6 @@ block content
 		form(action="", method="post", enctype="multipart/form-data")
 			.form_title Название:
 			+form_text_single('title', post_item)
-			.form_title Подзаголовок:
-			+form_text_single('s_title', post_item)
 			.form_title Синоним:
 			span= 'https://' + host + '/posts/'
 			input(type='text', name='sym', value=post_item.sym, placeholder=post_item._short_id)
@@ -32,20 +30,6 @@ block content
 			+form_single_file('poster', post_item)(accept='image/jpeg,image/png,image/gif')
 			.form_title Обложка:
 			+form_single_file('cover', post_item)(accept='image/jpeg,image/png,image/gif')
-			.form_title Вид в потоке:
-			select(name='view')
-				option(value='base', selected= post_item.view == 'base' && 'base') обычный
-				option(value='blank', selected= post_item.view == 'blank' && 'blank') отбивка
-			.form_title Стиль:
-			select(name='style')
-				option(value='white', selected= post_item.style == 'white' && 'white') Белый текст / черный фон
-				option(value='black', selected= post_item.style == 'black' && 'black') Черный текст / белый фон
-			.form_title Затенение фона:
-			select(name='holder')
-				option(value='true', selected=post_item.holder == true) Вкл.
-				option(value='false', selected=post_item.holder == false) Выкл.
-			.form_title Интро:
-			+form_text_multi('intro', post_item)
 			.form_title Описание:
 			+form_text_multi('description', post_item)(classes=['image', 'image_position', 'video', 'header', 'order', 'unorder'])
 			.form_title Статус:

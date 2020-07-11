@@ -1,7 +1,7 @@
 extends ../layout
 
 block header_meta
-	- var content_title= 'ЖУРНАЛ'
+	- var content_title= 'НОВОСТИ'
 
 block header_include
 	- var include_css = ['add.css']
@@ -24,7 +24,7 @@ block sub_menu
 block content
 	.title= content_title
 	br
-	a.add(href='/admin/posts/add') + Добавить запись
+	a.add(href='/admin/posts/add') + Добавить новость
 	br
 	br
 	.lists_block

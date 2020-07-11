@@ -2,7 +2,7 @@ extends ../layout
 include ../_forms.pug
 
 block header_meta
-	- var content_title= 'ДОБАВИТЬ ЗАПИСЬ'
+	- var content_title= 'ДОБАВИТЬ НОВОСТЬ'
 
 block header_include
 	- var include_libs_css = ['pickmeup.min.css', 'font-awesome.css', 'wysiwyg-editor.min.css']
@@ -23,8 +23,6 @@ block content
 		form(action="", method="post", enctype="multipart/form-data")
 			.form_title Название:
 			+form_text_single('title')
-			.form_title Подзаголовок:
-			+form_text_single('s_title')
 			.form_title Синоним:
 			span= 'https://' + host + '/posts/'
 			input(type='text', name='sym')
@@ -32,20 +30,6 @@ block content
 			+form_single_file('poster')(accept='image/jpeg,image/png,image/gif')
 			.form_title Обложка:
 			+form_single_file('cover')(accept='image/jpeg,image/png,image/gif')
-			.form_title Вид в потоке:
-			select(name='view')
-				option(value='base') обычный
-				option(value='blank') отбивка
-			.form_title Стиль:
-			select(name='style')
-				option(value='white') Белый текст / черный фон
-				option(value='black') Черный текст / белый фон
-			.form_title Затенение фона:
-			select(name='holder')
-				option(value='true') Вкл.
-				option(value='false') Выкл.
-			.form_title Интро:
-			+form_text_multi('intro')
 			.form_title Описание:
 			+form_text_multi('description')(classes=['image', 'image_position', 'video', 'header', 'order', 'unorder'])
 			.form_title Статус:
