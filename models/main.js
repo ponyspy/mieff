@@ -7,6 +7,7 @@ var Schema = mongoose.Schema,
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/' +  __app_name, {
+	useUnifiedTopology: true,
 	useCreateIndex: true,
 	useNewUrlParser: true
 });
@@ -71,6 +72,23 @@ var eventSchema = new Schema({
 		preview: { type: String }
 	}],
 	status: String,
+	_short_id: { type: String, unique: true, index: true, sparse: true },
+	date: { type: Date, default: Date.now },
+});
+
+programSchema = new Schema({
+	title: { type: String, trim: true, locale: true },
+	description: { type: String, trim: true, locale: true },
+	poster: String,
+	cover: String,
+	sym: { type: String, trim: true, index: true, unique: true, sparse: true },
+	_short_id: { type: String, unique: true, index: true, sparse: true },
+	date: { type: Date, default: Date.now },
+});
+
+placeSchema = new Schema({
+	title: { type: String, trim: true, locale: true },
+	description: { type: String, trim: true, locale: true },
 	_short_id: { type: String, unique: true, index: true, sparse: true },
 	date: { type: Date, default: Date.now },
 });
@@ -144,6 +162,8 @@ partnerSchema.index({'title.value': 'text'}, {language_override: 'lg', default_l
 userSchema.plugin(mongooseBcrypt, { fields: ['password'] });
 
 eventSchema.plugin(mongooseLocale);
+placeSchema.plugin(mongooseLocale);
+programSchema.plugin(mongooseLocale);
 memberSchema.plugin(mongooseLocale);
 partnerSchema.plugin(mongooseLocale);
 postSchema.plugin(mongooseLocale);
@@ -156,6 +176,9 @@ postSchema.plugin(mongooseLocale);
 
 module.exports.User = mongoose.model('User', userSchema);
 module.exports.Event = mongoose.model('Event', eventSchema);
+module.exports.Place = mongoose.model('Place', placeSchema);
+module.exports.Program = mongoose.model('Program', programSchema);
 module.exports.Member = mongoose.model('Member', memberSchema);
 module.exports.Partner = mongoose.model('Partner', partnerSchema);
 module.exports.Post = mongoose.model('Post', postSchema);
+
