@@ -21,8 +21,13 @@ $(function() {
 										.appendTo('form');
 
 			$('<input />').attr('type', 'hidden')
-										.attr('name', 'schedule' + '[' + i + ']' + '[premiere]')
-										.attr('value', $(schedule).find('.premiere').is(':checked'))
+										.attr('name', 'schedule' + '[' + i + ']' + '[free]')
+										.attr('value', $(schedule).find('.free').is(':checked'))
+										.appendTo('form');
+
+			$('<input />').attr('type', 'hidden')
+										.attr('name', 'schedule' + '[' + i + ']' + '[place]')
+										.attr('value', $(schedule).find('.place').val())
 										.appendTo('form');
 
 			$('<input />').attr('type', 'hidden')

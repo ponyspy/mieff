@@ -7,6 +7,7 @@ module.exports = function(Model, Params) {
 	var Event = Model.Event;
 	var Member = Model.Member;
 	var Partner = Model.Partner;
+	var Place = Model.Place;
 
 	var previewImages = Params.upload.preview;
 	var uploadImages = Params.upload.images;
@@ -25,12 +26,17 @@ module.exports = function(Model, Params) {
 			Member.find().sort('name.value').exec(function(err, members) {
 				if (err) return next(err);
 
-				Partner.find().sort('title.value').exec(function(err, partners) {
+				Place.find().sort('title.value').exec(function(err, places) {
+					if (err) return next(err);
 
-					previewImages(event.images, function(err, images_preview) {
+					Partner.find().sort('title.value').exec(function(err, partners) {
 						if (err) return next(err);
 
-						res.render('admin/events/edit.pug', { event: event, members: members, partners: partners, images_preview: images_preview });
+						previewImages(event.images, function(err, images_preview) {
+							if (err) return next(err);
+
+							res.render('admin/events/edit.pug', { event: event, members: members, places: places, partners: partners, images_preview: images_preview });
+						});
 					});
 				});
 			});
@@ -61,7 +67,8 @@ module.exports = function(Model, Params) {
 						date: moment(schedule.date + 'T' + schedule.time.hours + ':' + schedule.time.minutes),
 						link: schedule.link == '' ? undefined : schedule.link,
 						options: schedule.options == '' ? undefined : schedule.options,
-						premiere: schedule.premiere
+						place: schedule.place,
+						free: schedule.free
 					});
 				}
 

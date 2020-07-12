@@ -44,7 +44,8 @@ var eventSchema = new Schema({
 		date: Date,
 		link: String,
 		options: String,
-		premiere: Boolean
+		place: { type: ObjectId, ref: 'Place' },
+		free: Boolean
 	}],
 	members: [{
 		title: { type: String, trim: true, locale: true },
@@ -69,6 +70,7 @@ programSchema = new Schema({
 	poster: String,
 	cover: String,
 	sym: { type: String, trim: true, index: true, unique: true, sparse: true },
+	status: String,
 	_short_id: { type: String, unique: true, index: true, sparse: true },
 	date: { type: Date, default: Date.now },
 });
@@ -76,6 +78,7 @@ programSchema = new Schema({
 placeSchema = new Schema({
 	title: { type: String, trim: true, locale: true },
 	description: { type: String, trim: true, locale: true },
+	status: String,
 	_short_id: { type: String, unique: true, index: true, sparse: true },
 	date: { type: Date, default: Date.now },
 });

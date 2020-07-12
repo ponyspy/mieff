@@ -28,6 +28,7 @@ module.exports = function(Model, Params) {
 		Place.findById(id).exec(function(err, place) {
 			if (err) return next(err);
 
+			place.status = post.status;
 			place.date = moment(post.date.date + 'T' + post.date.time.hours + ':' + post.date.time.minutes);
 
 			var locales = post.en ? ['ru', 'en'] : ['ru'];

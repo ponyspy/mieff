@@ -8,6 +8,7 @@ module.exports = function(Model, Params) {
 	var Event = Model.Event;
 	var Member = Model.Member;
 	var Partner = Model.Partner;
+	var Place = Model.Place;
 
 	var uploadImages = Params.upload.images;
 	var uploadImage = Params.upload.image;
@@ -20,10 +21,14 @@ module.exports = function(Model, Params) {
 		Member.find().sort('name.value').exec(function(err, members) {
 			if (err) return next(err);
 
-			Partner.find().sort('title.value').exec(function(err, partners) {
+			Place.find().sort('title.value').exec(function(err, places) {
 				if (err) return next(err);
 
-				res.render('admin/events/add.pug', { members: members, partners: partners });
+				Partner.find().sort('title.value').exec(function(err, partners) {
+					if (err) return next(err);
+
+					res.render('admin/events/add.pug', { members: members, places: places, partners: partners });
+				});
 			});
 		});
 	};
@@ -50,7 +55,8 @@ module.exports = function(Model, Params) {
 					date: moment(schedule.date + 'T' + schedule.time.hours + ':' + schedule.time.minutes),
 					link: schedule.link,
 					options: schedule.options,
-					premiere: schedule.premiere
+					place: schedule.place,
+					free: schedule.free
 				});
 			}
 

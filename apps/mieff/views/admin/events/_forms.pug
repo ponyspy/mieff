@@ -59,7 +59,7 @@ mixin form_members(groups)
 
 mixin form_schedule(schedule)
 	.block_items
-		each item in (schedule && schedule.length) ? schedule : [{ hidden: true, date: '', premiere: false }]
+		each item in (schedule && schedule.length) ? schedule : [{ hidden: true, date: '', free: false }]
 			- var date = item.date
 			- var dd = date && (date.getFullYear() + '-' + ('0' + (date.getMonth() + 1)).slice(-2)  + '-' + ('0' + date.getDate()).slice(-2))
 			- var hh = date && (date.getHours())
@@ -78,12 +78,17 @@ mixin form_schedule(schedule)
 						- var format = ('0' + (i*5)).slice(-2)
 						option(value=format, selected=(i*5) <= mm)= format
 				span= ' -- '
+				select.place
+					each place in places
+						- var status_list = { 'hidden': '[*] ', 'special': '[!] ' }
+						option(value=place._id, selected=item.place == place._id.toString())=  (place.status != 'base' ? status_list[place.status] : '') + place.i18n.title.get('ru')
+				span= ' -- '
 				label
-					input.premiere(type='checkbox', checked=item.premiere, )
-					!= ' премьера'
+					input.free(type='checkbox', checked=item.free, )
+					!= ' free'
 				span= ' -- '
 				select.date_options
-					option(value='') intickets
+					option(value='') off
 					option(value='link', selected=item.options == 'link') ссылка
 					option(value='widget', selected=item.options == 'widget') виджет
 				span.ext_block(style=!item.options ? 'display: none;' : '')

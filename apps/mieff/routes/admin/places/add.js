@@ -21,6 +21,7 @@ module.exports = function(Model, Params) {
 		var place = new Place();
 
 		place._short_id = shortid.generate();
+		place.status = post.status;
 		place.date = moment(post.date.date + 'T' + post.date.time.hours + ':' + post.date.time.minutes);
 
 		var locales = post.en ? ['ru', 'en'] : ['ru'];
