@@ -88,6 +88,12 @@ module.exports = function(Model, Params) {
 			checkNested(post, [locale, 'duration'])
 				&& event.setPropertyLocalised('duration', post[locale].duration, locale);
 
+			checkNested(post, [locale, 'country'])
+				&& event.setPropertyLocalised('country', post[locale].country, locale);
+
+			checkNested(post, [locale, 'premiere'])
+				&& event.setPropertyLocalised('premiere', post[locale].premiere, locale);
+
 			checkNested(post, [locale, 'description'])
 				&& event.setPropertyLocalised('description', post[locale].description, locale);
 
@@ -95,8 +101,7 @@ module.exports = function(Model, Params) {
 
 		async.series([
 			async.apply(uploadImages, event, 'events', null, post.images),
-			async.apply(uploadImage, event, 'events', 'poster', 600, files.poster && files.poster[0], null),
-			async.apply(uploadImage, event, 'events', 'poster_hover', 600, files.poster_hover && files.poster_hover[0], null),
+			async.apply(uploadImage, event, 'events', 'poster', 800, files.poster && files.poster[0], null),
 		], function(err, results) {
 			if (err) return next(err);
 

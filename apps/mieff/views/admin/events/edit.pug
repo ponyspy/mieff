@@ -32,8 +32,10 @@ block content
 			+form_text_multi('description', event)
 			.form_title Продолжительность:
 			+form_text_single('duration', event)
-			.form_title Площадка:
-			+form_text_single('place', event)
+			.form_title Страна:
+			+form_text_single('country', event)
+			.form_title Премьера:
+			+form_text_single('premiere', event)
 			.form_title Возраст:
 			select(name='age')
 				each age, i in new Array(22)
@@ -48,8 +50,6 @@ block content
 			input(type='text', name='video', value=(event.video && event.video.provider) ? (event.video.provider == 'youtube' ? 'https://youtu.be/' + event.video.id : 'https://vimeo.com/' + event.video.id) : '')
 			.form_title Обложка:
 			+form_single_file('poster', event)(accept='image/jpeg,image/png,image/gif')
-			.form_title Обложка [при наведении]:
-			+form_single_file('poster_hover', event)(accept='image/jpeg,image/png,image/gif')
 			.form_title Изображения:
 			+form_images_upload(event.images)
 			.form_title Статус:

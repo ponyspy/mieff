@@ -30,12 +30,11 @@ var eventSchema = new Schema({
 	title: { type: String, trim: true, locale: true },
 	s_title: { type: String, trim: true, locale: true },
 	description: { type: String, trim: true, locale: true },
-	place: { type: String, trim: true, locale: true },
 	duration: { type: String, trim: true, locale: true },
+	country: { type: String, trim: true, locale: true },
+	premiere: { type: String, trim: true, locale: true },
 	age: Number,
 	poster: { type: String },
-	poster_hover: { type: String },
-	w_alias: { type: String, trim: true },
 	sym: { type: String, trim: true, index: true, unique: true, sparse: true },
 	video: {
 		provider: String,
@@ -46,16 +45,6 @@ var eventSchema = new Schema({
 		link: String,
 		options: String,
 		premiere: Boolean
-	}],
-	comments: [{
-		title: { type: String, trim: true, locale: true },
-		member: { type: ObjectId, ref: 'Member' },
-		description: { type: String, trim: true, locale: true },
-	}],
-	publications: [{
-		title: { type: String, trim: true, locale: true },
-		link: String,
-		description: { type: String, trim: true, locale: true },
 	}],
 	members: [{
 		title: { type: String, trim: true, locale: true },
