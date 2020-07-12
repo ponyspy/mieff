@@ -70,8 +70,8 @@ module.exports = function(Model, Params) {
 
 			event.members = post.members ? post.members.map(function(group) {
 				return {
-					mode: group.mode,
 					title: [{ 'lg':'ru', 'value': group.title.ru }, { 'lg':'en', 'value': group.title.en }],
+					description: [{ 'lg':'ru', 'value': group.description.ru }, { 'lg':'en', 'value': group.description.en }],
 					list: group.list ? group.list.filter(function(item) { return item !== ''; }) : []
 				};
 			}) : [];

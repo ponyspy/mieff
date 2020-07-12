@@ -23,22 +23,20 @@ mixin form_partners(event_partners)
 
 mixin form_members(groups)
 	.block_items
-		each group in (groups && groups.length) ? groups : [{ hidden: true, mode: 'event', list: [null], title: [ {lg: 'ru', value: ''}, {lg: 'en', value: ''} ] }]
+		each group in (groups && groups.length) ? groups : [{ hidden: true, list: [null], title: [ {lg: 'ru', value: ''}, {lg: 'en', value: ''} ], description: [ {lg: 'ru', value: ''}, {lg: 'en', value: ''} ] }]
 			.block_item.group(class= group.hidden ? 'hidden' : '', style=group.hidden ? 'display: none;': '')
 				.group_options
 					input.rm_block(type='button', value='−')
 					input.up_block(type='button', value='▲')
 					input.down_block(type='button', value='▼')
-					span!= '&nbsp;&nbsp;&nbsp;||&nbsp;&nbsp;&nbsp;'
-					span показать:
-					select.group_mode
-						option(value='event', selected=group.mode == 'event') в событии
-						option(value='schedule', selected=group.mode == 'schedule') в расписании
-						option(value='all', selected=group.mode == 'all') везде
-				br
 				.group_title
+					p Заголовок группы:
 					input.ru(type="text", value=group.title.filter(function(locale) { return locale.lg == 'ru' })[0].value)
 					input.en(type="text", disabled, value=group.title.filter(function(locale) { return locale.lg == 'en' })[0].value)
+				.group_desc
+					p Описание группы:
+					input.ru(type="text", value=group.description.filter(function(locale) { return locale.lg == 'ru' })[0].value)
+					input.en(type="text", disabled, value=group.description.filter(function(locale) { return locale.lg == 'en' })[0].value)
 				br
 				.group_list
 					each list_item in group.list

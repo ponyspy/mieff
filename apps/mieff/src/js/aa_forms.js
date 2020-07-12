@@ -41,18 +41,23 @@ $(function() {
 
 		$('.block_item.group').not('.hidden').toArray().forEach(function(group, i) {
 			$('<input />').attr('type', 'hidden')
-										.attr('name', 'members' + '[' + i + ']' + '[mode]')
-										.attr('value', $(group).find('.group_mode').val())
-										.appendTo('form');
-
-			$('<input />').attr('type', 'hidden')
 										.attr('name', 'members' + '[' + i + ']' + '[title][ru]')
-										.attr('value', $(group).find('.ru').val())
+										.attr('value', $(group).find('.group_title .ru').val())
 										.appendTo('form');
 
 			$('<input />').attr('type', 'hidden')
 										.attr('name', 'members' + '[' + i + ']' + '[title][en]')
-										.attr('value', $(group).find('.en').val())
+										.attr('value', $(group).find('.group_title .en').val())
+										.appendTo('form');
+
+			$('<input />').attr('type', 'hidden')
+										.attr('name', 'members' + '[' + i + ']' + '[description][ru]')
+										.attr('value', $(group).find('.group_desc .ru').val())
+										.appendTo('form');
+
+			$('<input />').attr('type', 'hidden')
+										.attr('name', 'members' + '[' + i + ']' + '[description][en]')
+										.attr('value', $(group).find('.group_desc .en').val())
 										.appendTo('form');
 
 			$(group).find('.list_item').toArray().forEach(function(item, j) {
