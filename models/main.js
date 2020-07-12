@@ -54,8 +54,6 @@ var eventSchema = new Schema({
 	partners: [{ type: ObjectId, ref: 'Partner' }],
 	images: [{
 		description: { type: String, trim: true, locale: true },
-		holder: Boolean,
-		style: String,
 		original: { type: String },
 		thumb: { type: String },
 		preview: { type: String }
