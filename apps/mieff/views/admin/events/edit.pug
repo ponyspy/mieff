@@ -48,9 +48,9 @@ block content
 			+form_members(event.members)
 			.form_title Видео YouTube / Vimeo:
 			input(type='text', name='video', value=(event.video && event.video.provider) ? (event.video.provider == 'youtube' ? 'https://youtu.be/' + event.video.id : 'https://vimeo.com/' + event.video.id) : '')
-			.form_title Обложка:
+			.form_title Постер:
 			+form_single_file('poster', event)(accept='image/jpeg,image/png,image/gif')
-			.form_title Изображения:
+			.form_title Изображения [Обложка]:
 			+form_images_upload(event.images)
 			.form_title Статус:
 			select(name='status')
