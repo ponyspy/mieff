@@ -146,6 +146,18 @@ postSchema.index({'title.value': 'text', 's_title.value': 'text', 'description.v
 	language_override: 'lg', default_language: 'ru'
 });
 partnerSchema.index({'title.value': 'text'}, {language_override: 'lg', default_language: 'ru'});
+eventSchema.index({'title.value': 'text', 'intro.value': 'text', 'description.value': 'text'}, {
+	weights: {'description.value': 2, 'intro.value': 3, 'title.value': 5},
+	language_override: 'lg', default_language: 'ru'
+});
+programSchema.index({'title.value': 'text', 'description.value': 'text'}, {
+	weights: {'description.value': 2, 'title.value': 5},
+	language_override: 'lg', default_language: 'ru'
+});
+placeSchema.index({'title.value': 'text', 'description.value': 'text'}, {
+	weights: {'description.value': 2, 'title.value': 5},
+	language_override: 'lg', default_language: 'ru'
+});
 
 
 // ------------------------
