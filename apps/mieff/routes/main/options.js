@@ -63,8 +63,6 @@ module.exports = function(Model) {
 					{ url: '/team' },
 					{ url: '/contacts' },
 					{ url: '/about' },
-					{ url: '/docs' },
-					{ url: '/students' },
 				].concat(arr_events)
 			});
 
