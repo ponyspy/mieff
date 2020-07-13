@@ -1,4 +1,9 @@
 {
+	"events_types": [
+		"seance",
+		"block"
+	],
+
 	"partners_types": [
 		"information",
 		"tv",

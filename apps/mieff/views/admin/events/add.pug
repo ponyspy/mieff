@@ -29,11 +29,8 @@ block content
 			input(type='text', name='sym')
 			.form_title Тип:
 			select(name='type')
-				option(value='Seance') Показ
-				option(value='Block') Блок
-				option(value='Q&A') Q&A
-				option(value='Party') Party
-				option(value='Performance') Performance
+				each type_item in static_types.events_types
+					option(value=type_item)= __n(type_item, 1)
 			.form_title Программа:
 			+form_single_select('program', programs)
 			.form_title Принадлежит блоку:

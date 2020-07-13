@@ -13,6 +13,13 @@ block sub_menu
 	span.sub_item.toggle_preview Превью
 	.sub_right_block
 
+		.sub_drop.type(style='z-index: 2;')
+			.drop_title Тип
+			.drop_inner
+				.drop_item(class='all').select Все
+				each type_item in static_types.events_types
+					.drop_item(class=type_item)= __n(type_item, 5)
+
 		.sub_drop.status(style='z-index: 1;')
 			.drop_title Статус
 			.drop_inner

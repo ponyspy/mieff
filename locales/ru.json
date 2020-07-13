@@ -91,5 +91,13 @@
 	"social": {
 		"one": "social",
 		"other": "social"
+	},
+	"seance": {
+		"one": "seance",
+		"other": "seance"
+	},
+	"block": {
+		"one": "block",
+		"other": "block"
 	}
 }

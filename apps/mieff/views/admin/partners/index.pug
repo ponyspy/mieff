@@ -16,8 +16,8 @@ block sub_menu
 			.drop_title Тип
 			.drop_inner
 				.drop_item(class='all').select Все
-				each type in static_types.partners_types
-					.drop_item(class=type)= __n(type, 5)
+				each type_item in static_types.partners_types
+					.drop_item(class=type_item)= __n(type_item, 5)
 
 		.sub_drop.status(style='z-index: 1;')
 			.drop_title Статус
