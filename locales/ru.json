@@ -75,5 +75,21 @@
 	"lifestyle": {
 		"one": "lifestyle",
 		"other": "lifestyle"
+	},
+	"information": {
+		"one": "information",
+		"other": "information"
+	},
+	"tv": {
+		"one": "tv",
+		"other": "tv"
+	},
+	"radio": {
+		"one": "radio",
+		"other": "radio"
+	},
+	"social": {
+		"one": "social",
+		"other": "social"
 	}
 }
