@@ -54,7 +54,7 @@ module.exports = function(Model, Params) {
 		event.status = post.status;
 		event.date = moment(post.date.date + 'T' + post.date.time.hours + ':' + post.date.time.minutes);
 		event.type = post.type;
-		event.block = post.block != 'none' ? post.block : undefined;
+		event.parent = post.parent != 'none' ? post.parent : undefined;
 		event.program = post.program != 'none' ? post.program : undefined;
 		event.age = post.age;
 		event.year = post.year;
