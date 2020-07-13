@@ -49,30 +49,45 @@ module.exports = function(Model) {
 	module.sitemap = function(req, res, next) {
 
 		Event.where('status').ne('hidden').exec(function(err, events) {
-			var arr_events = events.map(function(event) {
-				return {
+
+			var links = [
+				{ url: '/' },
+				{ url: '/team' },
+				{ url: '/contacts' },
+				{ url: '/about' },
+			];
+
+			var stream = new sitemap.SitemapStream({ hostname: 'https://' + req.hostname });
+
+			stream.pipe(res);
+			res.type('xml');
+
+			links.forEach(function(link) {
+				return stream.write(link);
+			});
+
+			events.forEach(function(event) {
+				return stream.write({
 					url: '/events/' + (event.sym ? event.sym : event._short_id)
-				};
+				});
 			});
 
-			var site_map = sitemap.createSitemap ({
-				hostname: 'https://' + req.hostname,
-				// cacheTime: 600000,
-				urls: [
-					{ url: '/' },
-					{ url: '/team' },
-					{ url: '/contacts' },
-					{ url: '/about' },
-				].concat(arr_events)
+			stream.end();
+
+			stream.on('error', function(err) {
+				return next(err);
 			});
 
-			site_map.toXML(function (err, xml) {
-				if (err) return next(err);
+			stream.on('data', function(chunk) {
+				res.write(data);
+			});
 
-				res.type('xml').send(xml);
+			stream.on('end', function() {
+				res.end();
 			});
 
 		});
+
 	};
 
 
