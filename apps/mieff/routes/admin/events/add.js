@@ -57,6 +57,7 @@ module.exports = function(Model, Params) {
 		event.block = post.block != 'none' ? post.block : undefined;
 		event.program = post.program != 'none' ? post.program : undefined;
 		event.age = post.age;
+		event.year = post.year;
 		event.sym = post.sym ? post.sym : undefined;
 
 		event.partners = post.partners;
@@ -110,8 +111,8 @@ module.exports = function(Model, Params) {
 			checkNested(post, [locale, 'country'])
 				&& event.setPropertyLocalised('country', post[locale].country, locale);
 
-			checkNested(post, [locale, 'premiere'])
-				&& event.setPropertyLocalised('premiere', post[locale].premiere, locale);
+			checkNested(post, [locale, 'intro'])
+				&& event.setPropertyLocalised('intro', post[locale].intro, locale);
 
 			checkNested(post, [locale, 'description'])
 				&& event.setPropertyLocalised('description', post[locale].description, locale);

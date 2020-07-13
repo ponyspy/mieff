@@ -38,18 +38,20 @@ block content
 			+form_single_select('program', programs)
 			.form_title Блок:
 			+form_single_select('block', events)
-			.form_title Описание:
-			+form_text_multi('description')
+			.form_title Интро:
+			+form_text_multi('intro')
 			.form_title Продолжительность:
 			+form_text_single('duration')
 			.form_title Страна:
 			+form_text_single('country')
-			.form_title Премьера:
-			+form_text_single('premiere')
+			.form_title Год:
+			input(name='year', type='number', value=new Date().getFullYear())
 			.form_title Возраст:
 			select(name='age')
 				each age, i in new Array(22)
 					option(value=i)= i + '+'
+			.form_title Описание:
+			+form_text_multi('description')
 			.form_title Расписание:
 			+form_schedule()
 			.form_title Партнеры:
