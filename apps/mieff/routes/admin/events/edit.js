@@ -8,6 +8,7 @@ module.exports = function(Model, Params) {
 	var Member = Model.Member;
 	var Partner = Model.Partner;
 	var Place = Model.Place;
+	var Program = Model.Program;
 
 	var previewImages = Params.upload.preview;
 	var uploadImages = Params.upload.images;
@@ -32,10 +33,18 @@ module.exports = function(Model, Params) {
 					Partner.find().sort('title.value').exec(function(err, partners) {
 						if (err) return next(err);
 
-						previewImages(event.images, function(err, images_preview) {
+						Program.find().sort('title.value').exec(function(err, programs) {
 							if (err) return next(err);
 
-							res.render('admin/events/edit.pug', { event: event, members: members, places: places, partners: partners, images_preview: images_preview });
+							Event.find({'type': 'Block'}).sort('title.value').exec(function(err, events) {
+								if (err) return next(err);
+
+								previewImages(event.images, function(err, images_preview) {
+									if (err) return next(err);
+
+									res.render('admin/events/edit.pug', { event: event, events: events, programs: programs, members: members, places: places, partners: partners, images_preview: images_preview });
+								});
+							});
 						});
 					});
 				});
@@ -55,9 +64,11 @@ module.exports = function(Model, Params) {
 
 			event.status = post.status;
 			event.date = moment(post.date.date + 'T' + post.date.time.hours + ':' + post.date.time.minutes);
+			event.type = post.type;
+			event.block = post.block != 'none' ? post.block : undefined;
+			event.program = post.program != 'none' ? post.program : undefined;
 			event.age = post.age;
 			event.sym = post.sym ? post.sym : undefined;
-			event.w_alias = post.w_alias ? post.w_alias : undefined;
 
 			event.partners = post.partners;
 

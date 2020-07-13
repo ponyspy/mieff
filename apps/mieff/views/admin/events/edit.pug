@@ -28,6 +28,17 @@ block content
 			.form_title Синоним:
 			span= 'https://' + host + '/events/'
 			input(type='text', name='sym', value=event.sym, placeholder=event._short_id)
+			.form_title Тип:
+			select(name='type')
+				option(value='Seance', selected= event.type == 'Seance' && 'Seance') Показ
+				option(value='Block', selected= event.type == 'Block' && 'Block') Блок
+				option(value='Q&A', selected= event.type == 'Q&A' && 'Q&A') Q&A
+				option(value='Party', selected= event.type == 'Party' && 'Party') Party
+				option(value='Performance', selected= event.type == 'Performance' && 'Performance') Performance
+			.form_title Программа:
+			+form_single_select('program', programs, event.program)
+			.form_title Блок:
+			+form_single_select('block', events, event.block)
 			.form_title Описание:
 			+form_text_multi('description', event)
 			.form_title Продолжительность:
