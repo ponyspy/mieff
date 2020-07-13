@@ -10,7 +10,7 @@ module.exports = function(Model) {
 		Event.find().sort('-date').limit(10).exec(function(err, events) {
 			if (err) return next(err);
 
-			Event.count().exec(function(err, count) {
+			Event.countDocuments().exec(function(err, count) {
 				if (err) return next(err);
 
 				res.render('admin/events', {events: events, count: Math.ceil(count / 10)});
@@ -34,7 +34,7 @@ module.exports = function(Model) {
 			Query.where('status').equals(post.context.status);
 		}
 
-		Query.count(function(err, count) {
+		Query.countDocuments(function(err, count) {
 			if (err) return next(err);
 
 			Query.find().sort('-date').skip(+post.context.skip).limit(+post.context.limit).exec(function(err, events) {
