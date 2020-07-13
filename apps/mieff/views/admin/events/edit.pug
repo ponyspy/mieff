@@ -37,7 +37,7 @@ block content
 				option(value='Performance', selected= event.type == 'Performance' && 'Performance') Performance
 			.form_title Программа:
 			+form_single_select('program', programs, event.program)
-			.form_title Блок:
+			.form_title Принадлежит блоку:
 			+form_single_select('block', events, event.block)
 			.form_title Интро:
 			+form_text_multi('intro', event)
