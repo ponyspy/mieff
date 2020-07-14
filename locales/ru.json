@@ -1,17 +1,4 @@
 {
-	"mieff": "mieff",
-	"поиск": "поиск",
-	"ваше имя": "ваше имя",
-	"день": "день",
-	"месяц": "месяц",
-	"год": "год",
-	"ждем ответа...": "ждем ответа...",
-	"отправить": "отправить",
-	"некорректный email": "некорректный email",
-	"спасибо за подписку": "спасибо за подписку",
-	"ошибка": "ошибка",
-	"Отправляя форму, вы даете свое согласие на обработку персональных данных. ": "Отправляя форму, вы даете свое согласие на обработку персональных данных. ",
-	"Подробнее...": "Подробнее...",
 	"actor": {
 		"one": "actor",
 		"other": "actor"
@@ -28,77 +15,45 @@
 		"one": "author",
 		"other": "author"
 	},
+	"main": {
+		"one": "main",
+		"other": "main"
+	},
 	"composer": {
 		"one": "composer",
 		"other": "composer"
 	},
-	"choreographer": {
-		"one": "choreographer",
-		"other": "choreographer"
+	"producer": {
+		"one": "producer",
+		"other": "producer"
 	},
-	"management": {
-		"one": "management",
-		"other": "management"
+	"musician": {
+		"one": "musician",
+		"other": "musician"
 	},
-	"consul": {
-		"one": "consul",
-		"other": "consul"
+	"curator": {
+		"one": "curator",
+		"other": "curator"
 	},
-	"gen_information": {
-		"one": "gen_information",
-		"other": "gen_information"
+	"performer": {
+		"one": "performer",
+		"other": "performer"
 	},
-	"off_information": {
-		"one": "off_information",
-		"other": "off_information"
+	"operator": {
+		"one": "operator",
+		"other": "operator"
 	},
-	"st_information": {
-		"one": "st_information",
-		"other": "st_information"
-	},
-	"off_tv": {
-		"one": "off_tv",
-		"other": "off_tv"
-	},
-	"off_radio": {
-		"one": "off_radio",
-		"other": "off_radio"
-	},
-	"off_social": {
-		"one": "off_social",
-		"other": "off_social"
-	},
-	"info_support": {
-		"one": "info_support",
-		"other": "info_support"
-	},
-	"lifestyle": {
-		"one": "lifestyle",
-		"other": "lifestyle"
-	},
-	"information": {
-		"one": "information",
-		"other": "information"
-	},
-	"tv": {
-		"one": "tv",
-		"other": "tv"
-	},
-	"radio": {
-		"one": "radio",
-		"other": "radio"
-	},
-	"social": {
-		"one": "social",
-		"other": "social"
+	"lecturer": {
+		"one": "lecturer",
+		"other": "lecturer"
 	},
 	"seance": {
 		"one": "seance",
 		"other": "seance"
 	},
-	"block": {
-		"one": "block",
-		"other": "block"
+	"lecture": {
+		"one": "lecture",
+		"other": "lecture"
 	},
 	"party": {
 		"one": "party",
@@ -108,8 +63,32 @@
 		"one": "performance",
 		"other": "performance"
 	},
-	"lecture": {
-		"one": "lecture",
-		"other": "lecture"
+	"strategic": {
+		"one": "strategic",
+		"other": "strategic"
+	},
+	"program": {
+		"one": "program",
+		"other": "program"
+	},
+	"tech": {
+		"one": "tech",
+		"other": "tech"
+	},
+	"partner": {
+		"one": "partner",
+		"other": "partner"
+	},
+	"info": {
+		"one": "info",
+		"other": "info"
+	},
+	"for_support": {
+		"one": "for_support",
+		"other": "for_support"
+	},
+	"official": {
+		"one": "official",
+		"other": "official"
 	}
 }

@@ -7,18 +7,28 @@
 	],
 
 	"partners_types": [
-		"information",
-		"tv",
-		"radio",
-		"social",
-		"lifestyle"
+		"strategic",
+		"program",
+		"tech",
+		"partner",
+		"info",
+		"for_support",
+		"official",
+		"main"
 	],
 
 	"members_roles": {
-		"actor": { "male": "actor", "female": "actresse" },
-		"director": { "male": "director", "female": "director" },
-		"artist": { "male": "artist", "female": "artist" },
-		"author": { "male": "author", "female": "author" },
-		"composer": { "male": "composer", "female": "composer" }
+		"actor": { "male": "actor", "female": "f_actor" },
+		"director": { "male": "director", "female": "f_director" },
+		"artist": { "male": "artist", "female": "f_artist" },
+		"author": { "male": "author", "female": "f_author" },
+		"main": { "male": "main", "female": "f_main" },
+		"composer": { "male": "composer", "female": "f_composer" },
+		"producer": { "male": "producer", "female": "f_producer" },
+		"musician": { "male": "musician", "female": "f_musician" },
+		"curator": { "male": "curator", "female": "f_curator" },
+		"performer": { "male": "performer", "female": "f_performer" },
+		"operator": { "male": "operator", "female": "f_operator" },
+		"lecturer": { "male": "lecturer", "female": "f_lecturer" }
 	}
 }

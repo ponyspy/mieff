@@ -36,20 +36,14 @@ block content
 			+form_single_select('program', programs, event.program)
 			.form_title Связанные события:
 			+form_multiple_select('events', events)
-			.form_title Метка:
+			.form_title Маркер:
 			+form_text_single('marker', event)
-			.form_title Интро:
-			+form_text_multi('intro', event)
-			.form_title Продолжительность:
-			+form_text_single('duration', event)
-			.form_title Страна:
-			+form_text_single('country', event)
-			.form_title Год:
-			input(name='year', type='number', value=event.year || new Date().getFullYear())
 			.form_title Возраст:
 			select(name='age')
 				each age, i in new Array(22)
 					option(value=i, selected=(event.age == i))= i + '+'
+			.form_title Интро:
+			+form_text_multi('intro', event)
 			.form_title Описание:
 			+form_text_multi('description', event)
 			.form_title Расписание:
