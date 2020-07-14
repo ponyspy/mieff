@@ -90,5 +90,53 @@
 	"official": {
 		"one": "official",
 		"other": "official"
+	},
+	"f_actor": {
+		"one": "f_actor",
+		"other": "f_actor"
+	},
+	"f_director": {
+		"one": "f_director",
+		"other": "f_director"
+	},
+	"f_artist": {
+		"one": "f_artist",
+		"other": "f_artist"
+	},
+	"f_author": {
+		"one": "f_author",
+		"other": "f_author"
+	},
+	"f_main": {
+		"one": "f_main",
+		"other": "f_main"
+	},
+	"f_composer": {
+		"one": "f_composer",
+		"other": "f_composer"
+	},
+	"f_producer": {
+		"one": "f_producer",
+		"other": "f_producer"
+	},
+	"f_musician": {
+		"one": "f_musician",
+		"other": "f_musician"
+	},
+	"f_curator": {
+		"one": "f_curator",
+		"other": "f_curator"
+	},
+	"f_performer": {
+		"one": "f_performer",
+		"other": "f_performer"
+	},
+	"f_operator": {
+		"one": "f_operator",
+		"other": "f_operator"
+	},
+	"f_lecturer": {
+		"one": "f_lecturer",
+		"other": "f_lecturer"
 	}
 }
