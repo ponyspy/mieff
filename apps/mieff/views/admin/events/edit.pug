@@ -36,7 +36,7 @@ block content
 			+form_single_select('program', programs, event.program)
 			.form_title Связанные события:
 			+form_multiple_select('events', events)
-			.form_title Маркер:
+			.form_title Маркер в расписании:
 			+form_text_single('marker', event)
 			.form_title Возраст:
 			select(name='age')
@@ -54,9 +54,11 @@ block content
 			+form_members(event.members)
 			.form_title Видео YouTube / Vimeo:
 			input(type='text', name='video', value=(event.video && event.video.provider) ? (event.video.provider == 'youtube' ? 'https://youtu.be/' + event.video.id : 'https://vimeo.com/' + event.video.id) : '')
+			.form_title Видео [обложка]:
+			+form_single_file('cover', event)(accept='image/jpeg,image/png,image/gif')
 			.form_title Постер:
 			+form_single_file('poster', event)(accept='image/jpeg,image/png,image/gif')
-			.form_title Изображения [Обложка]:
+			.form_title Изображения [обложка]:
 			+form_images_upload(event.images)
 			.form_title Статус:
 			select(name='status')

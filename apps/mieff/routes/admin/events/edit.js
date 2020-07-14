@@ -129,6 +129,7 @@ module.exports = function(Model, Params) {
 			async.series([
 				async.apply(uploadImages, event, 'events', post.hold, post.images),
 				async.apply(uploadImage, event, 'events', 'poster', 800, files.poster && files.poster[0], post.poster_del),
+				async.apply(uploadImage, event, 'events', 'cover', 800, files.cover && files.cover[0], post.cover_del),
 			], function(err, results) {
 				if (err) return next(err);
 

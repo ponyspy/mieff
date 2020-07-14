@@ -3,7 +3,8 @@
 		"seance",
 		"lecture",
 		"party",
-		"performance"
+		"performance",
+		"block"
 	],
 
 	"partners_types": [

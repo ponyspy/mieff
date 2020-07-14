@@ -26,7 +26,7 @@ module.exports = (function() {
 
 	router.route('/').get(checkAuth, admin.main.index);
 
-	router.use('/events', checkAuth, upload.fields([ { name: 'poster' }, { name: 'poster_hover' } ]), admin.events);
+	router.use('/events', checkAuth, upload.fields([ { name: 'poster' }, { name: 'cover' } ]), admin.events);
 	router.use('/places', checkAuth, admin.places);
 	router.use('/programs', checkAuth, upload.fields([ { name: 'poster' }, { name: 'cover' } ]), admin.programs);
 	router.use('/members', checkAuth, upload.fields([ { name: 'photo' } ]), admin.members);

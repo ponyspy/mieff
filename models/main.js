@@ -37,6 +37,7 @@ var eventSchema = new Schema({
 	program: { type: ObjectId, ref: 'Program' },
 	age: Number,
 	poster: { type: String },
+	cover: { type: String },
 	sym: { type: String, trim: true, index: true, unique: true, sparse: true },
 	video: {
 		provider: String,
