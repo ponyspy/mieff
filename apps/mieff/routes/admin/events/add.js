@@ -111,6 +111,9 @@ module.exports = function(Model, Params) {
 			checkNested(post, [locale, 'country'])
 				&& event.setPropertyLocalised('country', post[locale].country, locale);
 
+			checkNested(post, [locale, 'marker'])
+				&& event.setPropertyLocalised('marker', post[locale].marker, locale);
+
 			checkNested(post, [locale, 'intro'])
 				&& event.setPropertyLocalised('intro', post[locale].intro, locale);
 

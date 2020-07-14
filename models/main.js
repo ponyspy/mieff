@@ -33,6 +33,7 @@ var eventSchema = new Schema({
 	duration: { type: String, trim: true, locale: true },
 	country: { type: String, trim: true, locale: true },
 	intro: { type: String, trim: true, locale: true },
+	marker: { type: String, trim: true, locale: true },
 	type: String,
 	events: [{ type: ObjectId, ref: 'Event' }],
 	program: { type: ObjectId, ref: 'Program' },
