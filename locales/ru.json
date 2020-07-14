@@ -99,5 +99,13 @@
 	"block": {
 		"one": "block",
 		"other": "block"
+	},
+	"party": {
+		"one": "party",
+		"other": "party"
+	},
+	"performance": {
+		"one": "performance",
+		"other": "performance"
 	}
 }

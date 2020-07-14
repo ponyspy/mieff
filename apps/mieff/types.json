@@ -1,7 +1,9 @@
 {
 	"events_types": [
 		"seance",
-		"block"
+		"block",
+		"party",
+		"performance"
 	],
 
 	"partners_types": [
