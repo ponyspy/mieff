@@ -34,7 +34,7 @@ var eventSchema = new Schema({
 	country: { type: String, trim: true, locale: true },
 	intro: { type: String, trim: true, locale: true },
 	type: String,
-	parent: { type: ObjectId, ref: 'Event' },
+	events: [{ type: ObjectId, ref: 'Event' }],
 	program: { type: ObjectId, ref: 'Program' },
 	age: Number,
 	year: Number,

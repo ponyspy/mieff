@@ -32,7 +32,7 @@ module.exports = function(Model, Params) {
 					Program.find().sort('title.value').exec(function(err, programs) {
 						if (err) return next(err);
 
-						Event.find({'type': 'block'}).sort('title.value').exec(function(err, events) {
+						Event.find({'events': { $size: 0 }}).sort('title.value').exec(function(err, events) {
 							if (err) return next(err);
 
 							res.render('admin/events/add.pug', { members: members, events: events, programs: programs, places: places, partners: partners });
@@ -54,7 +54,7 @@ module.exports = function(Model, Params) {
 		event.status = post.status;
 		event.date = moment(post.date.date + 'T' + post.date.time.hours + ':' + post.date.time.minutes);
 		event.type = post.type;
-		event.parent = post.parent != 'none' ? post.parent : undefined;
+		event.events = post.events.filter(function(event) { return event != 'none'; });
 		event.program = post.program != 'none' ? post.program : undefined;
 		event.age = post.age;
 		event.year = post.year;

@@ -1,7 +1,7 @@
 {
 	"events_types": [
 		"seance",
-		"block",
+		"lecture",
 		"party",
 		"performance"
 	],

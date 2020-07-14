@@ -34,8 +34,8 @@ block content
 					option(value=type_item, selected=event.type == type_item)= __n(type_item, 1)
 			.form_title Программа:
 			+form_single_select('program', programs, event.program)
-			.form_title Принадлежит блоку:
-			+form_single_select('parent', events, event.parent)
+			.form_title Связанные события:
+			+form_multiple_select('events', events)
 			.form_title Интро:
 			+form_text_multi('intro', event)
 			.form_title Продолжительность:

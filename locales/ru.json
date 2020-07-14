@@ -107,5 +107,9 @@
 	"performance": {
 		"one": "performance",
 		"other": "performance"
+	},
+	"lecture": {
+		"one": "lecture",
+		"other": "lecture"
 	}
 }
