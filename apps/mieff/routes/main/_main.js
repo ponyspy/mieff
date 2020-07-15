@@ -33,9 +33,6 @@ module.exports = (function() {
 	router.route('/widget')
 		.get(main.tickets.widget);
 
-	router.route('/mailer')
-		.post(main.tickets.mailer);
-
 	router.route('/search')
 		.post(main.options.search);
 
