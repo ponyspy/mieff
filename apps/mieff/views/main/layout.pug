@@ -5,12 +5,12 @@ html
 	body
 		.maket_block
 			.title_block
-				img.logo_block(src='/stuff/mieff/logo/mieff.svg')
+				img.logo_block(src='/stuff/mieff/logo/main.png')
 
 				.menu_block
 					a(href='/program') Programm
 					a(href='/about') About
-					a(href='https://money.yandex.ru/to/4100112187266456', target='_blank') Support MIEFF
+					a(href='https://money.yandex.ru/to/4100112187266456', target='_blank') Поддержите MIEFF
 
 				a.locale_block(href='/lang/en') En
 
@@ -18,6 +18,18 @@ html
 				block content
 
 			.footer_block
+				.support_block: a(href='https://money.yandex.ru/to/4100112187266456', target='_blank')
+					| Поддержите MIEFF
+
+				.mailing_block
+					.mailing_title Новостная рассылка
+					.mailing_desc Подпишитесь на новостную рассылку и&nbsp;узнайте первым о всех событиях фестиваля.
+					.mailing_form
+						form(action='https://mieff.us15.list-manage.com/subscribe/post?u=425b7a6d22043b7b9e65d108c&id=0c2536a50b' method='post' name='mc-embedded-subscribe-form' target='_blank' novalidate)
+							input.email(type='email' name='EMAIL' placeholder='e-mail' required)
+							input(type='hidden' name='b_425b7a6d22043b7b9e65d108c_0c2536a50b' tabindex='-1')
+							input.submit(type='submit' value='subscribe' name='subscribe')
+
 				.social_block
 					a(href='https://www.facebook.com/MIEFFESTIVAL', target='_blank') Facebook
 					a(href='https://www.instagram.com/mieff_festival/?hl=ru', target='_blank') Instagram
