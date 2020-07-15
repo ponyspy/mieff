@@ -1,5 +1,5 @@
 doctype html
-html
+html(lang=locale)
 	head
 		include header
 	body
@@ -14,7 +14,11 @@ html
 					a(href='/about') About
 					a(href='https://money.yandex.ru/to/4100112187266456', target='_blank') Поддержите MIEFF
 
-				a.locale_block(href='/lang/en') En
+				.locale_block
+					if (locale == 'ru')
+						a(href='/lang/en') En
+					else
+						a(href='/lang/ru') Ru
 
 			.content_block
 				block content
