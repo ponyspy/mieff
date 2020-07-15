@@ -79,7 +79,10 @@ app.use(error.err_500, error.err_404);
 // *** Connect server Block ***
 // ------------------------
 
+var port = process.env.PORT || 3000;
+var host = process.env.HOST || process.env.NODE_ENV == 'production' ? 'localhost' : '0.0.0.0';
 
-app.listen(process.env.PORT || 3000, (process.env.NODE_ENV == 'production' ? 'localhost' : undefined), function() {
-	console.log('http://localhost:' + (process.env.PORT || 3000));
+app.listen(port, host, function() {
+	console.log('http://' + host + ':' + port);
 });
+
