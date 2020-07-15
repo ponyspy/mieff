@@ -42,7 +42,7 @@ block content
 		.program_events
 
 			each event in events
-				.event_item
+				a.event_item(href='/events/' + (event.sym ? event.sym : event._short_id))
 					.event_cover
 						img.cover_image(src=event.poster)
 						.cover_buy= event.schedule.free == true ? __('Регистрация') : __('Купить билет')

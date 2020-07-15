@@ -63,19 +63,25 @@
 .program_events
 	margin 25px
 	margin-bottom 0
-	color #c8c8c8
-	font-size 14pt
-	line-height 16pt
 	.event_item
+		color #c8c8c8
+		font-size 14pt
+		line-height 16pt
+		text-decoration none
 		.event_cover
 			position relative
 			.cover_image
 				width 100%
 				display block
-				border-radius 10px
+				border-radius 8px
+				box-shadow: 0 0 10px rgba(0,0,0,1);
 			.cover_buy
+				border-radius 0 0 8px 8px
+				font-family 'Panama Regular'
+				text-transform uppercase
 				display none
 				background-color #00c641
+				color black
 				text-align center
 				box-sizing border-box
 				padding 10px
@@ -89,7 +95,7 @@
 		&:hover .cover_buy
 			display block
 		.event_schedule
-			margin-top 5px
+			margin-top 15px
 			font-family 'Panama Regular'
 			display flex
 			.schedule_date
