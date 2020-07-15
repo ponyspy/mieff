@@ -13,4 +13,40 @@ block header_include
 
 
 block content
-	img(src='/stuff/mieff/logo/mieff.svg')
+	.video_block
+		img(src='/stuff/mieff/logo/mieff.svg')
+
+	.news_block
+
+	.program_block
+		.program_title Programm
+
+		.program_nanv
+			.nav_column.date
+				.nav_item.all All
+				each date in dates
+					.nav_item= moment(date).format('DD.MM')
+			.nav_column.program
+				.nav_item.all All
+				each program in programs
+					.nav_item(class=program._id)= program.i18n.title.get(locale)
+			.nav_column.type
+				.nav_item.all All
+				each type_item in static_types.events_types
+					.nav_item(class=type_item)= __(type_item)
+			.nav_column.place
+				.nav_item.all All
+				each place in places
+					.nav_item(class=place._id)= place.i18n.title.get(locale)
+
+		.program_events
+
+			.event_item
+				.event_cover
+					img.cover_image(src='#')
+					.cover_buy Buy Ticket
+				.event_title
+					.event_date 19.08 (19:00)
+					.event_place Garage Musium
+				.event_program International competition
+				.event_name БАРБАРА ХАММЕР. КОРОТКИЙ МЕТР

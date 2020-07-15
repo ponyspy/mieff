@@ -1,3 +1,58 @@
 @media screen and (max-width: 840px)
 	@import 'mobile/_main.styl'
 
+.video_block
+	background-color #00c641
+	border-top 0
+	border-bottom 0
+	border-left 20px
+	border-right 20px
+	border-style solid
+	border-color #c8c8c8
+	box-sizing border-box
+
+.program_block
+	background-color #ff3333
+	.program_title
+		text-align center
+		background-color black
+		color #c8c8c8
+		font-size 30pt
+		line-height 20pt
+		font-family 'Panamatica Regular'
+		text-transform lowercase
+		padding-top 20px
+		padding-bottom 20px
+		border-top 0
+		border-bottom 0
+		border-left 20px
+		border-right 20px
+		border-color #00c641
+		border-style solid
+		box-sizing border-box
+	.program_nanv
+		padding 20px
+		margin 20px
+		background-color black
+		color #c8c8c8
+		.nav_column
+			margin-bottom 10px
+			&:last-child
+				margin-bottom 0
+			.nav_item
+				cursor pointer
+				margin 10px
+				display inline-block
+				font-size 14pt
+				line-height 16pt
+				font-family 'Panama Regular'
+				&:hover
+					color #00c641
+				&.all
+					margin 0
+					padding 10px
+					color black
+					background-color #00c641
+					&:hover
+						color #c8c8c8
+						background-color #ff3333
