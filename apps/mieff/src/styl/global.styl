@@ -11,200 +11,144 @@ body
 		height 100%
 		overflow hidden
 
-
-.subs_block
-	display none
-	z-index 999999999999
-	position fixed
+.title_block
+	z-index 1
+	border-top 0
+	border-bottom 0
+	border-left 40px
+	border-right 40px
+	border-color #00c641
+	border-style solid
 	box-sizing border-box
-	overflow scroll
+	position fixed
+	width 100%
 	top 0
 	left 0
-	width 100%
-	height 100%
-	background-color white
-	padding-left 40px
-	padding-right 40px
-	box-sizing border-box
-	&.show
-		display block
-	.subs_close
-		cursor pointer
-		margin-top 5px
-		width 42px
-		height 42px
-		background-position center
-		background-repeat no-repeat
-		background-size 50%
-		background-image url('/stuff/mieff/icons/x.svg')
+	background-color black
+	display flex
+	justify-content space-between
+	align-items center
+	a
+		font-family 'Panama Regular'
+		color #c8c8c8
+		text-decoration none
+		font-size 14pt
+		line-height 16pt
 		&:hover
-			opacity 0.7
-	.subs_date
+			color #00c641
+	.logo_block
+		flex 1
+		img
+			height 45px
+	.menu_block
+		flex 2
 		display flex
-		flex-wrap wrap
 		justify-content space-between
-		max-width 960px
-		margin 0 auto
-	.subs_input
-		-webkit-appearance: none;
-		border-radius 0
-		margin 0 auto
-		padding 0
-		display block
-		margin-top 40px
-		margin-bottom 80px
-		padding-bottom 10px
-		font 22pt/24pt 'PT Mono'
-		text-align center
-		border none
-		outline none
-		width 100%
-		max-width 960px
-		border-bottom 1px solid black
-		&.date
-			width 25%
-			margin 0
-	.subs_controls
-		text-align center
-		margin 0 auto
-		max-width 400px
-		.subs_submit
-			display inline-block
-			margin-top 80px
-			cursor pointer
-			font 14pt/16pt 'PT Mono'
-			&:hover
-				opacity 0.7
-		.subs_status
-			font 12pt/14pt 'PT Mono Bold'
-			margin-top 20px
-			height 40px
-		.subs_personal
-			font 10pt/16pt 'PT Serif'
-			margin-bottom 80px
-			a
-				color black
-				text-decoration none
-				font-weight bold
-				&:hover
-					opacity 0.7
+	.locale_block
+		flex 1
+		margin-right 20px
+		text-align right
+		font-family 'Panama Regular'
 
 
-.search_block
-	display none
-	z-index 999999999999
-	position fixed
-	top 0
-	left 0
-	width 100%
-	height 100%
-	background-color white
-	padding-left 40px
-	padding-right 40px
+.support_block
+	text-align center
+	background-color #c8c8c8
+	padding-top 20px
+	padding-bottom 20px
+	border-top 0
+	border-bottom 0
+	border-left 40px
+	border-right 40px
+	border-color black
+	border-style solid
 	box-sizing border-box
-	overflow scroll
-	-webkit-overflow-scrolling: touch
-	&.show
-		display block
-	.search_close
-		cursor pointer
-		margin-top 5px
-		width 42px
-		height 42px
-		background-position center
-		background-repeat no-repeat
-		background-size 50%
-		background-image url('/stuff/mieff/icons/x.svg')
+	a
+		font-size 30pt
+		line-height 20pt
+		font-family 'Panamatica Regular'
+		text-transform lowercase
+		text-decoration none
+		color black
 		&:hover
-			opacity 0.7
-	.search_input
-		-webkit-appearance: none;
-		border-radius 0
-		margin 0 auto
-		padding 0
-		display block
-		margin-top 40px
-		margin-bottom 80px
-		padding-bottom 10px
-		font 22pt/24pt 'PT Mono'
+			color #ff3333
+
+
+.mailing_block
+	padding-top 20px
+	padding-bottom 20px
+	padding-left 20px
+	padding-right 20px
+	border-top 0
+	border-bottom 0
+	border-left 40px
+	border-right 40px
+	border-color #c8c8c8
+	border-style solid
+	box-sizing border-box
+	background-color #00c641
+	.mailing_title
 		text-align center
-		border none
-		outline none
-		width 100%
-		max-width 960px
-		border-bottom 1px solid black
-	.context_column
-		overflow hidden
-		margin-bottom 40px
-		position relative
-		.context_title
-			font 12pt/14pt 'PT Mono'
-			max-width 960px
-			margin 0 auto
-			margin-bottom 40px
-		.context_results
-			max-width 960px
-			margin 0 auto
-			overflow hidden
-			.results_inner
-				margin-left -40px
-				font-size 0
-			.results_holder
-				margin-left 40px
-				margin-bottom 40px
+		font-size 30pt
+		line-height 20pt
+		font-family 'Panamatica Regular'
+		text-transform lowercase
+	.mailing_desc
+		font-size 14pt
+		font-family 'Panama Regular'
+		text-align center
+		max-width 400px
+		margin 20px auto
+	.mailing_form
+		margin-top 40px
+		margin-bottom 10px
+		form
+			text-align center
+			.email
+				border-radius 0
+				border none
+				margin 0
+				padding 0
+				outline none
+				padding 10px
+				font-size 14pt
+				font-family 'Panama Regular'
+				margin-right 10px
+			.submit
+				border-radius 0
 				cursor pointer
-				font 12pt/14pt 'PT Mono'
+				border none
+				margin 0
+				padding 0
+				padding 10px
+				background-color black
+				color #c8c8c8
+				font-size 14pt
+				font-family 'Panama Regular'
 				&:hover
-					opacity 0.7
-			.result_item
-				display inline-block
-				vertical-align top
-				color black
-				text-decoration none
-				margin-bottom 40px
-				box-sizing border-box
-				width 50%
-				overflow hidden
-				padding-left 40px
-				&.hidden
-					display none
-				&:hover
-					opacity 0.7
-		&.posts .result_item
-				width 33.333333333%
-		&.events .item_title
-				width 65%
-		&.posts
-		&.events
-			.item_poster
-				width 100%
-				padding-bottom 65%
-				background-position center
-				background-size cover
-				background-repeat no-repeat
-			.item_title
-				text-transform lowercase
-				margin-top 10px
-				font 16pt/18pt 'PT Mono Bold'
-		&.members
-			.item_photo
-				width 100px
-				height 100px
-				margin-right 20px
-				float left
-				background-position center
-				background-size cover
-				background-repeat no-repeat
-			.item_roles
-				font 12pt/14pt 'PT Mono'
-				.role
-					display inline-block
-					margin-right 5px
-					&:last-child:after
-						content ''
-					&:after
-						content ','
-			.item_name
-				margin-top 10px
-				font 12pt/14pt 'PT Mono Bold'
+					color #00c641
+
+
+.social_block
+	background-color black
+	padding-top 20px
+	padding-bottom 20px
+	border-top 0
+	border-bottom 0
+	border-left 40px
+	border-right 40px
+	border-color #00c641
+	border-style solid
+	box-sizing border-box
+	display flex
+	justify-content center
+	a
+		margin-left 3%
+		margin-right 3%
+		color #c8c8c8
+		text-decoration none
+		font-size 12pt
+		font-family 'Panama Regular'
+		&:hover
+			color #00c641
 

@@ -5,9 +5,11 @@ html
 	body
 		.maket_block
 			.title_block
-				img.logo_block(src='/stuff/mieff/logo/main.png')
+				a.logo_block(href='/'): img(src='/stuff/mieff/logo/main.png')
 
 				.menu_block
+					if (session && session.user_id)
+						a(href='/admin') Stargazer
 					a(href='/program') Programm
 					a(href='/about') About
 					a(href='https://money.yandex.ru/to/4100112187266456', target='_blank') Поддержите MIEFF
@@ -36,3 +38,4 @@ html
 					a(href='https://vk.com/mieff', target='_blank') VKontakte
 					a(href='https://www.youtube.com/channel/UChkh9UIV7qqoS45sevM1-Xg', target='_blank') Youtube
 					a(href='http://archive.mieff.com', target='_blank') Архив
+
