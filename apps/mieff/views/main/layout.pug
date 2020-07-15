@@ -28,7 +28,7 @@ html(lang=locale)
 
 				.mailing_block
 					.mailing_title= __('Новостная рассылка')
-					.mailing_desc= __('Подпишитесь на новостную рассылку и&nbsp;узнайте первым о всех событиях фестиваля.')
+					.mailing_desc!= __('Подпишитесь на новостную рассылку и&nbsp;узнайте первым о всех событиях фестиваля.')
 					.mailing_form
 						form(action='https://mieff.us15.list-manage.com/subscribe/post?u=425b7a6d22043b7b9e65d108c&id=0c2536a50b' method='post' name='mc-embedded-subscribe-form' target='_blank' novalidate)
 							input.email(type='email' name='EMAIL' placeholder='e-mail' required)
