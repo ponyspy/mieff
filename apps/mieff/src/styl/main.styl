@@ -59,3 +59,55 @@
 						color #c8c8c8
 						background-color #ff3333
 
+
+.program_events
+	margin 25px
+	color #c8c8c8
+	font-size 14pt
+	line-height 16pt
+	.event_item
+		.event_cover
+			position relative
+			.cover_image
+				width 100%
+				display block
+				border-radius 10px
+			.cover_buy
+				display none
+				background-color #00c641
+				text-align center
+				box-sizing border-box
+				padding 10px
+				width 100%
+				position absolute
+				bottom 0
+				cursor pointer
+				&:hover
+					background-color black
+					color #c8c8c8
+		&:hover .cover_buy
+			display block
+		.event_schedule
+			margin-top 5px
+			font-family 'Panama Regular'
+			display flex
+			.schedule_date
+				&:after
+					display inline-block
+					margin-left 5px
+					margin-right 5px
+					content ' | '
+		.event_program
+			margin-top 5px
+		.event_title
+			margin-top 5px
+			font-family 'Pragmatica Book'
+			text-transform uppercase
+
+
+
+
+
+
+
+
