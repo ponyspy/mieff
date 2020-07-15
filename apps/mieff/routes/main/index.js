@@ -11,7 +11,16 @@ module.exports = function(Model) {
 		Program.find().exec(function(err, programs) {
 			Place.find().exec(function(err, places) {
 				Event.find().distinct('schedule.date', function(err, dates) {
-					res.render('main/index.pug', {moment: moment, programs: programs, places: places, dates: dates});
+					Event.aggregate([
+						{ $unwind: '$schedule' },
+						{ $match: { 'status': {
+							$ne: 'hidden'
+						}}},
+						{ $sort: { 'schedule.date': 1 } },
+					])
+					.exec(function(err, events) {
+						res.render('main/index.pug', {moment: moment, events: events, programs: programs, places: places, dates: dates});
+					});
 				});
 			});
 		});

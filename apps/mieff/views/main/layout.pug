@@ -10,9 +10,9 @@ html(lang=locale)
 				.menu_block
 					if (session && session.user_id)
 						a(href='/admin') Stargazer
-					a(href='/program') Programm
-					a(href='/about') About
-					a(href='https://money.yandex.ru/to/4100112187266456', target='_blank') Поддержите MIEFF
+					a(href='/program')= __('Программа')
+					a(href='/about')= __('О Фестивале')
+					a(href='https://money.yandex.ru/to/4100112187266456', target='_blank')= __('Поддержите MIEFF')
 
 				.locale_block
 					if (locale == 'ru')
@@ -24,12 +24,11 @@ html(lang=locale)
 				block content
 
 			.footer_block
-				.support_block: a(href='https://money.yandex.ru/to/4100112187266456', target='_blank')
-					| Поддержите MIEFF
+				.support_block: a(href='https://money.yandex.ru/to/4100112187266456', target='_blank')= __('Поддержите MIEFF')
 
 				.mailing_block
-					.mailing_title Новостная рассылка
-					.mailing_desc Подпишитесь на новостную рассылку и&nbsp;узнайте первым о всех событиях фестиваля.
+					.mailing_title= __('Новостная рассылка')
+					.mailing_desc= __('Подпишитесь на новостную рассылку и&nbsp;узнайте первым о всех событиях фестиваля.')
 					.mailing_form
 						form(action='https://mieff.us15.list-manage.com/subscribe/post?u=425b7a6d22043b7b9e65d108c&id=0c2536a50b' method='post' name='mc-embedded-subscribe-form' target='_blank' novalidate)
 							input.email(type='email' name='EMAIL' placeholder='e-mail' required)
@@ -41,5 +40,5 @@ html(lang=locale)
 					a(href='https://www.instagram.com/mieff_festival/?hl=ru', target='_blank') Instagram
 					a(href='https://vk.com/mieff', target='_blank') VKontakte
 					a(href='https://www.youtube.com/channel/UChkh9UIV7qqoS45sevM1-Xg', target='_blank') Youtube
-					a(href='http://archive.mieff.com', target='_blank') Архив
+					a(href='http://archive.mieff.com', target='_blank')= __('Архив')
 

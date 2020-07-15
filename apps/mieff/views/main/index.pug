@@ -19,7 +19,7 @@ block content
 	.news_block
 
 	.program_block
-		.program_title Programm
+		.program_title= __('Программа')
 
 		.program_nanv
 			.nav_column.date
@@ -41,12 +41,13 @@ block content
 
 		.program_events
 
-			.event_item
-				.event_cover
-					img.cover_image(src='#')
-					.cover_buy Buy Ticket
-				.event_title
-					.event_date 19.08 (19:00)
-					.event_place Garage Musium
-				.event_program International competition
-				.event_name БАРБАРА ХАММЕР. КОРОТКИЙ МЕТР
+			each event in events
+				.event_item
+					.event_cover
+						img.cover_image(src=event.poster)
+						.cover_buy= event.schedule.free == true ? __('Регистрация') : __('Купить билет')
+					.event_head
+						.event_date=moment(event.schedule.date).format('DD.MM (hh:mm)')
+						.event_place Garage Musium
+					.event_program International competition
+					.event_name БАРБАРА ХАММЕР. КОРОТКИЙ МЕТР
