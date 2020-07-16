@@ -4,6 +4,7 @@
 
 .content_block
 	margin-top 50px
+	background-color #ff3333
 
 .event_title
 	text-align center
@@ -107,7 +108,6 @@
 				height 100%
 
 
-
 .event_members
 	text-align center
 	font-size 14pt
@@ -117,7 +117,6 @@
 	color #c8c8c8
 	.members_group
 		overflow hidden
-		margin-bottom 50px
 		&:last-child
 			margin-bottom 0
 		.group_title
@@ -138,14 +137,30 @@
 			border-style solid
 			box-sizing border-box
 		.group_description
-			text-align left
-			max-width 800px
-			margin 0 auto
-			padding-top 20px
-			padding-bottom 20px
+			border-top 0
+			border-bottom 0
+			border-left 25px
+			border-right 25px
+			border-color #c8c8c8
+			border-style solid
+			box-sizing border-box
+			.description_inner
+				text-align left
+				max-width 800px
+				margin 0 auto
+				padding-top 20px
+				padding-bottom 20px
 		.group_list
+			padding-bottom 20px
 			display flex
 			justify-content center
+			border-top 0
+			border-bottom 0
+			border-left 25px
+			border-right 25px
+			border-color #c8c8c8
+			border-style solid
+			box-sizing border-box
 			.list_item
 				color #c8c8c8
 				text-decoration none
@@ -165,9 +180,73 @@
 					line-height 16pt
 					text-transform uppercase
 					font-family 'Pragmatica Book'
-				// .item_roles
-				// 	.item_role
+				.item_roles
+					.item_role
+						margin-top 5px
 
+
+.event_partners
+	text-align center
+	font-size 14pt
+	line-height 16pt
+	font-family 'Panama Regular'
+	background-color #c8c8c8
+	color #ff3333
+	.partners_title
+		text-align center
+		color #c8c8c8
+		background-color #ff3333
+		font-size 30pt
+		line-height 20pt
+		font-family 'Panamatica Regular'
+		text-transform lowercase
+		padding-top 20px
+		padding-bottom 20px
+		border-top 0
+		border-bottom 0
+		border-left 25px
+		border-right 25px
+		border-color black
+		border-style solid
+		box-sizing border-box
+	.partners_list
+		display flex
+		justify-content center
+		align-items center
+		padding-top 20px
+		padding-bottom 20px
+		border-top 0
+		border-bottom 0
+		border-left 25px
+		border-right 25px
+		border-color #ff3333
+		border-style solid
+		box-sizing border-box
+		.partner_item
+			margin-left 20px
+			margin-right 20px
+			text-decoration none
+			color black
+			.partner_logo
+				height 80px
+			.partner_type
+				margin-top 10px
+
+
+// .event_events
+// 	.event_item
+// 		.event_poster
+// 		.event_title
+
+// .event_also_blocks
+// 	.blocks_title
+// 	.blocks_items
+// 		.block_item
+
+// .event_also_programs
+// 	.programs_title
+// 	.programs_items
+// 		.program_item
 
 
 
