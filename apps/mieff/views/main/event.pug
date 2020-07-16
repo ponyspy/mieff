@@ -1,8 +1,8 @@
 extends layout
 
 block header_meta
-	- var content_title= 'mieff'
-	- var content_description = event.i18n.s_title.get(locale)
+	- var content_title= 'MIEFF | ' + event.i18n.title.get(locale)
+	- var content_description = event.i18n.description.get(locale)
 	- var content_images = [event.poster]
 
 block header_include
@@ -13,4 +13,78 @@ block header_include
 
 
 block content
-	h1 Event!
+	.event_title= event.i18n.title.get(locale)
+
+	.event_cover
+		each image in event.images
+			.cover_item(style='background-image: url(' + image.thumb + ')')
+
+	.event_schedule
+		each item in event.schedule
+			.schedule_item
+				.schedule_meta
+					.meta_date= moment(item.date).format('DD.MM (hh:mm)')
+					.meta_place= item.place.i18n.title.get(locale)
+				.schedule_buy(data-link=item.link, data-type=item.free)= item.free == true ? __('Регистрация') : __('Купить билет')
+
+	.event_body
+		.event_intro!= event.i18n.intro.get(locale)
+
+		.event_age= event.age
+
+		if event.video && event.video.provider
+			- var provider_path= event.video.provider == 'youtube' ? 'https://www.youtube.com/embed/' : 'https://player.vimeo.com/video/'
+			.event_video: .video_inner: iframe.video(src=provider_path + event.video.id, frameborder='0', allow='autoplay; encrypted-media', allowfullscreen='')
+
+		.event_description!= event.i18n.description.get(locale)
+
+		if event.members && event.members.length
+			.event_members: .members_inner
+				each group in event.members
+					if group.list.length
+						.members_group
+							.group_title= get_locale(group.title, locale)
+							.group_description= get_locale(group.description, locale)
+							.group_list
+								each item in group.list
+									if item.status == 'special'
+										.list_item= get_locale(item.name, locale)
+									else
+										a.list_item(href='/team#' + item._short_id)= get_locale(item.name, locale)
+
+		if event.partners && event.partners.length
+			.event_partners
+				.partners_title= __('партнеры')
+				.partners_list
+					each partner in event.partners
+						a.partner_item(href=partner.link, target='_blank'): img(src=partner.logo)
+
+		if event.events && event.events.length
+			.event_events
+				each event_item in event.events
+					a.event_item(href='/events/' + (event_item.sym ? event_item.sym : event_item._short_id))
+						img.event_poster(src=event_item.poster)
+						.event_title= event_item.i18n.title.get(locale)
+
+	.event_also_blocks
+		.blocks_title= event.program.i18n.title.get(locale)
+		.blocks_items
+			each block in blocks
+				.block_item= block.i18n.title.get(locale)
+
+	.event_also_programs
+		.programs_title= __('смотрите так же')
+		.programs_items
+			each program in programs
+				a.program_item(href='/program/' + (program.sym ? program.sym : program._short_id))= program.i18n.title.get(locale)
+
+
+
+
+
+
+
+
+
+
+

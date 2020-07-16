@@ -19,6 +19,12 @@ module.exports = (function() {
 	router.route('/')
 		.get(main.index.index)
 
+	router.route('/events')
+		.get(main.events.index);
+
+	router.route('/events/:short_id')
+		.get(main.events.event);
+
 	router.route('/about')
 		.get(main.static.about);
 
