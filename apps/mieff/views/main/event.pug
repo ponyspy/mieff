@@ -49,10 +49,12 @@ block content
 						.group_description= get_locale(group.description, locale)
 						.group_list
 							each item in group.list
-								if item.status == 'special'
-									.list_item= get_locale(item.name, locale)
-								else
-									a.list_item(href='/team#' + item._short_id)= get_locale(item.name, locale)
+								a.list_item(href='/members/' + item._short_id)
+									.item_photo(style='background-image: url(' + item.photo + ')')
+									.item_name= get_locale(item.name, locale)
+									.item_roles
+										each role in item.roles
+											.item_role= __n(static_types.members_roles[role][item.sex], 1)
 
 	if event.partners && event.partners.length
 		.event_partners

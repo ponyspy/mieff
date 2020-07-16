@@ -27,7 +27,7 @@ module.exports = function(Model) {
 
 		Query
 			.populate({'path': 'partners', 'match': { 'status': { '$ne': 'hidden' } }, 'select': 'title status _short_id link logo' })
-			.populate({'path': 'members.list', 'match': { 'status': { '$ne': 'hidden' } }, 'select': 'name status _short_id' })
+			.populate({'path': 'members.list', 'match': { 'status': { '$ne': 'hidden' } }, 'select': 'name photo sex roles status _short_id' })
 			.populate({'path': 'program', 'match': { 'status': { '$ne': 'hidden' } }, 'select': 'title status _short_id' })
 			.populate({'path': 'events', 'match': { 'status': { '$ne': 'hidden' } }, 'select': 'title status _short_id' })
 			.populate({'path': 'schedule.place', 'match': { 'status': { '$ne': 'hidden' } }, 'select': 'title status _short_id' })
