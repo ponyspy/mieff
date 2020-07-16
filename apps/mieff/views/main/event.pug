@@ -15,9 +15,11 @@ block header_include
 block content
 	.event_title= event.i18n.title.get(locale)
 
-	.event_cover
-		each image in event.images
-			.cover_item(style='background-image: url(' + image.thumb + ')')
+	.event_cover.swiper-container
+		.swiper-wrapper
+			each image in event.images
+				.cover_item.swiper-slide(style='background-image: url(' + image.thumb + ')')
+		.swiper-pagination
 
 	.event_schedule
 		each item in event.schedule
@@ -38,45 +40,47 @@ block content
 
 		.event_description!= event.i18n.description.get(locale)
 
-		if event.members && event.members.length
-			.event_members: .members_inner
-				each group in event.members
-					if group.list.length
-						.members_group
-							.group_title= get_locale(group.title, locale)
-							.group_description= get_locale(group.description, locale)
-							.group_list
-								each item in group.list
-									if item.status == 'special'
-										.list_item= get_locale(item.name, locale)
-									else
-										a.list_item(href='/team#' + item._short_id)= get_locale(item.name, locale)
+	if event.members && event.members.length
+		.event_members
+			each group in event.members
+				if group.list.length
+					.members_group
+						.group_title= get_locale(group.title, locale)
+						.group_description= get_locale(group.description, locale)
+						.group_list
+							each item in group.list
+								if item.status == 'special'
+									.list_item= get_locale(item.name, locale)
+								else
+									a.list_item(href='/team#' + item._short_id)= get_locale(item.name, locale)
 
-		if event.partners && event.partners.length
-			.event_partners
-				.partners_title= __('партнеры')
-				.partners_list
-					each partner in event.partners
-						a.partner_item(href=partner.link, target='_blank'): img(src=partner.logo)
+	if event.partners && event.partners.length
+		.event_partners
+			.partners_title= __('партнеры')
+			.partners_list
+				each partner in event.partners
+					a.partner_item(href=partner.link, target='_blank'): img(src=partner.logo)
 
-		if event.events && event.events.length
-			.event_events
-				each event_item in event.events
-					a.event_item(href='/events/' + (event_item.sym ? event_item.sym : event_item._short_id))
-						img.event_poster(src=event_item.poster)
-						.event_title= event_item.i18n.title.get(locale)
+	if event.events && event.events.length
+		.event_events
+			each event_item in event.events
+				a.event_item(href='/events/' + (event_item.sym ? event_item.sym : event_item._short_id))
+					img.event_poster(src=event_item.poster)
+					.event_title= event_item.i18n.title.get(locale)
 
-	.event_also_blocks
-		.blocks_title= event.program.i18n.title.get(locale)
-		.blocks_items
-			each block in blocks
-				.block_item= block.i18n.title.get(locale)
+	if blocks && blocks.length
+		.event_also_blocks
+			.blocks_title= event.program.i18n.title.get(locale)
+			.blocks_items
+				each block in blocks
+					.block_item= block.i18n.title.get(locale)
 
-	.event_also_programs
-		.programs_title= __('смотрите так же')
-		.programs_items
-			each program in programs
-				a.program_item(href='/program/' + (program.sym ? program.sym : program._short_id))= program.i18n.title.get(locale)
+	if programs && programs.length
+		.event_also_programs
+			.programs_title= __('смотрите так же')
+			.programs_items
+				each program in programs
+					a.program_item(href='/program/' + (program.sym ? program.sym : program._short_id))= program.i18n.title.get(locale)
 
 
 
