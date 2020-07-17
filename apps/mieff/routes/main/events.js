@@ -34,7 +34,7 @@ module.exports = function(Model) {
 			.exec(function(err, event) {
 			if (!event || err) return next(err);
 
-			Event.find({'status': {'$ne': 'hidden'}, 'program': event.program, 'events': {'$not': {'$size': 0}} }).exec(function(err, blocks) {
+			Event.find({'status': {'$ne': 'hidden'}, 'program': event.program._id, 'events': {'$not': {'$size': 0}}}).exec(function(err, blocks) {
 				Program.find().exec(function(err, programs) {
 					res.render('main/event.pug', {event: event, get_locale: get_locale, moment: moment, blocks: blocks, programs: programs });
 				});

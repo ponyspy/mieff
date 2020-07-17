@@ -78,7 +78,7 @@ block content
 			.blocks_title= event.program.i18n.title.get(locale)
 			.blocks_items
 				each block in blocks
-					.block_item= block.i18n.title.get(locale)
+					a.block_item(href='/events/' + (block.sym ? block.sym : block._short_id))= block.i18n.title.get(locale)
 
 	if programs && programs.length
 		.event_also_programs
