@@ -14,6 +14,31 @@ module.exports = function(Model) {
 	};
 
 	module.index = function(req, res) {
+		// Event.aggregate([
+		// 	{ $unwind: '$schedule' },
+		// 	{ $match: { 'status': {
+		// 		$ne: 'hidden'
+		// 	}}},
+		// 	{ $group: {
+		// 		_id: {
+		// 			month: { $month: "$schedule.date" },
+		// 			day: { $dayOfMonth: "$schedule.date" },
+		// 			year: { $year: "$schedule.date" }
+		// 		},
+		// 		schedule: {$push: { 'date': '$schedule.date' }},
+		// 	}},
+		// 	{ $sort: { 'schedule.date': 1 } },
+		// 	{ $project: {
+		// 		_id: 0,
+		// 		month: '$_id.month',
+		// 		day: '$_id.day',
+		// 		year: '$_id.year',
+		// 	}}
+		// ]).exec(function(err, dates) {
+		// 	return res.send(dates)
+		// });
+
+
 		Program.find().exec(function(err, programs) {
 			Place.find().exec(function(err, places) {
 				Event.find().distinct('schedule.date', function(err, dates) {
