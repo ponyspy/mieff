@@ -15,7 +15,7 @@ module.exports = function(Model) {
 					return actual_roles.indexOf(a) - actual_roles.indexOf(b);
 				});
 
-				res.render('main/team.pug', { members: members, roles: roles });
+				res.render('main/members.pug', { members: members, roles: roles });
 			});
 		});
 	};

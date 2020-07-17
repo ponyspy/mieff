@@ -6,7 +6,8 @@ var main = {
 	index: require('./index.js')(Model),
 	events: require('./events.js')(Model),
 	posts: require('./posts.js')(Model),
-	team: require('./team.js')(Model),
+	program: require('./program.js')(Model),
+	members: require('./members.js')(Model),
 	partners: require('./partners.js')(Model),
 	options: require('./options.js')(Model),
 	tickets: require('./tickets.js')(Model),
@@ -25,11 +26,11 @@ module.exports = (function() {
 	router.route('/events/:short_id')
 		.get(main.events.event);
 
+	router.route('/program')
+		.get(main.program.index);
+
 	router.route('/about')
 		.get(main.static.about);
-
-	router.route('/contacts')
-		.get(main.static.contacts);
 
 	router.route('/lang/:locale').get(function(req, res) {
 		res.cookie('locale', req.params.locale);
@@ -38,9 +39,6 @@ module.exports = (function() {
 
 	router.route('/widget')
 		.get(main.tickets.widget);
-
-	router.route('/search')
-		.post(main.options.search);
 
 	router.route('/sitemap.xml')
 		.get(main.options.sitemap);
