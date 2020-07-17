@@ -78,22 +78,13 @@ block content
 			.blocks_title= event.program.i18n.title.get(locale)
 			.blocks_items
 				each block in blocks
-					a.block_item(href='/events/' + (block.sym ? block.sym : block._short_id))= block.i18n.title.get(locale)
+					a.block_item(href='/events/' + (block.sym ? block.sym : block._short_id)): span= block.i18n.title.get(locale)
 
 	if programs && programs.length
 		.event_also_programs
 			.programs_title= __('смотрите так же')
 			.programs_items
 				each program in programs
-					a.program_item(href='/program/' + (program.sym ? program.sym : program._short_id))= program.i18n.title.get(locale)
-
-
-
-
-
-
-
-
-
+					a.program_item(href='/program/' + (program.sym ? program.sym : program._short_id)): span= program.i18n.title.get(locale)
 
 
