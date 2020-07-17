@@ -47,7 +47,7 @@ block content
 						if event.poster
 							img.cover_image(src=event.poster)
 						else
-							.cover_title: .title_inner: span= get_locale(event.title, locale)
+							.cover_title= get_locale(event.title, locale)
 						.cover_buy= event.schedule.free == true ? __('Регистрация') : __('Купить билет')
 					.event_schedule
 						.schedule_date=moment(event.schedule.date).format('DD.MM (hh:mm)')
