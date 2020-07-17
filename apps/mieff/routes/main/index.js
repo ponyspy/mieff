@@ -17,6 +17,10 @@ module.exports = function(Model) {
 		Program.find().exec(function(err, programs) {
 			Place.find().exec(function(err, places) {
 				Event.find().distinct('schedule.date', function(err, dates) {
+					dates = dates.filter(function(item, pos) {
+						return dates.indexOf(item) == pos;
+					});
+
 					Event.aggregate([
 						{ $unwind: '$schedule' },
 						{ $match: { 'status': {
