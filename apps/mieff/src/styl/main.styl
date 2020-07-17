@@ -70,11 +70,31 @@
 		text-decoration none
 		.event_cover
 			position relative
+			.cover_title
 			.cover_image
 				width 100%
 				display block
 				border-radius 8px
+				background-color black
 				box-shadow: 0 0 10px rgba(0,0,0,1);
+			.cover_title
+				padding-top 40%
+				font-family 'Panamatica Regular'
+				text-transform lowercase
+				font-size 22pt
+				line-height 24pt
+				text-align center
+				.title_inner
+					position absolute
+					top 0; left 0; right 0; bottom 0
+					&:before
+						content ''
+						height 100%
+						display inline-block
+						vertical-align middle
+					span
+						display inline-block
+						vertical-align middle
 			.cover_buy
 				border-radius 0 0 8px 8px
 				font-family 'Panama Regular'
@@ -90,8 +110,8 @@
 				bottom 0
 				cursor pointer
 				&:hover
-					background-color black
-					color #c8c8c8
+					background-color #c8c8c8
+					color #ff3333
 		&:hover .cover_buy
 			display block
 		.event_schedule
