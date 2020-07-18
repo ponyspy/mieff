@@ -7,7 +7,9 @@ module.exports = function(Model) {
 	var Event = Model.Event;
 
 	module.index = function(req, res) {
-		res.render('main/program.pug');
+		Program.find().where('status').ne('hidden').exec(function(err, programs) {
+			res.render('main/program.pug', {programs: programs});
+		});
 	};
 
 	return module;

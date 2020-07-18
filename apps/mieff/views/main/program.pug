@@ -12,4 +12,13 @@ block header_include
 
 
 block content
-	h1 Program!
+	.program_main_title= __('Программа')
+
+	.programs_list: .programs_inner
+		each program in programs
+			a.program_item(href='/program/' + (program.sym ? program.sym : program._short_id))
+				.program_inner(style='background-image: url(' + program.poster + ')'): .program_text
+					span= program.i18n.title.get(locale)
+
+
+
