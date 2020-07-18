@@ -1,0 +1,24 @@
+extends layout
+
+block header_meta
+	- var content_title= 'MIEFF | ' + __('Программа')
+	- var content_description= ''
+
+block header_include
+	- var include_libs_css = ['swiper.min.css']
+	- var include_css = ['programs.css']
+	- var include_libs_js = ['swiper.min.js']
+	- var include_js = ['programs.js']
+
+
+block content
+	.program_main_title= __('Программа')
+
+	.programs_list: .programs_inner
+		each program in programs
+			a.program_item(href='/program/' + (program.sym ? program.sym : program._short_id))
+				.program_inner(style='background-image: url(' + program.poster + ')'): .program_text
+					span= program.i18n.title.get(locale)
+
+
+
