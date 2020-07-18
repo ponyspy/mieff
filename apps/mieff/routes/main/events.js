@@ -1,5 +1,4 @@
 var moment = require('moment');
-var pug = require('pug');
 
 module.exports = function(Model) {
 	var module = {};

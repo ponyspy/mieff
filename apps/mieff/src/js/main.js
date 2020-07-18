@@ -8,4 +8,14 @@ $(document).ready(function() {
 		columns: 4,
 	});
 
+	$(document).on('events_load', function() {
+		$.post('').done(function(data) {
+			$('.program_events').append(data);
+
+			macyInstance.runOnImageLoad(function() {
+			  macyInstance.recalculate(true);
+			}, true);
+		});
+	}).trigger('events_load');
+
 });

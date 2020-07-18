@@ -27,11 +27,11 @@ block content
 			.nav_column.date
 				.nav_item.all= __('Все')
 				each date in dates
-					.nav_item= moment(date).format('DD.MM')
+					.nav_item(data-date=date.day + '-' + date.month + '-' + date.year)= date.day + '.' + date.month
 			.nav_column.program
 				.nav_item.all= __('Все')
 				each program in programs
-					.nav_item(class=program._id)= program.i18n.title.get(locale)
+					.nav_item(class=program._id.toString())= program.i18n.title.get(locale)
 			.nav_column.type
 				.nav_item.all= __('Все')
 				each type_item in static_types.events_types
@@ -39,24 +39,7 @@ block content
 			.nav_column.place
 				.nav_item.all= __('Все')
 				each place in places
-					.nav_item(class=place._id)= place.i18n.title.get(locale)
+					.nav_item(class=place._id.toString())= place.i18n.title.get(locale)
 
 		.program_events
-
-			each event in events
-				a.event_item(href='/events/' + (event.sym ? event.sym : event._short_id))
-					.event_cover
-						if get_locale(event.marker, locale) !== ''
-							.cover_marker= get_locale(event.marker, locale)
-						if event.poster
-							img.cover_image(src=event.poster)
-						else
-							.cover_title= get_locale(event.title, locale)
-						if event.schedule.options
-							.cover_buy.buy_open(data-src=event.schedule.link, class=event.schedule.options)= event.schedule.free == true ? __('Регистрация') : __('Купить билет')
-					.event_schedule
-						.schedule_date=moment(event.schedule.date).format('DD.MM (hh:mm)')
-						.schedule_place= event.schedule.place.i18n.title.get(locale)
-					.event_program=event.program.i18n.title.get(locale)
-					.event_title= get_locale(event.title, locale)
 

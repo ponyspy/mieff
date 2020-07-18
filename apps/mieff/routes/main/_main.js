@@ -19,6 +19,7 @@ module.exports = (function() {
 
 	router.route('/')
 		.get(main.index.index)
+		.post(main.index.get_events);
 
 	router.route('/events')
 		.get(main.events.index);
