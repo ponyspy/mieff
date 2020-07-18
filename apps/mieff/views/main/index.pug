@@ -24,22 +24,30 @@ block content
 		.program_title= __('Программа')
 
 		.program_nanv
+
 			.nav_column.date
-				.nav_item.all= __('Все')
-				each date in dates
-					.nav_item(data-date=date.day + '-' + date.month + '-' + date.year)= date.day + '.' + date.month
+				.nav_all= __('Все')
+				.nav_items
+					each date in dates
+						.nav_item(data-val=date.day + '-' + date.month + '-' + date.year)= date.day + '.' + date.month
+
 			.nav_column.program
-				.nav_item.all= __('Все')
-				each program in programs
-					.nav_item(class=program._id.toString())= program.i18n.title.get(locale)
+				.nav_all= __('Все')
+				.nav_items
+					each program in programs
+						.nav_item(data-val=program._id.toString())= program.i18n.title.get(locale)
+
 			.nav_column.type
-				.nav_item.all= __('Все')
-				each type_item in static_types.events_types
-					.nav_item(class=type_item)= __(type_item)
+				.nav_all= __('Все')
+				.nav_items
+					each type_item in static_types.events_types
+						.nav_item(data-val=type_item)= __(type_item)
+
 			.nav_column.place
-				.nav_item.all= __('Все')
-				each place in places
-					.nav_item(class=place._id.toString())= place.i18n.title.get(locale)
+				.nav_all= __('Все')
+				.nav_items
+					each place in places
+						.nav_item(data-val=place._id.toString())= place.i18n.title.get(locale)
 
 		.program_events
 

@@ -1,5 +1,6 @@
 var moment = require('moment');
 var pug = require('pug');
+var mongoose = require('mongoose');
 
 module.exports = function(Model) {
 	var module = {};
@@ -7,6 +8,12 @@ module.exports = function(Model) {
 	var Event = Model.Event;
 	var Program = Model.Program;
 	var Place = Model.Place;
+
+	var to_Objectid = function(ids) {
+		return ids.map(function(id) {
+			return mongoose.Types.ObjectId(id);
+		});
+	}
 
 	var get_locale = function(option, lg) {
 		return ((option.filter(function(locale) {
@@ -53,6 +60,9 @@ module.exports = function(Model) {
 			{ $match: { 'status': {
 				$ne: 'hidden'
 			}}},
+			{	$match: { 'type': req.body.context && req.body.context.type ? { '$in': req.body.context.type } : {'$ne': 'none'} }},
+			{	$match: { 'schedule.place': req.body.context && req.body.context.place ? { '$in': to_Objectid(req.body.context.place) } : {'$ne': 'none'} }},
+			{	$match: { 'program': req.body.context && req.body.context.program ? { '$in': to_Objectid(req.body.context.program) } : {'$ne': 'none'} }},
 			{ $sort: { 'schedule.date': 1 } },
 		])
 		.exec(function(err, events) {
