@@ -13,6 +13,8 @@ block header_include
 
 
 block content
+	.widget_block: .widget_inner
+
 	.event_main_title= event.i18n.title.get(locale)
 
 	.event_cover.swiper-container
@@ -23,11 +25,12 @@ block content
 
 	.event_schedule
 		each item in event.schedule
-			.schedule_item
-				.schedule_meta
-					.meta_date= moment(item.date).format('DD.MM (hh:mm)')
-					.meta_place= item.place.i18n.title.get(locale)
-				.schedule_buy(data-link=item.link, data-type=item.free)= item.free == true ? __('Регистрация') : __('Купить билет')
+			if item.options
+				.schedule_item
+					.schedule_meta
+						.meta_date= moment(item.date).format('DD.MM (hh:mm)')
+						.meta_place= item.place.i18n.title.get(locale)
+					.schedule_buy.buy_open(data-src=item.link, class=item.options)= item.free == true ? __('Регистрация') : __('Купить билет')
 
 	.event_body
 		.event_intro!= event.i18n.intro.get(locale)

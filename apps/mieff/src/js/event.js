@@ -1,4 +1,5 @@
-$(document).ready(function() {
+$(function() {
+
 	var swiper = new Swiper('.swiper-container', {
 		loop: true,
 		effect: 'fade',
@@ -14,4 +15,5 @@ $(document).ready(function() {
 	$('.cover_item').on('click', function(e) {
 		swiper.slideNext();
 	});
+
 });

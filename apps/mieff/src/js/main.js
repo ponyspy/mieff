@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
 	var macyInstance = Macy({
 		container: '.program_events',
 		trueOrder: false,
@@ -6,4 +7,5 @@ $(document).ready(function() {
 		margin: 25,
 		columns: 4,
 	});
+
 });

@@ -13,6 +13,8 @@ block header_include
 
 
 block content
+	.widget_block: .widget_inner
+
 	.video_block
 		img(src='/stuff/mieff/logo/mieff.svg')
 
@@ -50,9 +52,11 @@ block content
 							img.cover_image(src=event.poster)
 						else
 							.cover_title= get_locale(event.title, locale)
-						.cover_buy= event.schedule.free == true ? __('Регистрация') : __('Купить билет')
+						if event.schedule.options
+							.cover_buy.buy_open(data-src=event.schedule.link, class=event.schedule.options)= event.schedule.free == true ? __('Регистрация') : __('Купить билет')
 					.event_schedule
 						.schedule_date=moment(event.schedule.date).format('DD.MM (hh:mm)')
 						.schedule_place= event.schedule.place.i18n.title.get(locale)
 					.event_program=event.program.i18n.title.get(locale)
 					.event_title= get_locale(event.title, locale)
+
