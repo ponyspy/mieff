@@ -27,7 +27,7 @@ module.exports = function(Model) {
 		});
 	};
 
-	module.program = function(req, res) {
+	module.program = function(req, res, next) {
 		var user_id = req.session.user_id;
 		var id = req.params.short_id;
 
@@ -36,6 +36,8 @@ module.exports = function(Model) {
 			: Program.findOne({ $or: [ { '_short_id': id }, { 'sym': id } ] }).where('status').ne('hidden');
 
 		Query.exec(function(err, program) {
+			if (!program) return next(err);
+
 			Program.find({'_id': {'$ne': program._id} }).where('status').ne('hidden').exec(function(err, programs) {
 				Place.find().exec(function(err, places) {
 					Event.find({'program': program._id, 'events': {'$not': {'$size': 0}}}).where('status').ne('hidden').exec(function(err, blocks) {
