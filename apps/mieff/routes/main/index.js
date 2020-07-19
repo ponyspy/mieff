@@ -55,7 +55,7 @@ module.exports = function(Model) {
 
 
 	module.get_events = function(req, res) {
-		dates = req.body.context && req.body.context.date.map(function(date) {
+		dates = req.body.context && req.body.context.date && req.body.context.date.map(function(date) {
 			var date_start = moment(date, "YY-MM-DD").startOf('day')
 			var date_end = moment(date, "YY-MM-DD").endOf('day')
 
