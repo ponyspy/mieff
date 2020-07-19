@@ -67,7 +67,7 @@ block content
 				each partner in event.partners
 					a.partner_item(href=partner.link, target='_blank')
 						img.partner_logo(src=partner.logo)
-						.partner_type= __(partner.type)
+						//- .partner_type= __(partner.type)
 
 	if event.events && event.events.length
 		.event_events
