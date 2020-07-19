@@ -28,25 +28,20 @@ block content
 	.program_body
 		.program_nanv
 
-			//- .nav_column.date
+			.nav_column.date
 				.nav_all= __('Все')
 				.nav_items
 					each date in dates
-						.nav_item(data-val=date.day + '-' + date.month + '-' + date.year)= date.day + '.' + date.month
+						- var date = moment(date.year + '-' + date.month + '-' + date.day, 'YY-MM-DD')
+						.nav_item(data-val=date.format('YY-MM-DD'))= date.format('DD.MM')
 
-			.nav_column.program
-				.nav_all= __('Все')
-				.nav_items
-					each program in programs
-						.nav_item(data-val=program._id.toString())= program.i18n.title.get(locale)
-
-			//- .nav_column.type
+			.nav_column.type
 				.nav_all= __('Все')
 				.nav_items
 					each type_item in static_types.events_types
 						.nav_item(data-val=type_item)= __(type_item)
 
-			//- .nav_column.place
+			.nav_column.place
 				.nav_all= __('Все')
 				.nav_items
 					each place in places

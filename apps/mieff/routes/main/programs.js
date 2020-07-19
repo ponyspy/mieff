@@ -37,22 +37,53 @@ module.exports = function(Model) {
 
 		Query.exec(function(err, program) {
 			Program.find({'_id': {'$ne': program._id} }).where('status').ne('hidden').exec(function(err, programs) {
-				Event.find({'program': program._id, 'events': {'$not': {'$size': 0}}}).where('status').ne('hidden').exec(function(err, blocks) {
-					res.render('main/program.pug', {program: program, programs: programs, blocks: blocks});
+				Place.find().exec(function(err, places) {
+					Event.find({'program': program._id, 'events': {'$not': {'$size': 0}}}).where('status').ne('hidden').exec(function(err, blocks) {
+						Event.aggregate([
+							{ $unwind: '$schedule' },
+							{ $match: { 'status': {
+								$ne: 'hidden'
+							}}},
+							{ $group: {
+								_id: {
+									month: { $month: "$schedule.date" },
+									day: { $dayOfMonth: "$schedule.date" },
+									year: { $year: "$schedule.date" }
+								},
+								schedule: {$push: { 'date': '$schedule.date' }},
+							}},
+							{ $sort: { 'schedule.date': 1 } },
+							{ $project: {
+								_id: 0,
+								month: '$_id.month',
+								day: '$_id.day',
+								year: '$_id.year',
+							}}
+						]).exec(function(err, dates) {
+							res.render('main/program.pug', {moment: moment, places: places, program: program, programs: programs, blocks: blocks, dates: dates});
+						});
+					});
 				});
 			});
 		});
 	};
 
 	module.get_events = function(req, res) {
+		dates = req.body.context && req.body.context.date && req.body.context.date.map(function(date) {
+			var date_start = moment(date, "YY-MM-DD").startOf('day')
+			var date_end = moment(date, "YY-MM-DD").endOf('day')
+
+			return { 'schedule.date': { $gte: date_start.toDate(), $lte: date_end.toDate() }};
+		});
+
 		Event.aggregate([
 			{ $unwind: '$schedule' },
 			{ $match: { 'status': {
 				$ne: 'hidden'
 			}}},
+			{ $match: { $or: dates || [{ 'schedule.date': {'$ne': 'none'}}] }},
 			{	$match: { 'type': req.body.context && req.body.context.type ? { '$in': req.body.context.type } : {'$ne': 'none'} }},
 			{	$match: { 'schedule.place': req.body.context && req.body.context.place ? { '$in': to_Objectid(req.body.context.place) } : {'$ne': 'none'} }},
-			{	$match: { 'program': req.body.context && req.body.context.program ? { '$in': to_Objectid(req.body.context.program) } : {'$ne': 'none'} }},
 			{ $sort: { 'schedule.date': 1 } },
 		])
 		.exec(function(err, events) {
