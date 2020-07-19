@@ -1,146 +1,146 @@
 {
 	"MIEFF": "MIEFF",
-	"Программа": "Программа",
-	"О Фестивале": "О Фестивале",
-	"Поддержите MIEFF": "Поддержите MIEFF",
-	"Все": "Все",
-	"seance": "seance",
-	"lecture": "lecture",
-	"party": "party",
-	"performance": "performance",
-	"installation": "installation",
-	"block": "block",
-	"Новостная рассылка": "Новостная рассылка",
-	"Подпишитесь на новостную рассылку и&nbsp;узнайте первым о всех событиях фестиваля.": "Подпишитесь на новостную рассылку и&nbsp;узнайте первым о всех событиях фестиваля.",
-	"подписаться": "подписаться",
-	"Архив": "Архив",
-	"Купить билет": "Купить билет",
-	"Регистрация": "Регистрация",
-	"Возрастное ограничение": "Возрастное ограничение",
-	"смотрите так же": "смотрите так же",
-	"партнеры": "партнеры",
+	"Программа": "Programme",
+	"О Фестивале": "About",
+	"Поддержите MIEFF": "Support MIEFF",
+	"Все": "All",
+	"seance": "Film",
+	"lecture": "Talk",
+	"party": "Party",
+	"performance": "Performance",
+	"installation": "Installation",
+	"block": "Block",
+	"Новостная рассылка": "Newsletter",
+	"Подпишитесь на новостную рассылку и&nbsp;узнайте первым о всех событиях фестиваля.": "Subscribe to our mailing list and get&nbsp;the latest news from MIEFF.",
+	"подписаться": "Subscribe",
+	"Архив": "Archive",
+	"Купить билет": "Buy ticket",
+	"Регистрация": "Register",
+	"Возрастное ограничение": "Age rating",
+	"смотрите так же": "See also",
+	"партнеры": "Partners",
 	"artist": {
-		"one": "artist",
-		"other": "artist"
+		"one": "Artist",
+		"other": "Artists"
 	},
 	"director": {
-		"one": "director",
-		"other": "director"
+		"one": "Filmmaker",
+		"other": "Filmmakers"
 	},
 	"f_producer": {
-		"one": "f_producer",
-		"other": "f_producer"
+		"one": "Producer",
+		"other": "Producers"
 	},
 	"actor": {
-		"one": "actor",
-		"other": "actor"
+		"one": "Actor",
+		"other": "Actors"
 	},
 	"author": {
-		"one": "author",
-		"other": "author"
+		"one": "Scriptwriter",
+		"other": "Scriptwriters"
 	},
 	"main": {
-		"one": "main",
-		"other": "main"
+		"one": "Director",
+		"other": "Directors"
 	},
 	"composer": {
-		"one": "composer",
-		"other": "composer"
+		"one": "Composer",
+		"other": "Composers"
 	},
 	"producer": {
-		"one": "producer",
-		"other": "producer"
+		"one": "Producer",
+		"other": "Producers"
 	},
 	"musician": {
-		"one": "musician",
-		"other": "musician"
+		"one": "Musician",
+		"other": "Musicians"
 	},
 	"curator": {
-		"one": "curator",
-		"other": "curator"
+		"one": "Curator",
+		"other": "Curators"
 	},
 	"performer": {
-		"one": "performer",
-		"other": "performer"
+		"one": "Performer",
+		"other": "Performers"
 	},
 	"operator": {
-		"one": "operator",
-		"other": "operator"
+		"one": "Director of photography",
+		"other": "Directors of photography"
 	},
 	"lecturer": {
-		"one": "lecturer",
-		"other": "lecturer"
+		"one": "Lecturer",
+		"other": "Lecturers"
 	},
 	"strategic": {
-		"one": "strategic",
-		"other": "strategic"
+		"one": "Strategic partner",
+		"other": "Strategic partners"
 	},
 	"program": {
-		"one": "program",
-		"other": "program"
+		"one": "Programme partner",
+		"other": "Programme partners"
 	},
 	"tech": {
-		"one": "tech",
-		"other": "tech"
+		"one": "Technical partner",
+		"other": "Technical partners"
 	},
 	"partner": {
-		"one": "partner",
-		"other": "partner"
+		"one": "Partner",
+		"other": "Partners"
 	},
 	"info": {
-		"one": "info",
-		"other": "info"
+		"one": "Media partner",
+		"other": "Media partners"
 	},
 	"for_support": {
-		"one": "for_support",
-		"other": "for_support"
+		"one": "Supported by",
+		"other": "Supported by"
 	},
 	"official": {
-		"one": "official",
-		"other": "official"
+		"one": "Official partner",
+		"other": "Official partners"
 	},
 	"f_actor": {
-		"one": "f_actor",
-		"other": "f_actor"
+		"one": "Actress",
+		"other": "Actresses"
 	},
 	"f_director": {
-		"one": "f_director",
-		"other": "f_director"
+		"one": "Filmmaker",
+		"other": "Filmmakers"
 	},
 	"f_artist": {
-		"one": "f_artist",
-		"other": "f_artist"
+		"one": "Artist",
+		"other": "Artists"
 	},
 	"f_author": {
-		"one": "f_author",
-		"other": "f_author"
+		"one": "Script writer",
+		"other": "Script writers"
 	},
 	"f_main": {
-		"one": "f_main",
-		"other": "f_main"
+		"one": "Director",
+		"other": "Directors"
 	},
 	"f_composer": {
-		"one": "f_composer",
-		"other": "f_composer"
+		"one": "Composer",
+		"other": "Composers"
 	},
 	"f_musician": {
-		"one": "f_musician",
-		"other": "f_musician"
+		"one": "Musician",
+		"other": "Musicians"
 	},
 	"f_curator": {
-		"one": "f_curator",
-		"other": "f_curator"
+		"one": "Curator",
+		"other": "Curators"
 	},
 	"f_performer": {
-		"one": "f_performer",
-		"other": "f_performer"
+		"one": "Performer",
+		"other": "Performers"
 	},
 	"f_operator": {
-		"one": "f_operator",
-		"other": "f_operator"
+		"one": "Director of photography",
+		"other": "Directors of photography"
 	},
 	"f_lecturer": {
-		"one": "f_lecturer",
-		"other": "f_lecturer"
+		"one": "Lecturer",
+		"other": "Lecturers"
 	}
 }

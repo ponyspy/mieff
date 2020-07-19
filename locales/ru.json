@@ -1,146 +1,146 @@
 {
 	"MIEFF": "MIEFF",
 	"Программа": "Программа",
-	"О Фестивале": "О Фестивале",
+	"О Фестивале": "О фестивале",
 	"Поддержите MIEFF": "Поддержите MIEFF",
 	"Все": "Все",
-	"seance": "seance",
-	"lecture": "lecture",
-	"party": "party",
-	"performance": "performance",
-	"installation": "installation",
-	"block": "block",
+	"seance": "Фильм",
+	"lecture": "Лекция",
+	"party": "Вечеринка",
+	"performance": "Перформанс",
+	"installation": "Инсталляция",
+	"block": "Блок",
 	"Новостная рассылка": "Новостная рассылка",
 	"Подпишитесь на новостную рассылку и&nbsp;узнайте первым о всех событиях фестиваля.": "Подпишитесь на новостную рассылку и&nbsp;узнайте первым о всех событиях фестиваля.",
-	"подписаться": "подписаться",
+	"подписаться": "Подписаться",
 	"Архив": "Архив",
 	"Купить билет": "Купить билет",
-	"Регистрация": "Регистрация",
+	"Регистрация": "Зарегистрироваться",
 	"Возрастное ограничение": "Возрастное ограничение",
-	"смотрите так же": "смотрите так же",
-	"партнеры": "партнеры",
+	"смотрите так же": "Смотрите также",
+	"партнеры": "Партнеры",
 	"artist": {
-		"one": "artist",
-		"other": "artist"
+		"one": "Художник",
+		"other": "Художники"
 	},
 	"director": {
-		"one": "director",
-		"other": "director"
+		"one": "Режиссер",
+		"other": "Режиссеры"
 	},
 	"f_producer": {
-		"one": "f_producer",
-		"other": "f_producer"
+		"one": "Продюсерка",
+		"other": "Продюсерки"
 	},
 	"actor": {
-		"one": "actor",
-		"other": "actor"
+		"one": "Актер",
+		"other": "Актеры"
 	},
 	"author": {
-		"one": "author",
-		"other": "author"
+		"one": "Сценарист",
+		"other": "Сценаристы"
 	},
 	"main": {
-		"one": "main",
-		"other": "main"
+		"one": "Директор",
+		"other": "Директора"
 	},
 	"composer": {
-		"one": "composer",
-		"other": "composer"
+		"one": "Композитор",
+		"other": "Композиторы"
 	},
 	"producer": {
-		"one": "producer",
-		"other": "producer"
+		"one": "Продюсер",
+		"other": "Продюсеры"
 	},
 	"musician": {
-		"one": "musician",
-		"other": "musician"
+		"one": "Музыкант",
+		"other": "Музыканты"
 	},
 	"curator": {
-		"one": "curator",
-		"other": "curator"
+		"one": "Куратор",
+		"other": "Кураторы"
 	},
 	"performer": {
-		"one": "performer",
-		"other": "performer"
+		"one": "Перформер",
+		"other": "Перформеры"
 	},
 	"operator": {
-		"one": "operator",
-		"other": "operator"
+		"one": "Оператор постановщик",
+		"other": "Операторы постановщики"
 	},
 	"lecturer": {
-		"one": "lecturer",
-		"other": "lecturer"
+		"one": "Лектор",
+		"other": "Лекторы"
 	},
 	"strategic": {
-		"one": "strategic",
-		"other": "strategic"
+		"one": "Стратегический партнер",
+		"other": "Стратегические партнеры"
 	},
 	"program": {
-		"one": "program",
-		"other": "program"
+		"one": "Программный партнер",
+		"other": "Программные партнеры"
 	},
 	"tech": {
-		"one": "tech",
-		"other": "tech"
+		"one": "Технический партнер",
+		"other": "Технические партнеры"
 	},
 	"partner": {
-		"one": "partner",
-		"other": "partner"
+		"one": "Партнер",
+		"other": "Партнеры"
 	},
 	"info": {
-		"one": "info",
-		"other": "info"
+		"one": "Медиа партнер",
+		"other": "Медиа партнеры"
 	},
 	"for_support": {
-		"one": "for_support",
-		"other": "for_support"
+		"one": "При поддержке",
+		"other": "При поддержке"
 	},
 	"official": {
-		"one": "official",
-		"other": "official"
+		"one": "Официальный партнер",
+		"other": "Официальные партнеры"
 	},
 	"f_actor": {
-		"one": "f_actor",
-		"other": "f_actor"
+		"one": "Актриса",
+		"other": "Актрисы"
 	},
 	"f_director": {
-		"one": "f_director",
-		"other": "f_director"
+		"one": "Режиссерка",
+		"other": "Режиссерки"
 	},
 	"f_artist": {
-		"one": "f_artist",
-		"other": "f_artist"
+		"one": "Художница",
+		"other": "Художницы"
 	},
 	"f_author": {
-		"one": "f_author",
-		"other": "f_author"
+		"one": "Авторка",
+		"other": "Авторки"
 	},
 	"f_main": {
-		"one": "f_main",
-		"other": "f_main"
+		"one": "Директорка",
+		"other": "Директорки"
 	},
 	"f_composer": {
-		"one": "f_composer",
-		"other": "f_composer"
+		"one": "Композиторка",
+		"other": "Композиторки"
 	},
 	"f_musician": {
-		"one": "f_musician",
-		"other": "f_musician"
+		"one": "Музыкантка",
+		"other": "Музыкантки"
 	},
 	"f_curator": {
-		"one": "f_curator",
-		"other": "f_curator"
+		"one": "Кураторка",
+		"other": "Кураторки"
 	},
 	"f_performer": {
-		"one": "f_performer",
-		"other": "f_performer"
+		"one": "Перформерка",
+		"other": "Перформерки"
 	},
 	"f_operator": {
-		"one": "f_operator",
-		"other": "f_operator"
+		"one": "Операторка",
+		"other": "Операторки"
 	},
 	"f_lecturer": {
-		"one": "f_lecturer",
-		"other": "f_lecturer"
+		"one": "Лекторка",
+		"other": "Лекторки"
 	}
 }
