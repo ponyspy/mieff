@@ -81,6 +81,7 @@ module.exports = function(Model) {
 			{ $match: { 'status': {
 				$ne: 'hidden'
 			}}},
+			{ $match: { 'program': mongoose.Types.ObjectId(req.body.context.program) }},
 			{ $match: { $or: dates || [{ 'schedule.date': {'$ne': 'none'}}] }},
 			{	$match: { 'type': req.body.context && req.body.context.type ? { '$in': req.body.context.type } : {'$ne': 'none'} }},
 			{	$match: { 'schedule.place': req.body.context && req.body.context.place ? { '$in': to_Objectid(req.body.context.place) } : {'$ne': 'none'} }},

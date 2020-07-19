@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	var context = {};
+	context['program'] = $('.program_main_title').attr('id');
 
 	var macyInstance = Macy({
 		container: '.program_events',

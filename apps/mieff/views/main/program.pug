@@ -14,7 +14,7 @@ block header_include
 block content
 	.widget_block: .widget_inner
 
-	.program_main_title= program.i18n.title.get(locale)
+	.program_main_title(id=program._id)= program.i18n.title.get(locale)
 
 	.program_cover(style='background-image: url(' + program.cover + ')')
 
