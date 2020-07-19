@@ -35,17 +35,17 @@ block content
 						- var date = moment(date.year + '-' + date.month + '-' + date.day, 'YY-MM-DD')
 						.nav_item(data-val=date.format('YY-MM-DD'))= date.format('DD.MM')
 
-			.nav_column.type
-				.nav_all= __('Все')
-				.nav_items
-					each type_item in static_types.events_types
-						.nav_item(data-val=type_item)= __(type_item)
-
 			.nav_column.place
 				.nav_all= __('Все')
 				.nav_items
 					each place in places
 						.nav_item(data-val=place._id.toString())= place.i18n.title.get(locale)
+
+			.nav_column.type
+				.nav_all= __('Все')
+				.nav_items
+					each type_item in static_types.events_types
+						.nav_item(data-val=type_item)= __(type_item)
 
 		.program_events
 
