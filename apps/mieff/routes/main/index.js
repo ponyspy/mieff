@@ -46,7 +46,7 @@ module.exports = function(Model) {
 					}}
 				]).exec(function(err, dates) {
 					res.render('main/index.pug', {
-						programs: programs, places: places, dates: dates
+						moment: moment, programs: programs, places: places, dates: dates
 					});
 				});
 			});
@@ -55,11 +55,19 @@ module.exports = function(Model) {
 
 
 	module.get_events = function(req, res) {
+		dates = req.body.context && req.body.context.date.map(function(date) {
+			var date_start = moment(date, "YY-MM-DD").startOf('day')
+			var date_end = moment(date, "YY-MM-DD").endOf('day')
+
+			return { 'schedule.date': { $gte: date_start.toDate(), $lte: date_end.toDate() }};
+		});
+
 		Event.aggregate([
 			{ $unwind: '$schedule' },
 			{ $match: { 'status': {
 				$ne: 'hidden'
 			}}},
+			{ $match: { $or: dates || [{ 'schedule.date': {'$ne': 'none'}}] }},
 			{	$match: { 'type': req.body.context && req.body.context.type ? { '$in': req.body.context.type } : {'$ne': 'none'} }},
 			{	$match: { 'schedule.place': req.body.context && req.body.context.place ? { '$in': to_Objectid(req.body.context.place) } : {'$ne': 'none'} }},
 			{	$match: { 'program': req.body.context && req.body.context.program ? { '$in': to_Objectid(req.body.context.program) } : {'$ne': 'none'} }},

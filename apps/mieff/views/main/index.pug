@@ -29,7 +29,8 @@ block content
 				.nav_all= __('Все')
 				.nav_items
 					each date in dates
-						.nav_item(data-val=date.day + '-' + date.month + '-' + date.year)= date.day + '.' + date.month
+						- var date = moment(date.year + '-' + date.month + '-' + date.day, 'YY-MM-DD')
+						.nav_item(data-val=date.format('YY-MM-DD'))= date.format('DD.MM')
 
 			.nav_column.program
 				.nav_all= __('Все')
