@@ -31,7 +31,8 @@ module.exports = (function() {
 		.get(main.programs.index);
 
 	router.route('/program/:short_id')
-		.get(main.programs.program);
+		.get(main.programs.program)
+		.post(main.programs.get_events);
 
 	router.route('/about')
 		.get(main.static.about);
