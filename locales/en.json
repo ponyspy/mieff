@@ -1,15 +1,8 @@
 {
-	"mieff": "mieff",
+	"MIEFF": "MIEFF",
 	"Программа": "Программа",
 	"О Фестивале": "О Фестивале",
 	"Поддержите MIEFF": "Поддержите MIEFF",
-	"Возрастное ограничение": "Возрастное ограничение",
-	"смотрите так же": "смотрите так же",
-	"Новостная рассылка": "Новостная рассылка",
-	"Подпишитесь на новостную рассылку и&nbsp;узнайте первым о всех событиях фестиваля.": "Подпишитесь на новостную рассылку и&nbsp;узнайте первым о всех событиях фестиваля.",
-	"подписаться": "подписаться",
-	"Архив": "Архив",
-	"MIEFF": "MIEFF",
 	"Все": "Все",
 	"seance": "seance",
 	"lecture": "lecture",
@@ -17,6 +10,137 @@
 	"performance": "performance",
 	"installation": "installation",
 	"block": "block",
+	"Новостная рассылка": "Новостная рассылка",
+	"Подпишитесь на новостную рассылку и&nbsp;узнайте первым о всех событиях фестиваля.": "Подпишитесь на новостную рассылку и&nbsp;узнайте первым о всех событиях фестиваля.",
+	"подписаться": "подписаться",
+	"Архив": "Архив",
 	"Купить билет": "Купить билет",
-	"Регистрация": "Регистрация"
+	"Регистрация": "Регистрация",
+	"Возрастное ограничение": "Возрастное ограничение",
+	"смотрите так же": "смотрите так же",
+	"партнеры": "партнеры",
+	"artist": {
+		"one": "artist",
+		"other": "artist"
+	},
+	"director": {
+		"one": "director",
+		"other": "director"
+	},
+	"f_producer": {
+		"one": "f_producer",
+		"other": "f_producer"
+	},
+	"actor": {
+		"one": "actor",
+		"other": "actor"
+	},
+	"author": {
+		"one": "author",
+		"other": "author"
+	},
+	"main": {
+		"one": "main",
+		"other": "main"
+	},
+	"composer": {
+		"one": "composer",
+		"other": "composer"
+	},
+	"producer": {
+		"one": "producer",
+		"other": "producer"
+	},
+	"musician": {
+		"one": "musician",
+		"other": "musician"
+	},
+	"curator": {
+		"one": "curator",
+		"other": "curator"
+	},
+	"performer": {
+		"one": "performer",
+		"other": "performer"
+	},
+	"operator": {
+		"one": "operator",
+		"other": "operator"
+	},
+	"lecturer": {
+		"one": "lecturer",
+		"other": "lecturer"
+	},
+	"strategic": {
+		"one": "strategic",
+		"other": "strategic"
+	},
+	"program": {
+		"one": "program",
+		"other": "program"
+	},
+	"tech": {
+		"one": "tech",
+		"other": "tech"
+	},
+	"partner": {
+		"one": "partner",
+		"other": "partner"
+	},
+	"info": {
+		"one": "info",
+		"other": "info"
+	},
+	"for_support": {
+		"one": "for_support",
+		"other": "for_support"
+	},
+	"official": {
+		"one": "official",
+		"other": "official"
+	},
+	"f_actor": {
+		"one": "f_actor",
+		"other": "f_actor"
+	},
+	"f_director": {
+		"one": "f_director",
+		"other": "f_director"
+	},
+	"f_artist": {
+		"one": "f_artist",
+		"other": "f_artist"
+	},
+	"f_author": {
+		"one": "f_author",
+		"other": "f_author"
+	},
+	"f_main": {
+		"one": "f_main",
+		"other": "f_main"
+	},
+	"f_composer": {
+		"one": "f_composer",
+		"other": "f_composer"
+	},
+	"f_musician": {
+		"one": "f_musician",
+		"other": "f_musician"
+	},
+	"f_curator": {
+		"one": "f_curator",
+		"other": "f_curator"
+	},
+	"f_performer": {
+		"one": "f_performer",
+		"other": "f_performer"
+	},
+	"f_operator": {
+		"one": "f_operator",
+		"other": "f_operator"
+	},
+	"f_lecturer": {
+		"one": "f_lecturer",
+		"other": "f_lecturer"
+	}
 }
