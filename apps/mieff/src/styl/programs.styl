@@ -68,3 +68,121 @@
 
 
 
+.program_body
+	border-top 0
+	border-bottom 0
+	border-left 25px
+	border-right 25px
+	border-color #c8c8c8
+	border-style solid
+	box-sizing border-box
+
+
+.program_nanv
+	padding 25px
+	margin 25px
+	margin-top 0
+	margin-bottom 0
+	background-color black
+	color #c8c8c8
+	.nav_column
+		margin-bottom 10px
+		&:last-child
+			margin-bottom 0
+		.nav_items
+			display inline-block
+		.nav_all
+		.nav_item
+			cursor pointer
+			margin 10px
+			display inline-block
+			font-size 14pt
+			line-height 16pt
+			font-family 'Panama Regular'
+			&:hover
+			&.active
+				color #00c641
+		.nav_all
+			margin 0
+			padding 10px
+			color black
+			background-color #00c641
+			&:hover
+				color #c8c8c8
+				background-color #ff3333
+
+
+.program_events
+	margin 25px
+	margin-bottom 0
+	.event_item
+		color #c8c8c8
+		font-size 14pt
+		line-height 16pt
+		text-decoration none
+		.event_cover
+			position relative
+			.cover_marker
+				font-family 'Pragmatica Book'
+				text-transform uppercase
+				color black
+				background-color red
+				position absolute
+				padding 5px
+				padding-bottom 0
+				right 15px
+				top 15px
+			.cover_title
+			.cover_image
+				width 100%
+				display block
+				border-radius 8px
+				background-color black
+				box-shadow: 0 0 10px rgba(0,0,0,1);
+			.cover_title
+				font-family 'Panamatica Regular'
+				text-transform uppercase
+				font-size 22pt
+				line-height 24pt
+				text-align center
+				padding-top 60px
+				padding-bottom 60px
+			.cover_buy
+				border-radius 0 0 8px 8px
+				font-family 'Panama Regular'
+				text-transform uppercase
+				display none
+				background-color #00c641
+				color black
+				text-align center
+				box-sizing border-box
+				padding 10px
+				width 100%
+				position absolute
+				bottom 0
+				cursor pointer
+				&:hover
+					background-color #c8c8c8
+					color #ff3333
+		&:hover .cover_buy
+			display block
+		.event_schedule
+			margin-top 15px
+			font-family 'Panama Regular'
+			display flex
+			.schedule_date
+				&:after
+					display inline-block
+					margin-left 5px
+					margin-right 5px
+					content ' | '
+		.event_program
+			margin-top 5px
+		.event_title
+			margin-top 5px
+			font-family 'Pragmatica Book'
+			text-transform uppercase
+
+
+
+

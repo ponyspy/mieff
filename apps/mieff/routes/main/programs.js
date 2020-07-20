@@ -22,8 +22,34 @@ module.exports = function(Model) {
 	};
 
 	module.index = function(req, res) {
-		Program.find().where('status').ne('hidden').exec(function(err, programs) {
-			res.render('main/programs.pug', {programs: programs});
+		Program.find().exec(function(err, programs) {
+			Place.find().exec(function(err, places) {
+				Event.aggregate([
+					{ $unwind: '$schedule' },
+					{ $match: { 'status': {
+						$ne: 'hidden'
+					}}},
+					{ $group: {
+						_id: {
+							month: { $month: "$schedule.date" },
+							day: { $dayOfMonth: "$schedule.date" },
+							year: { $year: "$schedule.date" }
+						},
+						schedule: {$push: { 'date': '$schedule.date' }},
+					}},
+					{ $sort: { 'schedule.date': 1 } },
+					{ $project: {
+						_id: 0,
+						month: '$_id.month',
+						day: '$_id.day',
+						year: '$_id.year',
+					}}
+				]).exec(function(err, dates) {
+					res.render('main/programs.pug', {
+						moment: moment, programs: programs, places: places, dates: dates
+					});
+				});
+			});
 		});
 	};
 
@@ -83,7 +109,7 @@ module.exports = function(Model) {
 			{ $match: { 'status': {
 				$ne: 'hidden'
 			}}},
-			{ $match: { 'program': mongoose.Types.ObjectId(req.body.context.program) }},
+			{ $match: { 'program': req.body.context && req.body.context.program ? mongoose.Types.ObjectId(req.body.context.program) : {'$ne': 'none'} }},
 			{ $match: { $or: dates || [{ 'schedule.date': {'$ne': 'none'}}] }},
 			{	$match: { 'type': req.body.context && req.body.context.type ? { '$in': req.body.context.type } : {'$ne': 'none'} }},
 			{	$match: { 'schedule.place': req.body.context && req.body.context.place ? { '$in': to_Objectid(req.body.context.place) } : {'$ne': 'none'} }},

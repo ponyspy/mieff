@@ -5,13 +5,15 @@ block header_meta
 	- var content_description= ''
 
 block header_include
-	- var include_libs_css = ['swiper.min.css']
+	//- - var include_libs_css = []
 	- var include_css = ['programs.css']
-	- var include_libs_js = ['swiper.min.js']
+	- var include_libs_js = ['macy.js']
 	- var include_js = ['programs.js']
 
 
 block content
+	.widget_block: .widget_inner
+
 	.program_main_title= __('Программа')
 
 	.programs_list: .programs_inner
@@ -20,5 +22,32 @@ block content
 				.program_inner(style='background-image: url(' + program.poster + ')'): .program_text
 					span= program.i18n.title.get(locale)
 
+	.program_body
+		.program_nanv
 
+			.nav_column.date
+				.nav_all= __('Все')
+				.nav_items
+					each date in dates
+						- var date = moment(date.year + '-' + date.month + '-' + date.day, 'YY-MM-DD')
+						.nav_item(data-val=date.format('YY-MM-DD'))= date.format('DD.MM')
 
+			.nav_column.place
+				.nav_all= __('Все')
+				.nav_items
+					each place in places
+						.nav_item(data-val=place._id.toString())= place.i18n.title.get(locale)
+
+			.nav_column.program
+				.nav_all= __('Все')
+				.nav_items
+					each program in programs
+						.nav_item(data-val=program._id.toString())= program.i18n.title.get(locale)
+
+			.nav_column.type
+				.nav_all= __('Все')
+				.nav_items
+					each type_item in static_types.events_types
+						.nav_item(data-val=type_item)= __(type_item)
+
+		.program_events
