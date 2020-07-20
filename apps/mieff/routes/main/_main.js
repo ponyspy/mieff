@@ -27,6 +27,9 @@ module.exports = (function() {
 	router.route('/events/:short_id')
 		.get(main.events.event);
 
+	router.route('/members/:short_id')
+		.get(main.members.member);
+
 	router.route('/program')
 		.get(main.programs.index)
 		.post(main.programs.get_events);
