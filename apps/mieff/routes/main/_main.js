@@ -11,7 +11,7 @@ var main = {
 	partners: require('./partners.js')(Model),
 	options: require('./options.js')(Model),
 	tickets: require('./tickets.js')(Model),
-	static: require('./static.js'),
+	static: require('./static.js')(Model),
 };
 
 module.exports = (function() {
@@ -45,9 +45,6 @@ module.exports = (function() {
 		res.cookie('locale', req.params.locale);
 		res.redirect('back');
 	});
-
-	router.route('/widget')
-		.get(main.tickets.widget);
 
 	router.route('/sitemap.xml')
 		.get(main.options.sitemap);
