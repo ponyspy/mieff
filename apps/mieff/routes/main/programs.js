@@ -62,7 +62,7 @@ module.exports = function(Model) {
 			: Program.findOne({ $or: [ { '_short_id': id }, { 'sym': id } ] }).where('status').ne('hidden');
 
 		Query.exec(function(err, program) {
-			if (!program) return next(err);
+			if (!program || err) return next(err);
 
 			Program.find({'_id': {'$ne': program._id} }).where('status').ne('hidden').exec(function(err, programs) {
 				Place.find().exec(function(err, places) {

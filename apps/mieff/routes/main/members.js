@@ -20,10 +20,12 @@ module.exports = function(Model) {
 		});
 	};
 
-	module.member = function(req, res) {
+	module.member = function(req, res, next) {
 		var id = req.params.short_id;
 
 		Member.findOne({ '_short_id': id }).where('status').nin(['hidden', 'special']).exec(function(err, member) {
+			if (!member || err) return next(err);
+
 			Event.find({'members.list': member._id}).where('status').ne('hidden').populate('program').exec(function(err, events) {
 				res.render('main/member.pug', { member: member, events: events });
 			});
