@@ -25,11 +25,11 @@ block content
 
 	.event_schedule
 		each item in event.schedule
-			if item.options
-				.schedule_item
-					.schedule_meta
-						.meta_date= moment(item.date).format('DD.MM (HH:mm)')
-						.meta_place= item.place.i18n.title.get(locale)
+			.schedule_item
+				.schedule_meta
+					.meta_date= moment(item.date).format('DD.MM (HH:mm)')
+					.meta_place= item.place.i18n.title.get(locale)
+				if item.options
 					.schedule_buy.buy_open(data-src=item.link, class=item.options)= item.free == true ? __('Регистрация') : __('Купить билет')
 
 	.event_body
