@@ -12,6 +12,7 @@ var admin = {
 	partners: require('./partners/_partners.js'),
 	posts: require('./posts/_posts.js'),
 	users: require('./users/_users.js'),
+	cv: require('./cv.js'),
 	options: require('./options.js')
 };
 
@@ -25,6 +26,10 @@ module.exports = (function() {
 	var router = express.Router();
 
 	router.route('/').get(checkAuth, admin.main.index);
+
+	router.route('/cv')
+		.get(checkAuth, admin.cv.edit)
+		.post(checkAuth, admin.cv.edit_form);
 
 	router.use('/events', checkAuth, upload.fields([ { name: 'poster' }, { name: 'cover' } ]), admin.events);
 	router.use('/places', checkAuth, admin.places);
