@@ -81,7 +81,7 @@ module.exports = function(Model) {
 					Event.find({'program': program._id, 'events': {'$not': {'$size': 0}}}).where('status').ne('hidden').exec(callback);
 				},
 				places: function(callback) {
-					Place.find().exec(callback);
+					Place.find().where('status').ne('hidden').exec(callback);
 				},
 				dates: function(callback) {
 					Event.aggregate([
