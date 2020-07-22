@@ -1,6 +1,7 @@
 var moment = require('moment');
 var pug = require('pug');
 var mongoose = require('mongoose');
+var async = require('async');
 
 module.exports = function(Model) {
 	var module = {};
@@ -22,8 +23,14 @@ module.exports = function(Model) {
 	};
 
 	module.index = function(req, res) {
-		Program.find().exec(function(err, programs) {
-			Place.find().exec(function(err, places) {
+		async.parallel({
+			programs: function(callback) {
+				Program.find().exec(callback);
+			},
+			places: function(callback) {
+				Place.find().exec(callback);
+			},
+			dates: function(callback) {
 				Event.aggregate([
 					{ $unwind: '$schedule' },
 					{ $match: { 'status': {
@@ -44,14 +51,16 @@ module.exports = function(Model) {
 						day: '$_id.day',
 						year: '$_id.year',
 					}}
-				]).exec(function(err, dates) {
-					res.render('main/index.pug', {
-						moment: moment, programs: programs, places: places, dates: dates
-					});
-				});
-			});
+				]).exec(callback);
+			},
+		}, function(err, results) {
+			if (err) return next(err);
+
+			results['moment'] = moment;
+
+			res.render('main/index.pug', results);
 		});
-	};
+	}
 
 
 	module.get_events = function(req, res) {
