@@ -1,6 +1,7 @@
 var pug = require('pug');
 var moment = require('moment');
 var mongoose = require('mongoose');
+var async = require('async');
 
 module.exports = function(Model) {
 	var module = {};
@@ -22,8 +23,14 @@ module.exports = function(Model) {
 	};
 
 	module.index = function(req, res) {
-		Program.find().exec(function(err, programs) {
-			Place.find().exec(function(err, places) {
+		async.parallel({
+			programs: function(callback) {
+				Program.find().exec(callback);
+			},
+			places: function(callback) {
+				Place.find().exec(callback);
+			},
+			dates: function(callback) {
 				Event.aggregate([
 					{ $unwind: '$schedule' },
 					{ $match: { 'status': {
@@ -44,14 +51,16 @@ module.exports = function(Model) {
 						day: '$_id.day',
 						year: '$_id.year',
 					}}
-				]).exec(function(err, dates) {
-					res.render('main/programs.pug', {
-						moment: moment, programs: programs, places: places, dates: dates
-					});
-				});
-			});
+				]).exec(callback);
+			},
+		}, function(err, results) {
+			if (err) return next(err);
+
+			results['moment'] = moment;
+
+			res.render('main/programs.pug', results);
 		});
-	};
+	}
 
 	module.program = function(req, res, next) {
 		var user_id = req.session.user_id;
@@ -64,34 +73,43 @@ module.exports = function(Model) {
 		Query.exec(function(err, program) {
 			if (!program || err) return next(err);
 
-			Program.find({'_id': {'$ne': program._id} }).where('status').ne('hidden').exec(function(err, programs) {
-				Place.find().exec(function(err, places) {
-					Event.find({'program': program._id, 'events': {'$not': {'$size': 0}}}).where('status').ne('hidden').exec(function(err, blocks) {
-						Event.aggregate([
-							{ $unwind: '$schedule' },
-							{ $match: { 'status': {
-								$ne: 'hidden'
-							}}},
-							{ $group: {
-								_id: {
-									month: { $month: "$schedule.date" },
-									day: { $dayOfMonth: "$schedule.date" },
-									year: { $year: "$schedule.date" }
-								},
-								schedule: {$push: { 'date': '$schedule.date' }},
-							}},
-							{ $sort: { 'schedule.date': 1 } },
-							{ $project: {
-								_id: 0,
-								month: '$_id.month',
-								day: '$_id.day',
-								year: '$_id.year',
-							}}
-						]).exec(function(err, dates) {
-							res.render('main/program.pug', {moment: moment, places: places, program: program, programs: programs, blocks: blocks, dates: dates});
-						});
-					});
-				});
+			async.parallel({
+				programs: function(callback) {
+					Program.find({'_id': {'$ne': program._id} }).where('status').ne('hidden').exec(callback);
+				},
+				places: function(callback) {
+					Place.find().exec(callback);
+				},
+				dates: function(callback) {
+					Event.aggregate([
+						{ $unwind: '$schedule' },
+						{ $match: { 'status': {
+							$ne: 'hidden'
+						}}},
+						{ $group: {
+							_id: {
+								month: { $month: "$schedule.date" },
+								day: { $dayOfMonth: "$schedule.date" },
+								year: { $year: "$schedule.date" }
+							},
+							schedule: {$push: { 'date': '$schedule.date' }},
+						}},
+						{ $sort: { 'schedule.date': 1 } },
+						{ $project: {
+							_id: 0,
+							month: '$_id.month',
+							day: '$_id.day',
+							year: '$_id.year',
+						}}
+					]).exec(callback);
+				}
+			}, function(err, results) {
+				if (err) return next(err);
+
+				results['program'] = program;
+				results['moment'] = moment;
+
+				res.render('main/program.pug', results);
 			});
 		});
 	};
