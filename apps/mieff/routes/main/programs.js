@@ -77,6 +77,9 @@ module.exports = function(Model) {
 				programs: function(callback) {
 					Program.find({'_id': {'$ne': program._id} }).where('status').ne('hidden').exec(callback);
 				},
+				blocks: function(callback) {
+					Event.find({'program': program._id, 'events': {'$not': {'$size': 0}}}).where('status').ne('hidden').exec(callback);
+				},
 				places: function(callback) {
 					Place.find().exec(callback);
 				},
