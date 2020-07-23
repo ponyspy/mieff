@@ -34,16 +34,22 @@ mixin form_text_multi(path, object)
 //- Single Select Form
 
 mixin form_single_select(path, options, select_option)
+	- var field = attributes.field || 'title'
+	- var disable = attributes.disable
+	- var none = attributes.none
+
 	if (!select_option)
-		select(name=path)
-			option(value='none') нет
+		select(name=path, disabled=disable)
+			unless none
+				option(value='none') нет
 			each option in options
-				option(value=option._id)= option['i18n']['title'].get('ru') || '!!! ПУСТОЕ ПОЛЕ !!!'
+				option(value=option._id)= option['i18n'][field].get('ru') || '!!! ПУСТОЕ ПОЛЕ !!!'
 	else
-		select(name=path)
-			option(value='none') нет
+		select(name=path, disabled=disable)
+			unless none
+				option(value='none') нет
 			each option in options
-				option(value=option._id, selected=select_option == option._id.toString())= option['i18n']['title'].get('ru') || '!!! ПУСТОЕ ПОЛЕ !!!'
+				option(value=option._id, selected=select_option == option._id.toString())= option['i18n'][field].get('ru') || '!!! ПУСТОЕ ПОЛЕ !!!'
 
 //- Multiple Select Form
 
