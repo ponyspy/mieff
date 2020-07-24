@@ -10,7 +10,6 @@ var main = {
 	members: require('./members.js')(Model),
 	partners: require('./partners.js')(Model),
 	options: require('./options.js')(Model),
-	tickets: require('./tickets.js')(Model),
 	static: require('./static.js')(Model),
 };
 
@@ -26,6 +25,9 @@ module.exports = (function() {
 
 	router.route('/events/:short_id')
 		.get(main.events.event);
+
+	router.route('/partners')
+		.get(main.partners.index);
 
 	router.route('/members/:short_id')
 		.get(main.members.member);
