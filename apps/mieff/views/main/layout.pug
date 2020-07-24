@@ -45,7 +45,7 @@ html(lang=locale)
 									.type_list: .list_inner
 										each partner in p_type.partners
 											a.partner_item(href=partner.link, target='_blank', rel='nofollow')
-												img.partner_logo(src=partner.logo)
+												.partner_logo(style='background-image: url(' + partner.logo + ')')
 
 				.social_block
 					a(href='https://www.facebook.com/MIEFFESTIVAL', target='_blank') Facebook
