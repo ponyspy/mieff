@@ -12,7 +12,7 @@ module.exports = function(Model) {
 	module.index = function(req, res) {
 		Partner.aggregate([
 			{ $match: { 'status': {
-				$nin: ['hidden', 'special']
+				$nin: ['hidden']
 			}}},
 			{ $sort: { 'date': -1 } },
 			{ $group: {
