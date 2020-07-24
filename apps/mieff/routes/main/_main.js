@@ -16,6 +16,8 @@ var main = {
 module.exports = (function() {
 	var router = express.Router();
 
+	router.use(main.partners.special)
+
 	router.route('/')
 		.get(main.index.index)
 		.post(main.index.get_events);

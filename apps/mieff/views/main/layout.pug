@@ -36,6 +36,17 @@ html(lang=locale)
 							input(type='hidden' name='b_425b7a6d22043b7b9e65d108c_0c2536a50b' tabindex='-1')
 							input.submit(type='submit' value=__('подписаться') name='subscribe')
 
+				.partners_block
+					.partners_types
+						if special_partners
+							each p_type in special_partners.types
+								.partner_type
+									.type_title= __n(p_type.type, p_type.partners.length == 1 ? 1 : 5)
+									.type_list: .list_inner
+										each partner in p_type.partners
+											a.partner_item(href=partner.link, target='_blank', rel='nofollow')
+												img.partner_logo(src=partner.logo)
+
 				.social_block
 					a(href='https://www.facebook.com/MIEFFESTIVAL', target='_blank') Facebook
 					a(href='https://www.instagram.com/mieff_festival/?hl=ru', target='_blank') Instagram
