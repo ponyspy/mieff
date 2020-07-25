@@ -29,6 +29,10 @@ $(document).ready(function() {
 			? $this.toggleClass('active')
 			: $this.closest('.nav_column').find('.nav_item').removeClass('active');
 
+		$this.closest('.nav_column').find('.nav_item.active').length !== 0
+			 ? $this.closest('.nav_column').find('.nav_all').addClass('active')
+			 : $this.closest('.nav_column').find('.nav_all').removeClass('active')
+
 		context[type] = $this.parent().find('.active').map(function() {
 			return $(this).attr('data-val');
 		}).toArray();
