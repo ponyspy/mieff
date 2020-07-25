@@ -36,7 +36,7 @@ module.exports = function(Model) {
 
 			async.parallel({
 				blocks: function(callback) {
-					Event.find({'status': {'$ne': 'hidden'}, 'program': event.program._id, '_id': {'$ne': event._id}, 'events': {'$ne': event._id, '$not': {'$size': 0}}}).exec(callback);
+					Event.find({'status': {'$ne': 'hidden'}, 'type': 'block', 'program': event.program._id, '_id': {'$ne': event._id}, 'events': {'$ne': event._id}}).exec(callback);
 				},
 				programs: function(callback) {
 					Program.find({'_id': {'$ne': event.program._id}}).exec(callback);

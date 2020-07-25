@@ -36,7 +36,7 @@ module.exports = function(Model, Params) {
 						Program.find().sort('title.value').exec(function(err, programs) {
 							if (err) return next(err);
 
-							Event.find({'events': { $size: 0 }}).sort('title.value').exec(function(err, events) {
+							Event.find({'type': {'$ne': 'block'}}).sort('title.value').exec(function(err, events) {
 								if (err) return next(err);
 
 								previewImages(event.images, function(err, images_preview) {
