@@ -73,8 +73,8 @@ block content
 		.event_events
 			each event_item in event.events
 				a.event_item(href='/events/' + (event_item.sym ? event_item.sym : event_item._short_id))
-					img.event_poster(src=event_item.poster)
 					.event_title= event_item.i18n.title.get(locale)
+					img.event_poster(src=event_item.poster)
 
 	if blocks && blocks.length
 		.event_also_blocks
