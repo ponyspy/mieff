@@ -1,5 +1,6 @@
 extends ../layout
 include ../_forms.pug
+include ../events/_forms.pug
 
 block header_meta
 	- var content_title= 'РЕДАКТИРОВАТЬ ПРОГРАММУ'
@@ -8,7 +9,7 @@ block header_include
 	- var include_libs_css = ['pickmeup.min.css', 'font-awesome.css', 'wysiwyg-editor.min.css']
 	- var include_css = ['add.css']
 	- var include_libs_js = ['jquery.pickmeup.min.js', 'wysiwyg.min.js', 'wysiwyg-editor.min.js']
-	- var include_js = ['editor.js', 'add.js', 'a_events.js']
+	- var include_js = ['editor.js', 'add.js', 'a_events.js', 'aa_events.js', 'aa_forms.js']
 
 block sub_menu
 	a.sub_item.back_link(href='/admin/programs') Назад
@@ -32,6 +33,8 @@ block content
 			+form_single_file('cover', program)(accept='image/jpeg,image/png,image/gif')
 			.form_title Описание:
 			+form_text_multi('description', program)
+			.form_title Партнеры:
+			+form_partners(program.partners)
 			.form_title Статус:
 			select(name='status')
 				option(value='base') Обычный

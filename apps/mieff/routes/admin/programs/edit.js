@@ -5,6 +5,7 @@ module.exports = function(Model, Params) {
 	var module = {};
 
 	var Program = Model.Program;
+	var Partner = Model.Partner;
 
 	var uploadImage = Params.upload.image;
 	var checkNested = Params.locale.checkNested;
@@ -16,7 +17,11 @@ module.exports = function(Model, Params) {
 		Program.findById(id).exec(function(err, program) {
 			if (err) return next(err);
 
-			res.render('admin/programs/edit.pug', { program: program });
+			Partner.find().sort('title.value').exec(function(err, partners) {
+				if (err) return next(err);
+
+				res.render('admin/programs/edit.pug', { program: program, partners: partners });
+			});
 		});
 	};
 
@@ -32,6 +37,8 @@ module.exports = function(Model, Params) {
 			program.status = post.status;
 			program.date = moment(post.date.date + 'T' + post.date.time.hours + ':' + post.date.time.minutes);
 			program.sym = post.sym ? post.sym : undefined;
+
+			program.partners = post.partners;
 
 			var locales = post.en ? ['ru', 'en'] : ['ru'];
 
