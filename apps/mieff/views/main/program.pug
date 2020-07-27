@@ -55,7 +55,7 @@ block content
 			.partners_list
 				each partner in program.partners
 					a.partner_item(href=partner.link, target='_blank')
-						img.partner_logo(src=partner.logo)
+						.partner_logo(style='background-image: url(' + partner.logo + ')')
 
 	if programs && programs.length
 		.program_also_programs
