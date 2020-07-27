@@ -49,6 +49,14 @@ block content
 
 		.program_events
 
+	if program.partners && program.partners.length
+		.program_partners
+			.partners_title= __('Партнеры')
+			.partners_list
+				each partner in program.partners
+					a.partner_item(href=partner.link, target='_blank')
+						img.partner_logo(src=partner.logo)
+
 	if programs && programs.length
 		.program_also_programs
 			.programs_title= __('смотрите так же')

@@ -70,6 +70,7 @@ module.exports = function(Model) {
 			? Program.findOne({ $or: [ { '_short_id': id }, { 'sym': id } ] })
 			: Program.findOne({ $or: [ { '_short_id': id }, { 'sym': id } ] }).where('status').ne('hidden');
 
+		Query.populate({'path': 'partners', 'match': { 'status': { '$ne': 'hidden' } }, 'select': 'title status _short_id type link logo' });
 		Query.exec(function(err, program) {
 			if (!program || err) return next(err);
 
