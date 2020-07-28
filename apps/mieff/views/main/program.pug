@@ -52,7 +52,7 @@ block content
 	if program.partners && program.partners.length
 		.program_partners
 			.partners_title= __('Партнеры')
-			.partners_list
+			.partners_list: .list_inner
 				each partner in program.partners
 					a.partner_item(href=partner.link, target='_blank')
 						.partner_logo(style='background-image: url(' + partner.logo + ')')
