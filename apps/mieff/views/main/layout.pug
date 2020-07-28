@@ -2,6 +2,8 @@ doctype html
 html(lang=locale)
 	head
 		include header
+		if node_env == 'production'
+			include counters
 	body
 		.maket_block
 			.title_block

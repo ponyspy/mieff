@@ -52,12 +52,13 @@ app.use(session({
 app.locals.static_types = require(__app_root + '/types.json');
 
 app.use(function(req, res, next) {
+	req.locale = req.cookies.locale || 'ru';
+	res.locals.locale = req.cookies.locale || 'ru';
 	res.locals.__app_name = __app_name;
 	res.locals.session = req.session;
-	res.locals.locale = req.cookies.locale || 'ru';
-	req.locale = req.cookies.locale || 'ru';
 	res.locals.host = req.hostname;
 	res.locals.url = req.originalUrl;
+	res.locals.node_env = process.env.NODE_ENV;
 	next();
 });
 
