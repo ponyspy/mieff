@@ -14,8 +14,6 @@ module.exports = function(Model) {
 
 			var links = [
 				{ url: '/' },
-				{ url: '/team' },
-				{ url: '/contacts' },
 				{ url: '/about' },
 			];
 
