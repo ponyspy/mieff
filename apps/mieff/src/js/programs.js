@@ -7,6 +7,20 @@ $(document).ready(function() {
 		waitForImages: false,
 		margin: 25,
 		columns: 4,
+		breakAt: {
+			1200: {
+				// margin: { x: 20, y: 10 },
+				columns: 3
+			},
+			900: {
+				// margin: { x: 20, y: 10 },
+				columns: 2
+			},
+			700: {
+				// margin: { x: 20, y: 10 },
+				columns: 1
+			}
+		}
 	});
 
 	$(document).on('events_load', function(e) {
