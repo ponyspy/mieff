@@ -1,5 +1,10 @@
 $(function() {
 
+	$('.menu_drop').on('click', function(e) {
+		$('body').toggleClass('stop_scroll');
+		$('.title_block, .menu_drop').toggleClass('open');
+	});
+
 	$(document)
 		.on('mouseup touchend', function(e) {
 			if ($(e.target).closest('.widget_inner').length) return;
