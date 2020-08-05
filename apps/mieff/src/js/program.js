@@ -35,6 +35,11 @@ $(document).ready(function() {
 	}).trigger('events_load');
 
 
+	$(document).on('click', '.nav_title', function(e) {
+		$(this).closest('.nav_column').addClass('open');
+	});
+
+
 	$(document).on('click', '.nav_item, .nav_all', function(e) {
 		var $this = $(this);
 		var type = $this.closest('.nav_column').attr('class').split(' ')[1];
@@ -45,7 +50,7 @@ $(document).ready(function() {
 
 		$this.closest('.nav_column').find('.nav_item.active').length !== 0
 			 ? $this.closest('.nav_column').find('.nav_all').addClass('active')
-			 : $this.closest('.nav_column').find('.nav_all').removeClass('active')
+			 : $this.closest('.nav_column').find('.nav_all').removeClass('active').end().removeClass('open')
 
 		context[type] = $this.parent().find('.active').map(function() {
 			return $(this).attr('data-val');

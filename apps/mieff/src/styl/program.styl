@@ -94,7 +94,6 @@
 			width 240px
 			height 240px
 			background-color black
-			font-size 30px
 			text-align center
 			display table-cell
 			vertical-align middle
@@ -126,11 +125,14 @@
 		display table
 		&:last-child
 			margin-bottom 0
+		.nav_title
+			display none
 		.nav_head
 		.nav_items
 			display table-cell
 		.nav_all
 		.nav_item
+		.nav_title
 			cursor pointer
 			margin 10px
 			font-size 14pt
@@ -141,6 +143,14 @@
 				color #00c641
 		.nav_item
 			display inline-block
+		.nav_title
+			margin 0
+			padding 10px
+			background-color #c8c8c8
+			color black
+			&:hover
+				color black
+				background-color #00c641
 		.nav_all
 			margin 0
 			padding 10px
@@ -335,7 +345,6 @@
 				height 240px
 				border-radius 100%
 				background-color black
-				font-size 30px
 				text-align center
 				display table-cell
 				vertical-align middle

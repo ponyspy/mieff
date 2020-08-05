@@ -30,6 +30,7 @@ block content
 
 			.nav_column.date
 				.nav_head
+					.nav_title= __('Дата')
 					.nav_all= __('Все')
 				.nav_items
 					each date in dates
@@ -38,6 +39,7 @@ block content
 
 			.nav_column.place
 				.nav_head
+					.nav_title= __('Площадка')
 					.nav_all= __('Все')
 				.nav_items
 					each place in places
@@ -45,6 +47,7 @@ block content
 
 			.nav_column.type
 				.nav_head
+					.nav_title= __('Тип')
 					.nav_all= __('Все')
 				.nav_items
 					each type_item in static_types.events_types
