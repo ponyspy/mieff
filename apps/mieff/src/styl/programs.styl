@@ -1,3 +1,6 @@
+@media screen and (max-width: 840px)
+	@import 'mobile/_programs.styl'
+
 .content_block
 	background-color #ff3333
 
@@ -55,7 +58,6 @@
 					text-align center
 					span
 						padding 10px
-						font-size 30px
 						text-align center
 						position relative
 						top 40%
@@ -89,11 +91,14 @@
 		display table
 		&:last-child
 			margin-bottom 0
+		.nav_title
+			display none
 		.nav_head
 		.nav_items
 			display table-cell
 		.nav_all
 		.nav_item
+		.nav_title
 			cursor pointer
 			margin 10px
 			font-size 14pt
@@ -104,6 +109,14 @@
 				color #00c641
 		.nav_item
 			display inline-block
+		.nav_title
+			margin 0
+			padding 10px
+			background-color #c8c8c8
+			color black
+			&:hover
+				color black
+				background-color #00c641
 		.nav_all
 			margin 0
 			padding 10px
