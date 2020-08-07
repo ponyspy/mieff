@@ -7,6 +7,7 @@ var main = {
 	events: require('./events.js')(Model),
 	posts: require('./posts.js')(Model),
 	programs: require('./programs.js')(Model),
+	jury: require('./jury.js')(Model),
 	members: require('./members.js')(Model),
 	partners: require('./partners.js')(Model),
 	options: require('./options.js')(Model),
@@ -30,6 +31,9 @@ module.exports = (function() {
 
 	router.route('/partners')
 		.get(main.partners.index);
+
+	router.route('/jury')
+		.get(main.jury.index);
 
 	router.route('/members/:short_id')
 		.get(main.members.member);
