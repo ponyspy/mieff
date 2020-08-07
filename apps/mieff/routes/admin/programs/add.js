@@ -7,6 +7,7 @@ module.exports = function(Model, Params) {
 
 	var Program = Model.Program;
 	var Partner = Model.Partner;
+	var Member = Model.Member;
 
 	var uploadImage = Params.upload.image;
 	var checkNested = Params.locale.checkNested;
@@ -15,8 +16,11 @@ module.exports = function(Model, Params) {
 	module.index = function(req, res, next) {
 		Partner.find().sort('title.value').exec(function(err, partners) {
 			if (err) return next(err);
+			Member.find().sort('name.value').exec(function(err, members) {
+				if (err) return next(err);
 
-			res.render('admin/programs/add.pug', {partners: partners});
+				res.render('admin/programs/add.pug', {partners: partners, members: members});
+			});
 		});
 	};
 
@@ -32,7 +36,8 @@ module.exports = function(Model, Params) {
 		program.date = moment(post.date.date + 'T' + post.date.time.hours + ':' + post.date.time.minutes);
 		program.sym = post.sym ? post.sym : undefined;
 
-		program.partners = post.partners;
+		program.partners = post.partners.filter(function(partner) { return partner != 'none'; });
+		program.members = post.members.filter(function(member) { return member != 'none'; });
 
 		var locales = post.en ? ['ru', 'en'] : ['ru'];
 

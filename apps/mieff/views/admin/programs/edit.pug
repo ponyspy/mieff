@@ -1,6 +1,5 @@
 extends ../layout
 include ../_forms.pug
-include ../events/_forms.pug
 
 block header_meta
 	- var content_title= 'РЕДАКТИРОВАТЬ ПРОГРАММУ'
@@ -33,8 +32,10 @@ block content
 			+form_single_file('cover', program)(accept='image/jpeg,image/png,image/gif')
 			.form_title Описание:
 			+form_text_multi('description', program)
+			.form_title Жюри:
+			+form_multiple_select('members', members, program.members)(field='name')
 			.form_title Партнеры:
-			+form_partners(program.partners)
+			+form_multiple_select('partners', partners, program.partners)
 			.form_title Статус:
 			select(name='status')
 				option(value='base') Обычный

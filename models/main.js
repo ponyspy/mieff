@@ -73,6 +73,7 @@ programSchema = new Schema({
 	poster: String,
 	cover: String,
 	partners: [{ type: ObjectId, ref: 'Partner' }],
+	members: [{ type: ObjectId, ref: 'Member' }],
 	sym: { type: String, trim: true, index: true, unique: true, sparse: true },
 	status: String,
 	_short_id: { type: String, unique: true, index: true, sparse: true },
