@@ -11,13 +11,15 @@ block header_include
 
 
 block content
+	.jury_main_title= __('Жюри')
+
 	.programs_block
 		each program in programs
 			.program_item
 				.program_title= program.i18n.title.get(locale)
-				.program_members
+				.program_members: .members_inner
 					each member in program.members
-						.member_item
+						a.member_item(href='/members/' + member._short_id)
 							.member_photo(style='background-image: url(' + member.photo + ')')
 							.member_title= member.i18n.name.get(locale)
 
