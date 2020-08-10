@@ -7,7 +7,9 @@ module.exports = function(Model) {
 	var Post = Model.Post;
 
 	module.index = function(req, res) {
-		res.redirect('/');
+		Post.find().sort('-date').where('status').ne('hidden').exec(function(err, posts) {
+			res.render('main/news.pug', { moment: moment, posts: posts });
+		});
 	};
 
 	module.post = function(req, res) {

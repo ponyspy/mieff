@@ -23,6 +23,8 @@ block content
 		form(action="", method="post", enctype="multipart/form-data")
 			.form_title Название:
 			+form_text_single('title', post_item)
+			.form_title Подзаголовок:
+			+form_text_single('s_title', post_item)
 			.form_title Синоним:
 			span= 'https://' + host + '/posts/'
 			input(type='text', name='sym', value=post_item.sym, placeholder=post_item._short_id)

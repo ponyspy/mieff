@@ -1,0 +1,19 @@
+extends layout
+
+block header_meta
+	- var content_title= 'MIEFF | ' + __('Новости')
+	- var content_description= ''
+
+block header_include
+	//- - var include_libs_css = []
+	- var include_css = ['news.css']
+	//- - var include_libs_js = []
+	- var include_js = ['mews.js']
+
+
+block content
+	.news_main_title= __('Новости')
+
+	.date_title
+
+	include _posts.pug

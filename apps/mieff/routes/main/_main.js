@@ -23,6 +23,13 @@ module.exports = (function() {
 		.get(main.index.index)
 		.post(main.index.get_events);
 
+	router.route('/news')
+		.get(main.posts.index)
+		.post(main.posts.get_posts);
+
+	router.route('/news/:short_id')
+		.get(main.posts.post);
+
 	router.route('/events')
 		.get(main.events.index);
 

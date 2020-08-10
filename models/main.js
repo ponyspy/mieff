@@ -113,11 +113,7 @@ partnerSchema = new Schema({
 postSchema = new Schema({
 	title: { type: String, trim: true, locale: true },
 	s_title: { type: String, trim: true, locale: true },
-	intro: { type: String, trim: true, locale: true },
 	description: { type: String, trim: true, locale: true },
-	holder: Boolean,
-	view: String,
-	style: String, // black / white
 	poster: String,
 	cover: String,
 	sym: { type: String, trim: true, index: true, unique: true, sparse: true },

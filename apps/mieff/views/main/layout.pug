@@ -12,6 +12,7 @@ html(lang=locale)
 				.menu_block
 					if (session && session.user_id)
 						a(href='/admin') Stargazer
+					a(href='/news')= __('Новости')
 					a(href='/program')= __('Программа')
 					a(href='/about')= __('О Фестивале')
 					a(href='/jury')= __('Жюри')
