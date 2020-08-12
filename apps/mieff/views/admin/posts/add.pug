@@ -33,7 +33,7 @@ block content
 			.form_title Обложка:
 			+form_single_file('cover')(accept='image/jpeg,image/png,image/gif')
 			.form_title Описание:
-			+form_text_multi('description')(classes=['image', 'image_position', 'video', 'header', 'order', 'unorder'])
+			+form_text_multi('description')(classes=['image', 'video', 'header', 'order', 'unorder'])
 			.form_title Статус:
 			select(name='status')
 				option(value='base') Обычный
