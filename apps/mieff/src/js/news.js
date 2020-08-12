@@ -3,12 +3,11 @@ var $document = $(document);
 var context = { skip: 0, limit: 30 };
 
 $(function() {
-	var scrollLoader = function(e) {
-		if ($window.scrollTop() + $window.height() + 240 >= $document.height()) {
+	var scrollLoader = function(e, fire) {
+		if (fire || $window.scrollTop() + $window.height() + 240 >= $document.height()) {
 			$window.off('scroll');
 
 			$.ajax({url: '', method: 'POST', data: { context: context }, async: false }).done(function(data) {
-				console.log(data)
 
 				if (data !== 'end') {
 					var $posts = $(data);
@@ -38,6 +37,6 @@ $(function() {
 	};
 
 	$('.news_more').children('span').on('click', function(e) {
-		$window.on('scroll', scrollLoader).trigger('scroll');
+		$window.on('scroll', scrollLoader).trigger('scroll', true);
 	}).trigger('click');
 });
