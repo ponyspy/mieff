@@ -6,6 +6,12 @@ module.exports = function(Model) {
 
 	var Post = Model.Post;
 
+	var get_locale = function(option, lg) {
+		return ((option.filter(function(locale) {
+			return locale.lg == lg;
+		})[0] || {}).value || '');
+	};
+
 	module.index = function(req, res) {
 		res.render('main/news.pug');
 	};
@@ -21,7 +27,15 @@ module.exports = function(Model) {
 		Query.exec(function(err, post_item) {
 			if (err) return next(err);
 
-			res.render('main/post.pug', { moment: moment, post_item: post_item });
+			Post.aggregate([
+				{ $match: { status: { $ne: 'hidden' } }	},
+				{ $match: { _id : { $ne: post_item._id } } },
+				{ $sample: { size: 4 } }]).exec(function(err, summary) {
+
+				if (err) return next(err);
+
+				res.render('main/post.pug', { moment: moment, get_locale: get_locale, post_item: post_item, summary: summary });
+			});
 		});
 	};
 

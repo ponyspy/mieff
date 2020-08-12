@@ -12,11 +12,9 @@ block header_include
 
 block content
 	.post_main_title= post_item.i18n.title.get(locale)
-
-	.post_date= moment(post_item.date).locale(locale).format('DD.MM.YYYY')
+	.post_main_date= moment(post_item.date).locale(locale).format('DD.MM.YYYY')
 	if post_item.cover
 		.post_cover(style='background-image: url(' + post_item.cover + ')')
-	//- .post_title= post_item.i18n.title.get(locale)
 	.post_body
 		.post_description!= post_item.i18n.description.get(locale)
 		.post_share
@@ -25,3 +23,15 @@ block content
 				img.s_button(social='fb', src='/stuff/mieff/social/facebook.svg')
 				img.s_button(social='twitter', src='/stuff/mieff/social/twitter.svg')
 				img.s_button(social='vk', src='/stuff/mieff/social/vk.svg')
+	.post_summary
+		.summary_title= __('Еще') + ' ' + __('Новости')
+		.summary_posts
+			each post, i in summary
+				a.post_item(href='/news/' + (post.sym ? post.sym : post._short_id)): .post_inner
+					if post.poster
+						.post_poster(style='background-image: url(' + post.poster + ')')
+					else
+						.post_title= get_locale(post.title, locale)
+					.post_desc
+						.post_date= moment(post.date).locale(locale).format('DD.MM.YYYY')
+						.post_s_title= get_locale(post.s_title, locale)
