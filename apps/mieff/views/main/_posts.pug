@@ -1,5 +1,5 @@
 each post, i in posts
-	a.post_item(class='year_' + moment(post.date).format('YYYY'), href='/news/' + (post.sym ? post.sym : post._short_id)): .post_inner
+	a.post_item(data-year = moment(post.date).format('YYYY'), href='/news/' + (post.sym ? post.sym : post._short_id)): .post_inner
 		if post.poster
 			.post_poster(style='background-image: url(' + post.poster + ')')
 		else
