@@ -8,8 +8,9 @@ $(function() {
 			$window.off('scroll');
 
 			$.ajax({url: '', method: 'POST', data: { context: context }, async: false }).done(function(data) {
-				if (data !== 'end') {
+				console.log(data)
 
+				if (data !== 'end') {
 					var $posts = $(data);
 					var years = [];
 
@@ -29,10 +30,14 @@ $(function() {
 
 					context.skip += 30;
 					$window.on('scroll', scrollLoader);
+				} else {
+					$('.news_more').addClass('hide');
 				}
 			});
 		}
 	};
 
-	$window.on('scroll', scrollLoader).trigger('scroll');
+	$('.news_more').children('span').on('click', function(e) {
+		$window.on('scroll', scrollLoader).trigger('scroll');
+	}).trigger('click');
 });
