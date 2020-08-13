@@ -23,6 +23,8 @@ block content
 			.news_title= __('Новости')
 			.news_posts
 				include _posts.pug
+			if posts.length >= 4
+				.news_more: a(href='/news')= __('Еще') + ' ' + __('Новости').toLowerCase() + '...'
 
 	.program_block
 		.program_title= __('Программа')
