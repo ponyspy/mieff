@@ -18,7 +18,11 @@ block content
 	.video_block
 		video(autoplay=true, loop=true, muted=true, playsinline=true, controls=false, poster='', src='/stuff/mieff/video/main.mp4')
 
-	.news_block
+	if posts && posts.length > 0
+		.news_block
+			.news_title= __('Новости')
+			.news_posts
+				include _posts.pug
 
 	.program_block
 		.program_title= __('Программа')

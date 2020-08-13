@@ -9,6 +9,7 @@ module.exports = function(Model) {
 	var Event = Model.Event;
 	var Program = Model.Program;
 	var Place = Model.Place;
+	var Post = Model.Post;
 
 	var to_Objectid = function(ids) {
 		return ids.map(function(id) {
@@ -24,6 +25,9 @@ module.exports = function(Model) {
 
 	module.index = function(req, res) {
 		async.parallel({
+			posts: function(callback) {
+				Post.find().where('status').ne('hidden').sort('-date').limit(4).exec(callback);
+			},
 			programs: function(callback) {
 				Program.find().where('status').ne('hidden').exec(callback);
 			},
