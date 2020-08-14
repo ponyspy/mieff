@@ -4,8 +4,13 @@ var async = require('async');
 module.exports = function(Model) {
 	var module = {};
 
+	var Member = Model.Member;
+
 	module.about = function(req, res, next) {
 		async.parallel({
+			members: function(callback) {
+				Member.find().sort('-date').exec(callback)
+			},
 			about: function(callback) {
 				fs.readFile(__app_root + '/static/about_' + req.locale + '.html', 'utf8', function(err, content) {
 					callback(null, content || '');

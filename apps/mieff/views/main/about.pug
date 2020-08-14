@@ -15,7 +15,14 @@ block content
 	.about_main_title= __('О Фестивале')
 
 	.about_body
-
 		img.about_logo(src='/stuff/mieff/logo/main.svg')
-
 		.about_description!= about
+
+	if members && members.length > 0
+		.about_team
+			.team_title= __('Команда')
+			.team_members: .members_inner
+				each member in members
+					a.member_item(href='/members/' + member._short_id)
+						.member_photo(style='background-image: url(' + member.photo + ')')
+						.member_title= member.i18n.name.get(locale)
