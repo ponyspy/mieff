@@ -28,6 +28,7 @@ module.exports = function(Model, Params) {
 		member.sym = post.sym ? post.sym : undefined;
 		member.date = moment(post.date.date + 'T' + post.date.time.hours + ':' + post.date.time.minutes);
 		member.sex = post.sex;
+		member.team = post.team;
 
 		var locales = post.en ? ['ru', 'en'] : ['ru'];
 

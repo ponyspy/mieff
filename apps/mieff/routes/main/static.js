@@ -9,7 +9,7 @@ module.exports = function(Model) {
 	module.about = function(req, res, next) {
 		async.parallel({
 			members: function(callback) {
-				Member.find().sort('-date').exec(callback)
+				Member.find({'team': true}).sort('-date').exec(callback)
 			},
 			about: function(callback) {
 				fs.readFile(__app_root + '/static/about_' + req.locale + '.html', 'utf8', function(err, content) {
