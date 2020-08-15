@@ -151,5 +151,69 @@
 	"Новости": "News",
 	"Поделиться": "Share",
 	"Еще": "More",
-	"Команда": "Team"
+	"Команда": "Team",
+	"fest_director": {
+		"one": "Festival director",
+		"other": "Festival directors"
+	},
+	"manage_director": {
+		"one": "Managing director",
+		"other": "Managing directors"
+	},
+	"pr_director": {
+		"one": "PR director",
+		"other": "PR directors"
+	},
+	"tech_director": {
+		"one": "Technical director",
+		"other": "Technical directors"
+	},
+	"translator": {
+		"one": "Translator",
+		"other": "Translators"
+	},
+	"smm": {
+		"one": "Social media manager",
+		"other": "Social media managers"
+	},
+	"technician": {
+		"one": "Technician",
+		"other": "Technicians"
+	},
+	"graph_designer": {
+		"one": "Graphic designer",
+		"other": "Graphic designers"
+	},
+	"fest_f_director": {
+		"one": "Festival director",
+		"other": "Festival directors"
+	},
+	"manage_f_director": {
+		"one": "Managing director",
+		"other": "Managing directors"
+	},
+	"pr_f_director": {
+		"one": "PR director",
+		"other": "PR directors"
+	},
+	"tech_f_director": {
+		"one": "Technical director",
+		"other": "Technical directors"
+	},
+	"f_translator": {
+		"one": "Translator",
+		"other": "Translators"
+	},
+	"f_smm": {
+		"one": "Social media manager",
+		"other": "Social media managers"
+	},
+	"f_technician": {
+		"one": "Technician",
+		"other": "Technicians"
+	},
+	"f_graph_designer": {
+		"one": "Graphic designer",
+		"other": "Graphic designers"
+	}
 }

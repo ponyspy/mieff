@@ -19,6 +19,14 @@
 	],
 
 	"members_roles": {
+		"fest_director": { "male": "fest_director", "female": "fest_f_director" },
+		"manage_director": { "male": "manage_director", "female": "manage_f_director" },
+		"pr_director": { "male": "pr_director", "female": "pr_f_director" },
+		"tech_director": { "male": "tech_director", "female": "tech_f_director" },
+		"translator": { "male": "translator", "female": "f_translator" },
+		"smm": { "male": "smm", "female": "f_smm" },
+		"technician": { "male": "technician", "female": "f_technician" },
+		"graph_designer": { "male": "graph_designer", "female": "f_graph_designer" },
 		"actor": { "male": "actor", "female": "f_actor" },
 		"director": { "male": "director", "female": "f_director" },
 		"artist": { "male": "artist", "female": "f_artist" },
