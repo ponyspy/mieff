@@ -12,6 +12,7 @@ each event in events
 		.event_schedule
 			.schedule_date=moment(event.schedule.date).format('DD.MM (HH:mm)')
 			.schedule_place= event.schedule.place.i18n.title.get(locale)
-		.event_program=event.program.i18n.title.get(locale)
+		if event.program
+			.event_program=event.program.i18n.title.get(locale)
 		.event_title= get_locale(event.title, locale)
 

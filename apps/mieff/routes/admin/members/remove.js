@@ -6,12 +6,17 @@ module.exports = function(Model) {
 
 	var Member = Model.Member;
 	var Event = Model.Event;
+	var Program = Model.Program;
 
 
 	module.index = function(req, res) {
 		var id = req.body.id;
 
+
 		async.series([
+			function(callback) {
+				Program.update({'members': id}, { $pull: { 'members': id } }, { 'multi': true }).exec(callback);
+			},
 			function(callback) {
 				Event.update({'members.list': id}, { $pull: { 'members.$.list': id } }, { 'multi': true }).exec(callback);
 			},

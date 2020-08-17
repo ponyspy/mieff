@@ -207,11 +207,11 @@ $(function() {
 
 	$(document)
 		.on('click', '.item_rm.user', {path:'/admin/users/remove', description: 'Удалить пользователя?'}, remove)
-		// .on('click', '.item_rm.place', {path:'/admin/place/remove', description: 'Удалить площадку?'}, remove)
-		// .on('click', '.item_rm.program', {path:'/admin/program/remove', description: 'Удалить программу?'}, remove)
-		// .on('click', '.item_rm.member', {path:'/admin/members/remove', description: 'Удалить участника?'}, remove)
-		// .on('click', '.item_rm.event', {path:'/admin/events/remove', description: 'Удалить событие?'}, remove)
-		// .on('click', '.item_rm.partner', {path:'/admin/partners/remove', description: 'Удалить партнера?'}, remove)
-		// .on('click', '.item_rm.post', {path:'/admin/posts/remove', description: 'Удалить запись?'}, remove);
+		.on('click', '.item_rm.place', {path:'/admin/places/remove', description: 'Удалить площадку?'}, remove)
+		.on('click', '.item_rm.program', {path:'/admin/programs/remove', description: 'Удалить программу?'}, remove)
+		.on('click', '.item_rm.member', {path:'/admin/members/remove', description: 'Удалить участника?'}, remove)
+		.on('click', '.item_rm.event', {path:'/admin/events/remove', description: 'Удалить событие?'}, remove)
+		.on('click', '.item_rm.partner', {path:'/admin/partners/remove', description: 'Удалить партнера?'}, remove)
+		.on('click', '.item_rm.post', {path:'/admin/posts/remove', description: 'Удалить запись?'}, remove);
 
 });

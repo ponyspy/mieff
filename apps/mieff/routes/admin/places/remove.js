@@ -1,4 +1,4 @@
-
+var async = require('async');
 
 module.exports = function(Model) {
 	var module = {};
@@ -10,15 +10,19 @@ module.exports = function(Model) {
 	module.index = function(req, res, next) {
 		var id = req.body.id;
 
-		Place.findByIdAndRemove(id).exec(function(err) {
+
+		async.series([
+			function(callback) {
+				Event.update({}, { $pull: { 'schedule': {'place': id} }}, { 'multi': true }).exec(callback);
+			},
+			function(callback) {
+				Place.findByIdAndRemove(id).exec(callback);
+			}
+		], function(err) {
 			if (err) return next(err);
 
-			Event.update({}, { $pull: { 'schedule': {'place': id} }}, { 'multi': true }).exec(function() {
-
-				res.send('ok');
-			});
+			res.send('ok');
 		});
-
 	};
 
 

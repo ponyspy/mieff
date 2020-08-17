@@ -36,14 +36,20 @@ module.exports = function(Model) {
 
 			async.parallel({
 				e_blocks: function(callback) {
+					if (!event.program) return callback(null, []);
+
 					Event.find({'status': {'$ne': 'hidden'}, 'type': 'block', 'program': event.program._id, '_id': {'$ne': event._id}, 'events': {'$eq': event._id}})
 							 .populate({'path': 'events', match: {'_id':{'$ne': event._id}}})
 							 .exec(callback);
 				},
 				blocks: function(callback) {
+					if (!event.program) return callback(null, []);
+
 					Event.find({'status': {'$ne': 'hidden'}, 'type': 'block', 'program': event.program._id, '_id': {'$ne': event._id}, 'events': {'$ne': event._id}}).exec(callback);
 				},
 				programs: function(callback) {
+					if (!event.program) return callback(null, []);
+
 					Program.find({'_id': {'$ne': event.program._id}}).exec(callback);
 				}
 			}, function(err, results) {
