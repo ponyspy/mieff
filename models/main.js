@@ -123,6 +123,20 @@ postSchema = new Schema({
 	date: { type: Date, default: Date.now },
 });
 
+applicationSchema = new Schema({
+	type: String,
+	files: [{
+		'name': String,
+		'path': String
+	}],
+	text: [{
+		'name': String,
+		'value': String
+	}],
+	_short_id: { type: String, unique: true, index: true, sparse: true },
+	date: { type: Date, default: Date.now },
+});
+
 
 // ------------------------
 // *** Index Block ***
@@ -185,4 +199,5 @@ module.exports.Program = mongoose.model('Program', programSchema);
 module.exports.Member = mongoose.model('Member', memberSchema);
 module.exports.Partner = mongoose.model('Partner', partnerSchema);
 module.exports.Post = mongoose.model('Post', postSchema);
+module.exports.Application = mongoose.model('Application', applicationSchema);
 

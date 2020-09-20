@@ -11,6 +11,7 @@ var admin = {
 	members: require('./members/_members.js'),
 	partners: require('./partners/_partners.js'),
 	posts: require('./posts/_posts.js'),
+	applications: require('./applications/_applications.js'),
 	users: require('./users/_users.js'),
 	cv: require('./cv.js'),
 	options: require('./options.js')
@@ -37,6 +38,7 @@ module.exports = (function() {
 	router.use('/members', checkAuth, upload.fields([ { name: 'photo' } ]), admin.members);
 	router.use('/partners', checkAuth, upload.fields([ { name: 'logo' } ]), admin.partners);
 	router.use('/posts', checkAuth, upload.fields([ { name: 'poster' }, { name: 'cover' } ]), admin.posts);
+	router.use('/applications', checkAuth, admin.applications);
 	router.use('/users', checkAuth, admin.users);
 
 	router.post('/preview', checkAuth, upload.single('image'), admin.options.preview);

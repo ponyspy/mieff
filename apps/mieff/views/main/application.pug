@@ -1,0 +1,131 @@
+extends layout
+
+block header_meta
+	- var content_title= 'MIEFF | OPEN CALL'
+	- var content_description= ''
+
+block header_include
+	- var include_css = ['application.css']
+	//- - var include_libs_js = []
+	- var include_js = ['application.js']
+
+block content
+	.application_main_title= 'OPEN CALL'
+
+	.application_intro: .intro_inner
+		div Участник должен являться студентом или недавним выпускником кино/артшколы и/или иметь опыт работы с движущимся изображением.
+		div Участникам программы должно быть не больше 35 лет.
+		div Возможность присутствовать на занятиях в будние дни по вечерам и полный день в выходные (с 3 ноября до 6 декабря).
+		div Устойчивый интерес к движущемуся изображению и наличие работ является ключевым критерием финального отбора.
+		br
+		div Программа проходит офлайн в Музее Москвы, онлайн обучение на программе невозможно. Обучение бесплатное, но организаторы не покрывают расходы на проезд и проживание участников.
+		br
+		div Чтобы принять участие в программе, заполните и отправьте заявку не позднее 21 октября 2020 г.. Отобранные участники будут приглашены на собеседование.
+		div Финальное количество участников — 12 человек.
+		div Результаты отбора и имена участников будут объявлены 28 октября 2020 г.
+
+	.application_forms
+		form.main(action="", method="post", enctype="multipart/form-data")
+
+			input(type='hidden', name='type', value='opencall')
+
+
+			//- Section 1
+
+
+			.form_title ИМЯ ФАМИЛИЯ
+			input.form_name(type='hidden', name='text[0][name]', value='ИМЯ ФАМИЛИЯ')
+			input.form_value(type='text', name='text[0][value]')
+
+			.form_title ДАТА РОЖДЕНИЯ
+			input.form_name(type='hidden', name='text[1][name]', value='ДАТА РОЖДЕНИЯ')
+			input.form_value(type='text', name='text[1][value]')
+
+			.form_title EMAIL
+			input.form_name(type='hidden', name='text[2][name]', value='EMAIL')
+			input.form_value(type='text', name='text[2][value]')
+
+			.form_title ТЕЛЕФОН
+			input.form_name(type='hidden', name='text[3][name]', value='ТЕЛЕФОН')
+			input.form_value(type='text', name='text[3][value]')
+
+			.form_title ТЕЛЕГРАМ (если есть)
+			input.form_name(type='hidden', name='text[4][name]', value='ТЕЛЕГРАМ')
+			input.form_value(type='text', name='text[4][value]')
+
+			.form_title ГОРОД ПРОЖИВАНИЯ
+			input.form_name(type='hidden', name='text[5][name]', value='ГОРОД ПРОЖИВАНИЯ')
+			input.form_value(type='text', name='text[5][value]')
+
+			.form_title ОБРАЗОВАНИЕ (указать год выпуска)
+			input.form_name(type='hidden', name='text[6][name]', value='ОБРАЗОВАНИЕ')
+			input.form_value(type='text', name='text[6][value]')
+
+			.form_title ОПЫТ РАБОТЫ
+			input.form_name(type='hidden', name='text[7][name]', value='ОПЫТ РАБОТЫ')
+			input.form_value(type='text', name='text[7][value]')
+
+			.form_title ВЛАДЕНИЕ ИНОСТРАННЫМИ ЯЗЫКАМИ (с указанием уровня)
+			input.form_name(type='hidden', name='text[8][name]', value='ВЛАДЕНИЕ ИНОСТРАННЫМИ ЯЗЫКАМИ')
+			input.form_value(type='text', name='text[8][value]')
+
+			.form_title ДОСТУП К КОМПЬЮТЕРУ (да/нет)
+			input.form_name(type='hidden', name='text[9][name]', value='ДОСТУП К КОМПЬЮТЕРУ')
+			input.form_value(type='text', name='text[9][value]')
+
+			.form_title ДОСТУП К ПО ДЛЯ МОНТАЖА (да/нет)
+			input.form_name(type='hidden', name='text[10][name]', value='ДОСТУП К ПО ДЛЯ МОНТАЖА')
+			input.form_value(type='text', name='text[10][value]')
+
+
+			//- Section 2
+
+
+			.form_title ПОЧЕМУ ВАМ ИНТЕРЕСНО ПРИНЯТЬ УЧАСТИЕ В ПРОГРАММЕ?
+			input.form_name(type='hidden', name='text[11][name]', value='ПОЧЕМУ ВАМ ИНТЕРЕСНО ПРИНЯТЬ УЧАСТИЕ В ПРОГРАММЕ?')
+			textarea.form_value(name='text[11][value]')
+
+			.form_title КАКИЕ У ВАС ОЖИДАНИЯ ОТ ПРОГРАММЫ?
+			input.form_name(type='hidden', name='text[12][name]', value='КАКИЕ У ВАС ОЖИДАНИЯ ОТ ПРОГРАММЫ?')
+			textarea.form_value(name='text[12][value]')
+
+
+			.form_title РАССКАЖИТЕ О ПОСЛЕДНЕМ ПОНРАВИВШЕМСЯ ВАМ ФИЛЬМЕ/ВИДЕО. ПОЧЕМУ ЭТА РАБОТА ПОКАЗАЛАСЬ ВАМ ИНТЕРЕСНОЙ?
+			input.form_name(type='hidden', name='text[13][name]', value='РАССКАЖИТЕ О ПОСЛЕДНЕМ ПОНРАВИВШЕМСЯ ВАМ ФИЛЬМЕ/ВИДЕО. ПОЧЕМУ ЭТА РАБОТА ПОКАЗАЛАСЬ ВАМ ИНТЕРЕСНОЙ?')
+			textarea.form_value(name='text[13][value]')
+
+
+			.form_title ХУДОЖНИКИ/РЕЖИССЕРЫ, ТВОРЧЕСТВО КОТОРЫХ ВАМ ИНТЕРЕСНО И ПОЧЕМУ?
+			input.form_name(type='hidden', name='text[14][name]', value='ХУДОЖНИКИ/РЕЖИССЕРЫ, ТВОРЧЕСТВО КОТОРЫХ ВАМ ИНТЕРЕСНО И ПОЧЕМУ?')
+			textarea.form_value(name='text[14][value]')
+
+			.form_title С КАКИМИ ТЕМАМИ ВАМ ИНТЕРЕСНО РАБОТАТЬ КАК АВТОРУ? УКАЖИТЕ ДВЕ-ТРИ ТЕМЫ, СНАБДИТЕ КАЖДУЮ КОММЕНТАРИЕМ, ПОЧЕМУ ВЫ СЧИТАЕТЕ ИХ ВАЖНЫМИ.
+			input.form_name(type='hidden', name='text[15][name]', value='С КАКИМИ ТЕМАМИ ВАМ ИНТЕРЕСНО РАБОТАТЬ КАК АВТОРУ? УКАЖИТЕ ДВЕ-ТРИ ТЕМЫ, СНАБДИТЕ КАЖДУЮ КОММЕНТАРИЕМ, ПОЧЕМУ ВЫ СЧИТАЕТЕ ИХ ВАЖНЫМИ.')
+			textarea.form_value(name='text[15][value]')
+
+
+			//- Section 3
+
+
+			.form_title КОРОТКИЙ РАССКАЗ О СЕБЕ (не более 1 страницы)
+			input.form_name(type='hidden', name='text[16][name]', value='КОРОТКИЙ РАССКАЗ О СЕБЕ')
+			textarea.form_value(name='text[16][value]')
+
+			.form_title ПОРТФОЛИО (PDF не более 5 работ, шоурилы не принимаются)
+			input(type='file', name='portfolio', accept='application/pdf')
+
+			.form_title CV (в формате PDF не больше двух страниц)
+			input(type='file', name='cv', accept='application/pdf')
+
+
+			//- Submit
+
+			.form_submit
+				.submit_button Отправить
+				.submit_confirm
+					label
+						input.confirm_check(type='checkbox')
+						| &nbsp;Я даю согласие на хранение и обработку персональных данных
+
+
+
