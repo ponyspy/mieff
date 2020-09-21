@@ -17,7 +17,9 @@ block content
 	if complete
 		.opencall_complete
 			.complete_title= __('Ваша заявка принята!')
-			.complete_text: .text_inner= __('Результаты отбора и имена участников будут объявлены 28 октября 2020 г.')
+			.complete_text
+				img.text_logo(src='/stuff/mieff/logo/main_black.svg')
+				.text_inner= __('Результаты отбора и имена участников будут объявлены 28 октября 2020 г.')
 	else
 		.opencall_description: .description_inner!= desc
 
