@@ -1,7 +1,7 @@
 extends layout
 
 block header_meta
-	- var content_title= 'MIEFF | OPEN CALL'
+	- var content_title= 'MIEFF | Open call'
 	- var content_description= ''
 
 block header_include
@@ -10,7 +10,9 @@ block header_include
 	- var include_js = ['application.js']
 
 block content
-	.application_main_title= 'OPEN CALL'
+	.application_main_title= 'Open call'
+
+	.application_intro_title= __('Требования к участникам')
 
 	.application_intro: .intro_inner
 		div Участник должен являться студентом или недавним выпускником кино/артшколы и/или иметь опыт работы с движущимся изображением.
@@ -30,92 +32,92 @@ block content
 			input(type='hidden', name='type', value='opencall')
 
 
-			.form_section Раздел 1
+			.form_section= __('Раздел') + ' I'
 
 
-			.form_title ИМЯ ФАМИЛИЯ
-			input.form_name(type='hidden', name='text[0][name]', value='ИМЯ ФАМИЛИЯ')
+			.form_title!= __('Имя фамилия')
+			input.form_name(type='hidden', name='text[0][name]', value='Имя фамилия')
 			input.form_value(type='text', name='text[0][value]')
 
-			.form_title ДАТА РОЖДЕНИЯ
-			input.form_name(type='hidden', name='text[1][name]', value='ДАТА РОЖДЕНИЯ')
+			.form_title!= __('Дата рождения')
+			input.form_name(type='hidden', name='text[1][name]', value='Дата рождения')
 			input.form_value(type='text', name='text[1][value]')
 
-			.form_title EMAIL
-			input.form_name(type='hidden', name='text[2][name]', value='EMAIL')
+			.form_title!= __('Email')
+			input.form_name(type='hidden', name='text[2][name]', value='Email')
 			input.form_value(type='text', name='text[2][value]')
 
-			.form_title ТЕЛЕФОН
-			input.form_name(type='hidden', name='text[3][name]', value='ТЕЛЕФОН')
+			.form_title!= __('Телефон')
+			input.form_name(type='hidden', name='text[3][name]', value='Телефон')
 			input.form_value(type='text', name='text[3][value]')
 
-			.form_title ТЕЛЕГРАМ (если есть)
-			input.form_name(type='hidden', name='text[4][name]', value='ТЕЛЕГРАМ')
+			.form_title!= __('Телеграм <div>(если есть)</div>')
+			input.form_name(type='hidden', name='text[4][name]', value='Телеграм')
 			input.form_value(type='text', name='text[4][value]')
 
-			.form_title ГОРОД ПРОЖИВАНИЯ
-			input.form_name(type='hidden', name='text[5][name]', value='ГОРОД ПРОЖИВАНИЯ')
+			.form_title!= __('Город проживания')
+			input.form_name(type='hidden', name='text[5][name]', value='Город проживания')
 			input.form_value(type='text', name='text[5][value]')
 
-			.form_title ОБРАЗОВАНИЕ (указать год выпуска)
-			input.form_name(type='hidden', name='text[6][name]', value='ОБРАЗОВАНИЕ')
+			.form_title!= __('Образование <div>(указать год выпуска)</div>')
+			input.form_name(type='hidden', name='text[6][name]', value='Образование')
 			input.form_value(type='text', name='text[6][value]')
 
-			.form_title ОПЫТ РАБОТЫ
-			input.form_name(type='hidden', name='text[7][name]', value='ОПЫТ РАБОТЫ')
+			.form_title!= __('Опыт работы')
+			input.form_name(type='hidden', name='text[7][name]', value='Опыт работы')
 			input.form_value(type='text', name='text[7][value]')
 
-			.form_title ВЛАДЕНИЕ ИНОСТРАННЫМИ ЯЗЫКАМИ (с указанием уровня)
-			input.form_name(type='hidden', name='text[8][name]', value='ВЛАДЕНИЕ ИНОСТРАННЫМИ ЯЗЫКАМИ')
+			.form_title!= __('Владение иностранными языками <div>(с указанием уровня)</div>')
+			input.form_name(type='hidden', name='text[8][name]', value='Владение иностранными языками')
 			input.form_value(type='text', name='text[8][value]')
 
-			.form_title ДОСТУП К КОМПЬЮТЕРУ (да/нет)
-			input.form_name(type='hidden', name='text[9][name]', value='ДОСТУП К КОМПЬЮТЕРУ')
+			.form_title!= __('Доступ к компьютеру <div>(да/нет)</div>')
+			input.form_name(type='hidden', name='text[9][name]', value='Доступ к компьютеру')
 			input.form_value(type='text', name='text[9][value]')
 
-			.form_title ДОСТУП К ПО ДЛЯ МОНТАЖА (да/нет)
-			input.form_name(type='hidden', name='text[10][name]', value='ДОСТУП К ПО ДЛЯ МОНТАЖА')
+			.form_title!= __('Доступ к по для монтажа <div>(да/нет)</div>')
+			input.form_name(type='hidden', name='text[10][name]', value='Доступ к по для монтажа')
 			input.form_value(type='text', name='text[10][value]')
 
 
-			.form_section Раздел 2
+			.form_section= __('Раздел') + ' II'
 
 
-			.form_title ПОЧЕМУ ВАМ ИНТЕРЕСНО ПРИНЯТЬ УЧАСТИЕ В ПРОГРАММЕ?
-			input.form_name(type='hidden', name='text[11][name]', value='ПОЧЕМУ ВАМ ИНТЕРЕСНО ПРИНЯТЬ УЧАСТИЕ В ПРОГРАММЕ?')
+			.form_title!= __('Почему вам интересно принять участие в программе?')
+			input.form_name(type='hidden', name='text[11][name]', value='Почему вам интересно принять участие в программе?')
 			textarea.form_value(name='text[11][value]')
 
-			.form_title КАКИЕ У ВАС ОЖИДАНИЯ ОТ ПРОГРАММЫ?
-			input.form_name(type='hidden', name='text[12][name]', value='КАКИЕ У ВАС ОЖИДАНИЯ ОТ ПРОГРАММЫ?')
+			.form_title!= __('Какие у вас ожидания от программы?')
+			input.form_name(type='hidden', name='text[12][name]', value='Какие у вас ожидания от программы?')
 			textarea.form_value(name='text[12][value]')
 
 
-			.form_title РАССКАЖИТЕ О ПОСЛЕДНЕМ ПОНРАВИВШЕМСЯ ВАМ ФИЛЬМЕ/ВИДЕО. ПОЧЕМУ ЭТА РАБОТА ПОКАЗАЛАСЬ ВАМ ИНТЕРЕСНОЙ?
-			input.form_name(type='hidden', name='text[13][name]', value='РАССКАЖИТЕ О ПОСЛЕДНЕМ ПОНРАВИВШЕМСЯ ВАМ ФИЛЬМЕ/ВИДЕО. ПОЧЕМУ ЭТА РАБОТА ПОКАЗАЛАСЬ ВАМ ИНТЕРЕСНОЙ?')
+			.form_title!= __('Расскажите о последнем понравившемся вам фильме/видео. почему эта работа показалась вам интересной?')
+			input.form_name(type='hidden', name='text[13][name]', value='Расскажите о последнем понравившемся вам фильме/видео. почему эта работа показалась вам интересной?')
 			textarea.form_value(name='text[13][value]')
 
 
-			.form_title ХУДОЖНИКИ/РЕЖИССЕРЫ, ТВОРЧЕСТВО КОТОРЫХ ВАМ ИНТЕРЕСНО И ПОЧЕМУ?
-			input.form_name(type='hidden', name='text[14][name]', value='ХУДОЖНИКИ/РЕЖИССЕРЫ, ТВОРЧЕСТВО КОТОРЫХ ВАМ ИНТЕРЕСНО И ПОЧЕМУ?')
+			.form_title!= __('Художники/режиссеры, творчество которых вам интересно и почему?')
+			input.form_name(type='hidden', name='text[14][name]', value='Художники/режиссеры, творчество которых вам интересно и почему?')
 			textarea.form_value(name='text[14][value]')
 
-			.form_title С КАКИМИ ТЕМАМИ ВАМ ИНТЕРЕСНО РАБОТАТЬ КАК АВТОРУ? УКАЖИТЕ ДВЕ-ТРИ ТЕМЫ, СНАБДИТЕ КАЖДУЮ КОММЕНТАРИЕМ, ПОЧЕМУ ВЫ СЧИТАЕТЕ ИХ ВАЖНЫМИ.
-			input.form_name(type='hidden', name='text[15][name]', value='С КАКИМИ ТЕМАМИ ВАМ ИНТЕРЕСНО РАБОТАТЬ КАК АВТОРУ? УКАЖИТЕ ДВЕ-ТРИ ТЕМЫ, СНАБДИТЕ КАЖДУЮ КОММЕНТАРИЕМ, ПОЧЕМУ ВЫ СЧИТАЕТЕ ИХ ВАЖНЫМИ.')
+			.form_title!= __('С какими темами вам интересно работать как автору? укажите две-три темы, снабдите каждую комментарием, почему вы считаете их важными.')
+			input.form_name(type='hidden', name='text[15][name]', value='С какими темами вам интересно работать как автору? укажите две-три темы, снабдите каждую комментарием, почему вы считаете их важными.')
 			textarea.form_value(name='text[15][value]')
 
 
-			.form_section Раздел 3
+			.form_section= __('Раздел') + ' III'
 
 
-			.form_title КОРОТКИЙ РАССКАЗ О СЕБЕ (не более 1 страницы)
-			input.form_name(type='hidden', name='text[16][name]', value='КОРОТКИЙ РАССКАЗ О СЕБЕ')
+			.form_title!= __('КОРОТКИЙ РАССКАЗ О СЕБЕ <div>(не более 1 страницы)</div>')
+			input.form_name(type='hidden', name='text[16][name]', value='Короткий рассказ о себе')
 			textarea.form_value(name='text[16][value]')
 
-			.form_title ПОРТФОЛИО (PDF не более 5 работ, шоурилы не принимаются)
-			input(type='file', name='portfolio', accept='application/pdf')
+			.form_title!= __('Портфолио <div>(PDF не более 5 работ, шоурилы не принимаются)</div>')
+			input.form_value(type='file', name='portfolio', accept='application/pdf')
 
-			.form_title CV (в формате PDF не больше двух страниц)
-			input(type='file', name='cv', accept='application/pdf')
+			.form_title!= __('CV <div>(в формате PDF не больше двух страниц)<div>')
+			input.form_value(type='file', name='cv', accept='application/pdf')
 
 
 			//- Submit
@@ -125,7 +127,6 @@ block content
 				.submit_confirm
 					label
 						input.confirm_check(type='checkbox')
-						| &nbsp;Я даю согласие на хранение и обработку персональных данных
-
+						!= ' ' + __('Я даю согласие на хранение и обработку персональных данных')
 
 
