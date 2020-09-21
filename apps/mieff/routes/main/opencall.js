@@ -20,6 +20,8 @@ module.exports = function(Model) {
 		}, function(err, results) {
 			if (err) return next(err);
 
+			results.complete = req.query.complete;
+
 			res.render('main/opencall.pug', results);
 		});
 	};
@@ -62,7 +64,7 @@ module.exports = function(Model) {
 		});
 
 		application.save(function(err, application) {
-			res.redirect('back');
+			res.redirect('/opencall?complete=true');
 		});
 	}
 

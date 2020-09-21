@@ -14,7 +14,12 @@ block header_include
 block content
 	.opencall_main_title= 'Open call'
 
-	.opencall_description: .description_inner!= desc
+	if complete
+		.opencall_complete
+			.complete_title= __('Ваша заявка принята!')
+			.complete_text: .text_inner= __('Результаты отбора и имена участников будут объявлены 28 октября 2020 г.')
+	else
+		.opencall_description: .description_inner!= desc
 
-	.opencall_application: a.application_button(href='/opencall/application')= __('Заполнить анкету')
+		.opencall_application: a.application_button(href='/opencall/application')= __('Заполнить анкету')
 
