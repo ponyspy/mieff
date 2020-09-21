@@ -79,39 +79,43 @@ block content
 			input.form_name(type='hidden', name='text[10][name]', value='Доступ к по для монтажа')
 			input.form_value(type='text', name='text[10][value]')
 
+			.form_title!= __('Если вы хотите рассказать о себе что-то дополнительно, используйте, пожалуйста, это поле <div>(например: этническая принадлежность, гендер, сексуальная ориентация, особенности здоровья или другое)</div>')
+			input.form_name(type='hidden', name='text[11][name]', value='Если вы хотите рассказать о себе что-то дополнительно, используйте, пожалуйста, это поле')
+			textarea.form_value(name='text[11][value]')
+
 
 			.form_section= __('Раздел') + ' II'
 
 
 			.form_title!= __('Почему вам интересно принять участие в программе?')
-			input.form_name(type='hidden', name='text[11][name]', value='Почему вам интересно принять участие в программе?')
-			textarea.form_value(name='text[11][value]')
-
-			.form_title!= __('Какие у вас ожидания от программы?')
-			input.form_name(type='hidden', name='text[12][name]', value='Какие у вас ожидания от программы?')
+			input.form_name(type='hidden', name='text[12][name]', value='Почему вам интересно принять участие в программе?')
 			textarea.form_value(name='text[12][value]')
 
-
-			.form_title!= __('Расскажите о последнем понравившемся вам фильме/видео. почему эта работа показалась вам интересной?')
-			input.form_name(type='hidden', name='text[13][name]', value='Расскажите о последнем понравившемся вам фильме/видео. почему эта работа показалась вам интересной?')
+			.form_title!= __('Какие у вас ожидания от программы?')
+			input.form_name(type='hidden', name='text[13][name]', value='Какие у вас ожидания от программы?')
 			textarea.form_value(name='text[13][value]')
 
 
-			.form_title!= __('Художники/режиссеры, творчество которых вам интересно и почему?')
-			input.form_name(type='hidden', name='text[14][name]', value='Художники/режиссеры, творчество которых вам интересно и почему?')
+			.form_title!= __('Расскажите о последнем понравившемся вам фильме/видео. почему эта работа показалась вам интересной?')
+			input.form_name(type='hidden', name='text[14][name]', value='Расскажите о последнем понравившемся вам фильме/видео. почему эта работа показалась вам интересной?')
 			textarea.form_value(name='text[14][value]')
 
-			.form_title!= __('С какими темами вам интересно работать как автору? укажите две-три темы, снабдите каждую комментарием, почему вы считаете их важными.')
-			input.form_name(type='hidden', name='text[15][name]', value='С какими темами вам интересно работать как автору? укажите две-три темы, снабдите каждую комментарием, почему вы считаете их важными.')
+
+			.form_title!= __('Художники/режиссеры, творчество которых вам интересно и почему?')
+			input.form_name(type='hidden', name='text[15][name]', value='Художники/режиссеры, творчество которых вам интересно и почему?')
 			textarea.form_value(name='text[15][value]')
+
+			.form_title!= __('С какими темами вам интересно работать как автору? укажите две-три темы, снабдите каждую комментарием, почему вы считаете их важными.')
+			input.form_name(type='hidden', name='text[16][name]', value='С какими темами вам интересно работать как автору? укажите две-три темы, снабдите каждую комментарием, почему вы считаете их важными.')
+			textarea.form_value(name='text[16][value]')
 
 
 			.form_section= __('Раздел') + ' III'
 
 
 			.form_title!= __('КОРОТКИЙ РАССКАЗ О СЕБЕ <div>(не более 1 страницы)</div>')
-			input.form_name(type='hidden', name='text[16][name]', value='Короткий рассказ о себе')
-			textarea.form_value(name='text[16][value]')
+			input.form_name(type='hidden', name='text[17][name]', value='Короткий рассказ о себе')
+			textarea.form_value(name='text[17][value]')
 
 			.form_title!= __('Портфолио <div>(PDF не более 5 работ, шоурилы не принимаются)</div>')
 			input.form_value(type='file', name='portfolio', accept='application/pdf')
