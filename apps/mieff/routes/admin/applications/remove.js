@@ -13,6 +13,9 @@ module.exports = function(Model) {
 		async.series([
 			function(callback) {
 				Application.findByIdAndRemove(id).exec(callback);
+			},
+			function(callback) {
+				rimraf(__glob_root + '/public/cdn/' + __app_name + '/applications/' + id, { glob: false }, callback);
 			}
 		], function(err) {
 			if (err) return next(err);
