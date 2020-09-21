@@ -27,9 +27,15 @@ block content
 			//- input.en(type='text', name='adress[en]', value= content.adress_en)
 			.form_title О фестивале:
 			.content
-				textarea.ru.editor(name='adress[ru]')= content.about_ru
-				textarea.en.editor(name='adress[en]')= content.about_en
-			//- .form_title Дополнительно:
-			//- .content(style='overflow: hidden;')
-			//- 	textarea.ru.editor(name='desc[ru]')= content.desc_ru
-			//- 	textarea.en.editor(name='desc[en]')= content.desc_en
+				textarea.ru.editor(name='about[ru]')= content.about_ru
+				textarea.en.editor(name='about[en]')= content.about_en
+
+			.form_title Open call (требования к участнику):
+			.content
+				textarea.ru.editor(name='opencall_intro[ru]')= content.opencall_intro_ru
+				textarea.en.editor(name='opencall_intro[en]')= content.opencall_intro_en
+
+			.form_title Open call (вступление):
+			.content(style='overflow: hidden;')
+				textarea.ru.editor(name='opencall_desc[ru]')= content.opencall_desc_ru
+				textarea.en.editor(name='opencall_desc[en]')= content.opencall_desc_en

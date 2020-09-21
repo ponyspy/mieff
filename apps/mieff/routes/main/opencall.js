@@ -3,6 +3,7 @@ var moment = require('moment');
 var fs = require('fs');
 var mime = require('mime');
 var mkdirp = require('mkdirp');
+var async = require('async');
 
 module.exports = function(Model) {
 	var module = {};
@@ -10,11 +11,31 @@ module.exports = function(Model) {
 	var Application = Model.Application;
 
 	module.index = function(req, res) {
-		return res.render('main/opencall.pug');
+		async.parallel({
+			desc: function(callback) {
+				fs.readFile(__app_root + '/static/opencall_desc_' + req.locale + '.html', 'utf8', function(err, content) {
+					callback(null, content || '');
+				});
+			},
+		}, function(err, results) {
+			if (err) return next(err);
+
+			res.render('main/opencall.pug', results);
+		});
 	};
 
 	module.application = function(req, res) {
-		return res.render('main/application.pug');
+		async.parallel({
+			intro: function(callback) {
+				fs.readFile(__app_root + '/static/opencall_intro_' + req.locale + '.html', 'utf8', function(err, content) {
+					callback(null, content || '');
+				});
+			},
+		}, function(err, results) {
+			if (err) return next(err);
+
+			res.render('main/application.pug', results);
+		});
 	};
 
 	module.form = function(req, res, next) {
