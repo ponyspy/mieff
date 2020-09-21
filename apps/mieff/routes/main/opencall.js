@@ -37,10 +37,6 @@ module.exports = function(Model) {
 				mkdirp.sync(public_path + file_path);
 				fs.renameSync(file.path, public_path + file_path + '/' + file_name);
 				application.files.push({'name': item, 'path': file_path + '/' + file_name});
-
-				setTimeout(function() {
-					console.log(item)
-				}, 500)
 			}
 		});
 

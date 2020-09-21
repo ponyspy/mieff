@@ -20,7 +20,7 @@ module.exports = (function() {
 		.get(applications.list.index)
 		.post(applications.list.get_list);
 
-	router.route('/edit/:place_id')
+	router.route('/edit/:application_id')
 		.get(applications.edit.index);
 
 	router.route('/remove')

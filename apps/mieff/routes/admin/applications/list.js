@@ -26,6 +26,10 @@ module.exports = function(Model) {
 			? Application.find({ $text : { $search : post.context.text } } )
 			: Application.find();
 
+		if (post.context.type && post.context.type != 'all') {
+			Query.where('type').equals(post.context.type);
+		}
+
 		Query.countDocuments(function(err, count) {
 			if (err) return next(err);
 

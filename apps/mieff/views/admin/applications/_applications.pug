@@ -2,7 +2,10 @@
 	each application in applications
 		.list_item
 			a.item_rm.application(href='#', id=application._id) -- удалить
-			a.item_title(href='/admin/applications/edit/' + application._id, class=application.status)= (application.i18n.title.get('ru') || '!!! ПУСТОЕ ПОЛЕ !!!')
+			- var date = new Date(application.date)
+			- var f_date = ('0' + date.getDate()).slice(-2) + '-' + ('0' + date.getMonth()).slice(-2) + '-' + date.getFullYear()
+			a.item_title(href='/admin/applications/edit/' + application._id, class=application.status)= f_date
+			span= ' ' + application.text[0]['value']
 
 .list_counter
 	a.list_back(href='#'): b назад
