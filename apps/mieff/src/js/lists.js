@@ -212,6 +212,7 @@ $(function() {
 		.on('click', '.item_rm.member', {path:'/admin/members/remove', description: 'Удалить участника?'}, remove)
 		.on('click', '.item_rm.event', {path:'/admin/events/remove', description: 'Удалить событие?'}, remove)
 		.on('click', '.item_rm.partner', {path:'/admin/partners/remove', description: 'Удалить партнера?'}, remove)
+		.on('click', '.item_rm.application', {path:'/admin/applications/remove', description: 'Удалить заявку?'}, remove)
 		.on('click', '.item_rm.post', {path:'/admin/posts/remove', description: 'Удалить запись?'}, remove);
 
 });

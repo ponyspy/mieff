@@ -30,7 +30,3 @@ block content
 		each form in application.files
 			li: a(href=form.path, target='_blank'): b(style='font-size: 16pt')= form.name
 
-		form(action="", method="post")
-			.form_title Дата публикации:
-			+form_date('date', application.date)
-
