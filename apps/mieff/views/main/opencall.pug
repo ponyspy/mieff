@@ -25,3 +25,11 @@ block content
 
 		.opencall_application: a.application_button(href='/opencall/application')= __('Заполнить анкету')
 
+		if members && members.length > 0
+			.opencall_team
+				.team_title= __('Преподаватели')
+				.team_members: .members_inner
+					each member in members
+						a.member_item(href='/members/' + member._short_id)
+							.member_photo(style='background-image: url(' + member.photo + ')')
+							.member_title= member.i18n.name.get(locale)

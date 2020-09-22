@@ -9,9 +9,13 @@ module.exports = function(Model) {
 	var module = {};
 
 	var Application = Model.Application;
+	var Member = Model.Member;
 
 	module.index = function(req, res) {
 		async.parallel({
+			members: function(callback) {
+				Member.find({'opencall': true}).sort('-date').exec(callback)
+			},
 			desc: function(callback) {
 				fs.readFile(__app_root + '/static/opencall_desc_' + req.locale + '.html', 'utf8', function(err, content) {
 					callback(null, content || '');
