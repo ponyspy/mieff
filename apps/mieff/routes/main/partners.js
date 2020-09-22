@@ -37,10 +37,13 @@ module.exports = function(Model) {
 	};
 
 	module.special = function(req, res, next) {
+		if (/\/partners/.test(req.url)) return next();
+
+		var is_opencall = /\/opencall/.test(req.url);
+
 		Partner.aggregate([
-			{ $match: { 'status': {
-				$in: ['special']
-			}}},
+			{ $match: { 'status': !is_opencall ? { $in: ['special'] } : {'$ne': 'none'} }},
+			{ $match: { 'opencall': is_opencall ? true : {'$ne': 'none'} }},
 			{ $sort: { 'date': -1 } },
 			{ $group: {
 				_id: '$type',
@@ -53,8 +56,6 @@ module.exports = function(Model) {
 				'partners': '$partners'
 			}}
 		]).exec(function(err, types) {
-			if (req.url == '/partners') return next();
-
 			var actual_types = req.app.locals.static_types.partners_types;
 
 			types.sort(function(a, b) {

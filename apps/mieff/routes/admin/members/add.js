@@ -29,6 +29,7 @@ module.exports = function(Model, Params) {
 		member.date = moment(post.date.date + 'T' + post.date.time.hours + ':' + post.date.time.minutes);
 		member.sex = post.sex;
 		member.team = post.team;
+		member.opencall = post.opencall;
 
 		var locales = post.en ? ['ru', 'en'] : ['ru'];
 

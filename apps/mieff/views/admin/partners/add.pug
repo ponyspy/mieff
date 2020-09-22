@@ -31,6 +31,10 @@ block content
 			select(name='type')
 				each type_item in static_types.partners_types
 					option(value=type_item)= __n(type_item, 1)
+			.form_title Opencall:
+			select(name='opencall')
+				option(value='false') Нет
+				option(value='true') Да
 			.form_title Статус:
 			select(name='status')
 				option(value='base') Обычный

@@ -93,6 +93,7 @@ var memberSchema = new Schema({
 	description: { type: String, trim: true, locale: true },
 	sex: String,
 	team: Boolean,
+	opencall: Boolean,
 	photo: { type: String },
 	photo_preview: { type: String },
 	roles: [{ type: String }],  // actor, director...
@@ -106,6 +107,7 @@ partnerSchema = new Schema({
 	link: String,
 	type: String,
 	logo: String,
+	opencall: Boolean,
 	status: String,
 	_short_id: { type: String, unique: true, index: true, sparse: true },
 	date: { type: Date, default: Date.now },

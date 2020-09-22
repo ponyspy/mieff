@@ -33,6 +33,10 @@ block content
 			select(name='team')
 				option(value='false') Нет
 				option(value='true', selected= member.team == true && 'true') Да
+			.form_title Opencall:
+			select(name='opencall')
+				option(value='false') Нет
+				option(value='true', selected= member.opencall == true && 'true') Да
 			.form_title Роли:
 			.snake_outer
 				each m_role in member.roles
