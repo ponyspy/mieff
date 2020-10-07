@@ -17,7 +17,7 @@ block content
 
 		.member_roles
 			each role in member.roles
-				.member_role=__n(static_types.members_roles[role][member.sex], 1)
+				.member_role=__n(static_types.members_roles[role][member.sex], member.plurals ? 5 : 1)
 
 		.member_description!= member.i18n.description.get(locale)
 

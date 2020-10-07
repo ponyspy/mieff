@@ -40,6 +40,7 @@ module.exports = function(Model, Params) {
 			member.sym = post.sym ? post.sym : undefined;
 			member.date = moment(post.date.date + 'T' + post.date.time.hours + ':' + post.date.time.minutes);
 			member.sex = post.sex;
+			member.plurals = post.plurals;
 			member.team = post.team;
 			member.opencall = post.opencall;
 

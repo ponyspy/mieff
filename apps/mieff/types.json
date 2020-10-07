@@ -38,6 +38,7 @@
 		"curator": { "male": "curator", "female": "f_curator" },
 		"performer": { "male": "performer", "female": "f_performer" },
 		"operator": { "male": "operator", "female": "f_operator" },
-		"lecturer": { "male": "lecturer", "female": "f_lecturer" }
+		"lecturer": { "male": "lecturer", "female": "f_lecturer" },
+		"collective": { "male": "collective", "female": "collective" }
 	}
 }

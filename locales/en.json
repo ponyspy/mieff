@@ -244,5 +244,9 @@
 	"Ваша заявка принята!": "Your application is accepted!",
 	"Результаты отбора и имена участников будут объявлены 28 октября 2020 г.": "Selected participants will be announced on October 28, 2020.",
 	"Преподаватели": "Teachers",
-	"MIEFF приглашает молодых фильммейкерок/ов и видеохудожниц/ков принять участие в междисциплинарной образовательной программе «Внеклассные практики»": "MIEFF invites young film makers and video artists to take part in an interdisciplinary educational programme Extracurricular practices"
+	"MIEFF приглашает молодых фильммейкерок/ов и видеохудожниц/ков принять участие в междисциплинарной образовательной программе «Внеклассные практики»": "MIEFF invites young film makers and video artists to take part in an interdisciplinary educational programme Extracurricular practices",
+	"collective": {
+		"one": "Collective",
+		"other": "Collectives"
+	}
 }

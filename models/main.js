@@ -92,6 +92,7 @@ var memberSchema = new Schema({
 	name: { type: String, trim: true, locale: true },
 	description: { type: String, trim: true, locale: true },
 	sex: String,
+	plurals: Boolean,
 	team: Boolean,
 	opencall: Boolean,
 	photo: { type: String },

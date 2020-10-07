@@ -29,6 +29,10 @@ block content
 			select(name='sex')
 				option(value='male', selected= member.sex == 'male' && 'male') муж.
 				option(value='female', selected= member.sex == 'female' && 'female') жен.
+			.form_title Число:
+			select(name='plurals')
+				option(value='false') единственное
+				option(value='true', selected= member.plurals == true && 'true') множественное
 			.form_title Команда:
 			select(name='team')
 				option(value='false') Нет
