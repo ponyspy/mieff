@@ -25,10 +25,10 @@ module.exports = function(Model) {
 	module.index = function(req, res) {
 		async.parallel({
 			programs: function(callback) {
-				Program.find().exec(callback);
+				Program.find().where('status').ne('hidden').exec(callback);
 			},
 			places: function(callback) {
-				Place.find().exec(callback);
+				Place.find().where('status').ne('hidden').exec(callback);
 			},
 			dates: function(callback) {
 				Event.aggregate([
