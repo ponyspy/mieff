@@ -2,7 +2,7 @@ extends layout
 
 block header_meta
 	- var content_title= __('MIEFF')
-	- var content_description= __('5 Московский международный фестиваль экспериментального кино MIEFF пройдет 19–25 августа')
+	- var content_description= __('Московский международный фестиваль экспериментального кино MIEFF')
 	- var content_images = ['/stuff/mieff/og.png']
 
 block header_include
@@ -16,7 +16,7 @@ block content
 	.widget_block: .widget_inner
 
 	.video_block
-		a(href='/opencall'): video(autoplay=true, loop=true, muted=true, playsinline=true, controls=false, poster='', src='/stuff/mieff/video/main.mp4')
+		a(href='/opencall'): video(autoplay=true, loop=true, muted=true, playsinline=true, controls=false, poster='/stuff/mieff/main.png', src='')
 
 	if posts && posts.length > 0
 		.news_block
