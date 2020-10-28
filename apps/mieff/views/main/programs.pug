@@ -22,8 +22,8 @@ block content
 				.program_inner(style='background-image: url(' + program.poster + ')'): .program_text
 					span= program.i18n.title.get(locale)
 
-	.program_body
-		if programs.length > 0
+	if programs.length > 0
+		.program_body
 			.program_nanv
 
 				.nav_column.date
