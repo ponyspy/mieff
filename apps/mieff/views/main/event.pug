@@ -2,7 +2,7 @@ extends layout
 
 block header_meta
 	- var content_title= 'MIEFF | ' + event.i18n.title.get(locale)
-	- var content_description = event.i18n.description.get(locale)
+	- var content_description = event.i18n.description.get(locale).replace(/<(?:.|\n)*?>/gm, '')
 	- var content_images = [event.poster]
 
 block header_include
