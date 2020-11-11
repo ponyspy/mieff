@@ -19,6 +19,7 @@
 	],
 
 	"members_roles": {
+		"co_founder": { "male": "co_founder", "female": "f_co_founder" },
 		"fest_director": { "male": "fest_director", "female": "fest_f_director" },
 		"manage_director": { "male": "manage_director", "female": "manage_f_director" },
 		"pr_director": { "male": "pr_director", "female": "pr_f_director" },

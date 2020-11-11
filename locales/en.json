@@ -216,6 +216,14 @@
 		"one": "Graphic designer",
 		"other": "Graphic designers"
 	},
+	"co_founder": {
+		"one": "Co-founder",
+		"other": "Co-founders"
+	},
+	"f_co_founder": {
+		"one": "Co-founder",
+		"other": "Co-founders"
+	},
 	"Требования к участникам": "Requirements for participants",
 	"Раздел": "Section",
 	"Имя фамилия": "Name Surname",
