@@ -26,3 +26,6 @@ block content
 					a.member_item(href='/members/' + member._short_id)
 						.member_photo(style='background-image: url(' + member.photo + ')')
 						.member_title= member.i18n.name.get(locale)
+						.member_roles
+							each role in member.roles
+								.member_role=__n(static_types.members_roles[role][member.sex], member.plurals ? 5 : 1)
