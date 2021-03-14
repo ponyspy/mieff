@@ -61,8 +61,8 @@ module.exports = (function() {
 	router.route('/about')
 		.get(main.static.about);
 
-	router.route('/opencall')
-		.get(main.opencall.index)
+	// router.route('/opencall')
+	// 	.get(main.opencall.index)
 
 	// router.route('/opencall/application')
 	// 	.get(main.opencall.application)

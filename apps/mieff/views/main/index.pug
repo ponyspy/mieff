@@ -15,10 +15,10 @@ block header_include
 block content
 	.widget_block: .widget_inner
 
-	.banner_block= __('MIEFF 2021 в процессе подготовки. Следите за новостями в соцсетях.')
+	.banner_block= __('MIEFF пройдет с 11 по 16 августа 2021 года.')
 
 	.video_block
-		a(href='/opencall'): video(autoplay=true, loop=true, muted=true, playsinline=true, controls=false, poster='/stuff/mieff/main.png', src='')
+		a(href='https://filmfreeway.com/moscowieff', target='_blank'): video(autoplay=true, loop=true, muted=true, playsinline=true, controls=false, poster='/stuff/mieff/main.jpg', src='')
 
 	if posts && posts.length > 0
 		.news_block
