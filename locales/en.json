@@ -161,8 +161,8 @@
 		"other": "Managing directors"
 	},
 	"pr_director": {
-		"one": "PR director",
-		"other": "PR directors"
+		"one": "PR manager",
+		"other": "PR managers"
 	},
 	"tech_director": {
 		"one": "Technical director",
@@ -193,8 +193,8 @@
 		"other": "Managing directors"
 	},
 	"pr_f_director": {
-		"one": "PR director",
-		"other": "PR directors"
+		"one": "PR manager",
+		"other": "PR managers"
 	},
 	"tech_f_director": {
 		"one": "Technical director",
