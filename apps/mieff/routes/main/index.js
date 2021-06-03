@@ -2,6 +2,7 @@ var moment = require('moment');
 var pug = require('pug');
 var mongoose = require('mongoose');
 var async = require('async');
+var fs = require('fs');
 
 module.exports = function(Model) {
 	var module = {};
@@ -25,6 +26,16 @@ module.exports = function(Model) {
 
 	module.index = function(req, res) {
 		async.parallel({
+			main_text: function(callback) {
+				fs.readFile(__app_root + '/static/main_text_' + req.locale + '.html', 'utf8', function(err, content) {
+					callback(null, content || '');
+				});
+			},
+			main_banner_link: function(callback) {
+				fs.readFile(__app_root + '/static/main_banner_link' + '.html', 'utf8', function(err, content) {
+					callback(null, content || '');
+				});
+			},
 			posts: function(callback) {
 				Post.find().where('status').ne('hidden').sort('-date').limit(4).exec(callback);
 			},

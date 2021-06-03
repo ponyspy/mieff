@@ -1,11 +1,20 @@
 var fs = require('fs');
 var async = require('async');
+var mkdirp = require('mkdirp');
+var mime = require('mime');
+
 
 exports.edit = function(req, res) {
 	async.series({
-		// link: function(callback) {
-		// 	fs.readFile(__app_root + '/static/link.html', 'utf8', callback);
-		// },
+		main_banner_link: function(callback) {
+			fs.readFile(__app_root + '/static/main_banner_link.html', 'utf8', callback);
+		},
+		main_text_ru: function(callback) {
+			fs.readFile(__app_root + '/static/main_text_ru.html', 'utf8', callback);
+		},
+		main_text_en: function(callback) {
+			fs.readFile(__app_root + '/static/main_text_en.html', 'utf8', callback);
+		},
 		about_ru: function(callback) {
 			fs.readFile(__app_root + '/static/about_ru.html', 'utf8', callback);
 		},
@@ -37,13 +46,33 @@ exports.edit = function(req, res) {
 
 exports.edit_form = function(req, res) {
 	var post = req.body;
+	var files = req.files;
 
 	async.series({
-		// link: function(callback) {
-		// 	if (!post.link) return callback(null);
+		main_banner_image: function(callback) {
+			if (!files['main_banner_image']) return callback(null);
 
-		// 	fs.writeFile(__app_root + '/static/link.html', post.link, callback);
-		// },
+			var file = files['main_banner_image'][0];
+
+			mkdirp(__glob_root + '/public/cdn/images', function() {
+				fs.rename(file.path, __glob_root + '/public/cdn/images/main_banner_image' + '.' + mime.getExtension(file.mimetype), callback);
+			});
+		},
+		main_banner_link: function(callback) {
+			if (!post.main_banner_link) return callback(null);
+
+			fs.writeFile(__app_root + '/static/main_banner_link.html', post.main_banner_link, callback);
+		},
+		main_text_ru: function(callback) {
+			if (!post.main_text.ru) return callback(null);
+
+			fs.writeFile(__app_root + '/static/main_text_ru.html', post.main_text.ru, callback);
+		},
+		main_text_en: function(callback) {
+			if (!post.main_text.en) return callback(null);
+
+			fs.writeFile(__app_root + '/static/main_text_en.html', post.main_text.en, callback);
+		},
 		about_ru: function(callback) {
 			if (!post.about.ru) return callback(null);
 
