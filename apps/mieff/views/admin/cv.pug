@@ -19,12 +19,14 @@ block sub_menu
 block content
 	.form_block
 		.title= content_title
-		form(action='', method='post')
-			//- .form_title Ссылка:
-			//- input(type='text', name='link', value= content.link)
-			//- .form_title Адрес:
-			//- input.ru(type='text', name='adress[ru]', value= content.adress_ru)
-			//- input.en(type='text', name='adress[en]', value= content.adress_en)
+		form(action='', method='post', enctype="multipart/form-data")
+			.form_title Баннер изображение:
+			input(type='file', name='main_banner_image', accept='image/jpeg')
+			.form_title Баннер ссылка:
+			input(type='text', name='main_banner_link', value= content.main_banner_link)
+			.form_title Анонс:
+			input.ru(type='text', name='main_text[ru]', value= content.main_text_ru)
+			input.en(type='text', name='main_text[en]', value= content.main_text_en)
 			.form_title О фестивале:
 			.content
 				textarea.ru.editor(name='about[ru]')= content.about_ru

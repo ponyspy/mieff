@@ -30,7 +30,7 @@ module.exports = (function() {
 
 	router.route('/cv')
 		.get(checkAuth, admin.cv.edit)
-		.post(checkAuth, admin.cv.edit_form);
+		.post(checkAuth, upload.fields([ {name: 'main_banner_image'} ]), admin.cv.edit_form);
 
 	router.use('/events', checkAuth, upload.fields([ { name: 'poster' }, { name: 'cover' } ]), admin.events);
 	router.use('/places', checkAuth, admin.places);
