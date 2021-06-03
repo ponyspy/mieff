@@ -25,6 +25,8 @@ block content
 		form(action='', method="post", enctype="multipart/form-data")
 			.form_title Название:
 			+form_text_single('title', event)
+			.form_title Подзаголовок:
+			+form_text_single('s_title', event)
 			.form_title Синоним:
 			span= 'https://' + host + '/events/'
 			input(type='text', name='sym', value=event.sym, placeholder=event._short_id)
