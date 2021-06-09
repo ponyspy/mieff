@@ -10,10 +10,10 @@ module.exports = function(Model) {
 	module.about = function(req, res, next) {
 		async.parallel({
 			members: function(callback) {
-				Member.find({'team': true}).sort('-date').exec(callback)
+				Member.find({'team': true}).where('status').ne('hidden').sort('-date').exec(callback)
 			},
 			programs: function(callback) {
-				Program.find({'members': {'$not': {'$size': 0}}}).populate('members').where('status').ne('hidden').sort('-date').exec(callback);
+				Program.find({'members': {'$not': {'$size': 0}}}).populate({'path': 'members', 'match': { 'status': { '$ne': 'hidden' }}}).where('status').ne('hidden').sort('-date').exec(callback);
 			},
 			about: function(callback) {
 				fs.readFile(__app_root + '/static/about_' + req.locale + '.html', 'utf8', function(err, content) {
