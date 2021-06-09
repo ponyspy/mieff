@@ -35,10 +35,11 @@ block content
 			.jury_title= __('Жюри')
 			.jury_programs
 				each program in programs
-					.program_item
-						.program_title= program.i18n.title.get(locale)
-						.program_members: .members_inner
-							each member in program.members
-								a.member_item(href='/members/' + member._short_id)
-									.member_photo(style='background-image: url(' + member.photo + ')')
-									.member_title= member.i18n.name.get(locale)
+					if program.members && program.members.length > 0
+						.program_item
+							.program_title= program.i18n.title.get(locale)
+							.program_members: .members_inner
+								each member in program.members
+									a.member_item(href='/members/' + member._short_id)
+										.member_photo(style='background-image: url(' + member.photo + ')')
+										.member_title= member.i18n.name.get(locale)
