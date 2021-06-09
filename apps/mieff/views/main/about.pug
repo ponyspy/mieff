@@ -30,7 +30,7 @@ block content
 							each role in member.roles
 								.member_role=__n(static_types.members_roles[role][member.sex], member.plurals ? 5 : 1)
 
-	if programs && programs.length > 0 && programs.every(function(program) { return program.members.length })
+	if programs && programs.length > 0 && programs.every(function(program) { return program.members.length; })
 		.about_jury
 			.jury_title= __('Жюри')
 			.jury_programs
