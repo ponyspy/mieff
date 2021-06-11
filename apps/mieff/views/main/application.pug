@@ -20,7 +20,7 @@ block content
 	.application_forms
 		form.main(action="", method="post", enctype="multipart/form-data")
 
-			input(type='hidden', name='type', value='opencall')
+			input(type='hidden', name='type', value='opencall_2')
 
 
 			.form_section= __('Раздел') + ' I'
@@ -58,17 +58,17 @@ block content
 			input.form_name(type='hidden', name='text[7][name]', value='Опыт работы')
 			input.form_value(type='text', name='text[7][value]')
 
-			.form_title!= __('Владение иностранными языками <div>(с указанием уровня)</div>')
-			input.form_name(type='hidden', name='text[8][name]', value='Владение иностранными языками')
-			input.form_value(type='text', name='text[8][value]')
+			//- .form_title!= __('Владение иностранными языками <div>(с указанием уровня)</div>')
+			//- input.form_name(type='hidden', name='text[8][name]', value='Владение иностранными языками')
+			//- input.form_value(type='text', name='text[8][value]')
 
-			.form_title!= __('Доступ к компьютеру <div>(да/нет)</div>')
-			input.form_name(type='hidden', name='text[9][name]', value='Доступ к компьютеру')
-			input.form_value(type='text', name='text[9][value]')
+			//- .form_title!= __('Доступ к компьютеру <div>(да/нет)</div>')
+			//- input.form_name(type='hidden', name='text[9][name]', value='Доступ к компьютеру')
+			//- input.form_value(type='text', name='text[9][value]')
 
-			.form_title!= __('Доступ к по для монтажа <div>(да/нет)</div>')
-			input.form_name(type='hidden', name='text[10][name]', value='Доступ к по для монтажа')
-			input.form_value(type='text', name='text[10][value]')
+			//- .form_title!= __('Доступ к по для монтажа <div>(да/нет)</div>')
+			//- input.form_name(type='hidden', name='text[10][name]', value='Доступ к по для монтажа')
+			//- input.form_value(type='text', name='text[10][value]')
 
 			.form_title!= __('Если вы хотите рассказать о себе что-то дополнительно, используйте, пожалуйста, это поле <div>(Например: этническая принадлежность, гендер, сексуальная ориентация, особенности здоровья или другое. Но если вам некомфортно делиться этой информацией, это вовсе не обязательно.)</div>')
 			input.form_name(type='hidden', name='text[11][name]', value='Если вы хотите рассказать о себе что-то дополнительно, используйте, пожалуйста, это поле')

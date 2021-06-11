@@ -32,12 +32,12 @@ block content
 				textarea.ru.editor(name='about[ru]')= content.about_ru
 				textarea.en.editor(name='about[en]')= content.about_en
 
-			.form_title Внеклассные практики (требования к участнику):
-			.content
-				textarea.ru.editor(name='opencall_intro[ru]')= content.opencall_intro_ru
-				textarea.en.editor(name='opencall_intro[en]')= content.opencall_intro_en
-
-			.form_title Внеклассные практики (вступление):
+			.form_title Open Call практики (вступление):
 			.content(style='overflow: hidden;')
 				textarea.ru.editor(name='opencall_desc[ru]')= content.opencall_desc_ru
 				textarea.en.editor(name='opencall_desc[en]')= content.opencall_desc_en
+
+			.form_title Open Call (требования к участнику):
+			.content
+				textarea.ru.editor(name='opencall_intro[ru]')= content.opencall_intro_ru
+				textarea.en.editor(name='opencall_intro[en]')= content.opencall_intro_en
