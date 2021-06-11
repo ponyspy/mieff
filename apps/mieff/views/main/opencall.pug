@@ -2,7 +2,7 @@ extends layout
 
 block header_meta
 	- var content_title= 'MIEFF | ' + __('Внеклассные практики')
-	- var content_description= __('MIEFF приглашает молодых фильммейкерок/ов и видеохудожниц/ков принять участие в междисциплинарной образовательной программе «Внеклассные практики»')
+	- var content_description= __('MIEFF приглашает молодых фильммейкерок/ов и видеохудожниц/ков принять участие в лаборатории «Внеклассные практики»')
 	- var content_images = ['/stuff/mieff/og_call.png']
 
 block header_include
@@ -20,7 +20,7 @@ block content
 			.complete_title= __('Ваша заявка принята!')
 			.complete_text
 				img.text_logo(src='/stuff/mieff/logo/main_black.svg')
-				.text_inner= __('Результаты отбора и имена участников будут объявлены 28 октября 2020 г.')
+				.text_inner= __('Результаты отбора и имена участников будут объявлены 23 июля 2021 г.')
 	else
 		.opencall_description: .description_inner!= desc
 

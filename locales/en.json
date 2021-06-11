@@ -238,8 +238,8 @@
 	"Доступ к компьютеру <div>(да/нет)</div>": "Access to computer <div>(yes / no)</div>",
 	"Доступ к по для монтажа <div>(да/нет)</div>": "Access to film editing software <div>(yes / no)</div>",
 	"Если вы хотите рассказать о себе что-то дополнительно, используйте, пожалуйста, это поле <div>(Например: этническая принадлежность, гендер, сексуальная ориентация, особенности здоровья или другое. Но если вам некомфортно делиться этой информацией, это вовсе не обязательно.)</div>": "If you want to tell something extra about yourself, please use this field <div>(For example: ethnicity, gender, sexual orientation, health characteristics, or other. However, if you don't feel comfortable to share such information, it is not necessary at all.)</div>",
-	"Почему вам интересно принять участие в программе?": "Why are you interested to take part in the programme?",
-	"Какие у вас ожидания от программы?": "What are your expectations from the programme?",
+	"Почему вам интересно принять участие в лаборатории?": "Why are you interested to take part in the laboratory?",
+	"Какие у вас ожидания от лаборатории?": "What are your expectations from the laboratory?",
 	"Расскажите о последнем понравившемся вам фильме/видео. почему эта работа показалась вам интересной?": "Tell us about the last film / video you liked and why?",
 	"Художники/режиссеры, творчество которых вам интересно и почему?": "Name artists / filmmakers whose work seems interesting to you and why?",
 	"С какими темами вам интересно работать как автору? укажите две-три темы, снабдите каждую комментарием, почему вы считаете их важными.": "What topics are challenging to work with as an author? specify two-three topics, comment why you find them important.",
@@ -250,9 +250,9 @@
 	"Отправить": "Send",
 	"Заполнить анкету": "fill in the form",
 	"Ваша заявка принята!": "Your application is accepted!",
-	"Результаты отбора и имена участников будут объявлены 28 октября 2020 г.": "Selected participants will be announced on October 28, 2020.",
+	"Результаты отбора и имена участников будут объявлены 23 июля 2021 г.": "Selected participants will be announced on Jury 23, 2021.",
 	"Преподаватели": "Teachers",
-	"MIEFF приглашает молодых фильммейкерок/ов и видеохудожниц/ков принять участие в междисциплинарной образовательной программе «Внеклассные практики»": "MIEFF invites young film makers and video artists to take part in an interdisciplinary educational programme Extracurricular practices",
+	"MIEFF приглашает молодых фильммейкерок/ов и видеохудожниц/ков принять участие в лаборатории «Внеклассные практики»": "MIEFF invites young film makers and video artists to take part in an laboratory Extracurricular practices",
 	"collective": {
 		"one": "Art collective",
 		"other": "Art collectives"
