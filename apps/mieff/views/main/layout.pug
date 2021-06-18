@@ -13,9 +13,8 @@ html(lang=locale)
 					if (session && session.user_id)
 						a(href='/admin') Stargazer
 					a(href='/news')= __('Новости')
-					a(href='https://filmfreeway.com/moscowieff', target='_blank')= __('Подать заявку')
-					if (session && session.user_id)
-						a(href='/opencall') Open Call
+					//- a(href='https://filmfreeway.com/moscowieff', target='_blank')= __('Подать заявку')
+					a(href='/opencall') Open Call
 					a(href='/program')= __('Программа')
 					a(href='/about')= __('О Фестивале')
 					a(href='/partners')= __('Партнеры')
