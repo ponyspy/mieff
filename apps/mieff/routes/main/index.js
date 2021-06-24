@@ -96,10 +96,20 @@ module.exports = function(Model) {
 			{	$match: { 'schedule.place': req.body.context && req.body.context.place ? { '$in': to_Objectid(req.body.context.place) } : {'$ne': 'none'} }},
 			{	$match: { 'program': req.body.context && req.body.context.program ? { '$in': to_Objectid(req.body.context.program) } : {'$ne': 'none'} }},
 			{ $sort: { 'schedule.date': 1 } },
+			{ $group: {
+				_id: {
+					year: { $year: '$schedule.date' },
+					month: { $month: '$schedule.date' },
+					date: { $dayOfMonth: '$schedule.date' }
+				},
+				events: {
+					$push: '$$ROOT'
+			}}},
+			{ $sort: { '_id.month': 1, '_id.year': 1, '_id.date': 1 } },
 		])
-		.exec(function(err, events) {
-			Place.populate(events, {path: 'schedule.place'}, function(err, events) {
-				Program.populate(events, {path: 'program'}, function(err, events) {
+		.exec(function(err, schedule) {
+			Place.populate(schedule, {path: 'events.schedule.place'}, function(err, schedule) {
+				Program.populate(schedule, {path: 'events.program'}, function(err, schedule) {
 					var opts = {
 						__: function() { return res.locals.__.apply(null, arguments); },
 						__n: function() { return res.locals.__n.apply(null, arguments); },
@@ -107,7 +117,7 @@ module.exports = function(Model) {
 						static_types: req.app.locals.static_types,
 						moment: moment,
 						get_locale: get_locale,
-						events: events,
+						schedule: schedule,
 						compileDebug: false, debug: false, cache: true, pretty: false
 					}
 

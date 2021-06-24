@@ -1,35 +1,43 @@
 $(document).ready(function() {
 	var context = {};
 
-	var macyInstance = Macy({
-		container: '.program_events',
-		trueOrder: false,
-		waitForImages: false,
-		margin: 25,
-		columns: 4,
-		breakAt: {
-			1200: {
-				// margin: { x: 20, y: 10 },
-				columns: 3
-			},
-			900: {
-				// margin: { x: 20, y: 10 },
-				columns: 2
-			},
-			700: {
-				// margin: { x: 20, y: 10 },
-				columns: 1
-			}
-		}
-	});
+
 
 	$(document).on('events_load', function(e) {
 		$.post('', {'context': context}).done(function(data) {
-			$('.program_events').empty().append(data);
 
-			macyInstance.runOnImageLoad(function() {
-				macyInstance.recalculate(true);
-			}, true);
+			var $data = $(data);
+
+			$('.program_events').empty().append($data);
+
+			$data.each(function() {
+				var macyInstance = Macy({
+					container: $(this).find('.date_events')[0],
+					trueOrder: false,
+					waitForImages: false,
+					margin: 25,
+					columns: 4,
+					breakAt: {
+						1200: {
+							// margin: { x: 20, y: 10 },
+							columns: 3
+						},
+						900: {
+							// margin: { x: 20, y: 10 },
+							columns: 2
+						},
+						700: {
+							// margin: { x: 20, y: 10 },
+							columns: 1
+						}
+					}
+				});
+
+				macyInstance.runOnImageLoad(function() {
+					macyInstance.recalculate(true);
+				}, true);
+
+			});
 		});
 	}).trigger('events_load');
 
