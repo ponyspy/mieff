@@ -1,8 +1,6 @@
 $(document).ready(function() {
 	var context = {};
 
-
-
 	$(document).on('events_load', function(e) {
 		$.post('', {'context': context}).done(function(data) {
 
