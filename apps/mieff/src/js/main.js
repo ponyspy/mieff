@@ -49,7 +49,7 @@ $(document).ready(function() {
 		var $this = $(this);
 		var type = $this.closest('.nav_column').attr('class').split(' ')[1];
 
-		$this.hasClass('nav_item')
+		$this.hasClass('nav_item') && !$this.hasClass('active')
 			// ? $this.toggleClass('active')
 			? $this.closest('.nav_column').find('.nav_item').removeClass('active').filter(this).addClass('active')
 			: $this.closest('.nav_column').find('.nav_item').removeClass('active');
