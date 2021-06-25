@@ -24,39 +24,4 @@ block content
 
 	if programs.length > 0
 		.program_body
-			.program_nanv
 
-				.nav_column.date
-					.nav_head
-						.nav_title= __('Дата')
-						.nav_all= __('Все')
-					.nav_items
-						each date in dates
-							- var date = moment(date.year + '-' + date.month + '-' + date.day, 'YY-MM-DD')
-							.nav_item(data-val=date.format('YY-MM-DD'))= date.format('DD.MM')
-
-				.nav_column.place
-					.nav_head
-						.nav_title= __('Площадка')
-						.nav_all= __('Все')
-					.nav_items
-						each place in places
-							.nav_item(data-val=place._id.toString())= place.i18n.title.get(locale)
-
-				.nav_column.program
-					.nav_head
-						.nav_title= __('Программа')
-						.nav_all= __('Все')
-					.nav_items
-						each program in programs
-							.nav_item(data-val=program._id.toString())= program.i18n.title.get(locale)
-
-				.nav_column.type
-					.nav_head
-						.nav_title= __('Тип')
-						.nav_all= __('Все')
-					.nav_items
-						each type_item in static_types.events_types
-							.nav_item(data-val=type_item)= __(type_item)
-
-			.program_events

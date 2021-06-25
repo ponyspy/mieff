@@ -1,0 +1,16 @@
+each program in programs.sort(function(a, b) {return (a._id.program ? a._id.program.date : -1) - (b._id.program ? b._id.program.date : -1) })
+	.program_item
+		if title
+			.program_title= program._id.program ? program._id.program.i18n.title.get(locale) : __('Специальные события')
+		.program_events
+			each event in program.events
+				a.event_item(href='/events/' + (event.sym ? event.sym : event._short_id))
+					.event_cover
+						if get_locale(event.marker, locale) !== ''
+							.cover_marker= get_locale(event.marker, locale)
+						if event.poster
+							img.cover_image(src=event.poster)
+						else
+							.cover_title= get_locale(event.title, locale)
+					.event_title= get_locale(event.title, locale)
+

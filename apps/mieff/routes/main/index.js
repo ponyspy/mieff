@@ -121,7 +121,7 @@ module.exports = function(Model) {
 						compileDebug: false, debug: false, cache: true, pretty: false
 					}
 
-					res.send(pug.renderFile(__app_root + '/views/main/_events.pug', opts));
+					res.send(pug.renderFile(__app_root + '/views/main/_schedule.pug', opts));
 				});
 			});
 		});

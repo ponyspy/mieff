@@ -127,29 +127,23 @@ module.exports = function(Model) {
 		});
 
 		Event.aggregate([
-			{ $unwind: '$schedule' },
 			{ $match: { 'status': {
 				$ne: 'hidden'
 			}}},
 			{ $match: { 'program': req.body.context && req.body.context.program ? mongoose.Types.ObjectId(req.body.context.program) : {'$ne': 'none'} }},
-			{ $match: { $or: dates || [{ 'schedule.date': {'$ne': 'none'}}] }},
-			{	$match: { 'type': req.body.context && req.body.context.type ? { '$in': req.body.context.type } : {'$ne': 'none'} }},
-			{	$match: { 'schedule.place': req.body.context && req.body.context.place ? { '$in': to_Objectid(req.body.context.place) } : {'$ne': 'none'} }},
+			{ $match: { 'type': {$ne: 'block'} } },
 			{ $sort: { 'schedule.date': 1 } },
 			{ $group: {
 				_id: {
-					year: { $year: '$schedule.date' },
-					month: { $month: '$schedule.date' },
-					date: { $dayOfMonth: '$schedule.date' }
+					program: '$program'
 				},
 				events: {
 					$push: '$$ROOT'
 			}}},
-			{ $sort: { '_id.month': 1, '_id.year': 1, '_id.date': 1 } },
 		])
-		.exec(function(err, schedule) {
-			Place.populate(schedule, {path: 'events.schedule.place'}, function(err, schedule) {
-				Program.populate(schedule, {path: 'events.program'}, function(err, schedule) {
+		.exec(function(err, programs) {
+				Program.populate(programs, {path: '_id.program'}, function(err, programs) {
+
 					var opts = {
 						__: function() { return res.locals.__.apply(null, arguments); },
 						__n: function() { return res.locals.__n.apply(null, arguments); },
@@ -157,14 +151,14 @@ module.exports = function(Model) {
 						static_types: req.app.locals.static_types,
 						moment: moment,
 						get_locale: get_locale,
-						schedule: schedule,
+						programs: programs,
+						title: !req.body.context,
 						compileDebug: false, debug: false, cache: true, pretty: false
 					}
 
-					res.send(pug.renderFile(__app_root + '/views/main/_events.pug', opts));
+					res.send(pug.renderFile(__app_root + '/views/main/_programs.pug', opts));
 				});
 			});
-		});
 	}
 
 	return module;

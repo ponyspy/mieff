@@ -108,70 +108,12 @@
 	border-bottom 0
 	border-left 25px
 	border-right 25px
-	border-color #c8c8c8
 	border-style solid
+	border-color #c8c8c8
 	box-sizing border-box
-
-
-.program_nanv
-	padding 25px
-	margin 25px
-	margin-top 0
-	margin-bottom 0
-	background-color black
-	color #c8c8c8
-	.nav_column
-		margin-bottom 10px
-		display table
-		&:last-child
-			margin-bottom 0
-		.nav_title
-			display none
-		.nav_head
-		.nav_items
-			display table-cell
-		.nav_all
-		.nav_item
-		.nav_title
-			cursor pointer
-			margin 10px
-			font-size 14pt
-			line-height 16pt
-			font-family 'Panama Regular'
-			&:hover
-			&.active
-				color #00c641
-		.nav_item
-			display inline-block
-		.nav_title
-			margin 0
-			padding 10px
-			background-color #c8c8c8
-			color black
-			&:hover
-				color black
-				background-color #00c641
-		.nav_all
-			margin 0
-			padding 10px
-			color black
-			background-color #00c641
-			&.active
-				background-color #c8c8c8
-				color black
-				&:hover
-					color black
-					background-color #00c641
-			&:hover
-				color black
-				background-color #c8c8c8
-
-
-.program_events
-	margin 25px
-	margin-bottom 0
-	.date_item
-		.date_title
+	padding-top 25px
+	.program_item
+		.program_title
 			text-align center
 			color #c8c8c8
 			background-color black
@@ -185,14 +127,21 @@
 			border-bottom 0
 			border-left 25px
 			border-right 25px
-			margin-left -50px
-			margin-right -50px
+			margin-left -25px
+			margin-right -25px
 			border-color #00c641
 			border-style solid
 			box-sizing border-box
 			margin-bottom 30px
-		.date_events
+		.program_events
 			width 100%
+			border-top 0
+			border-bottom 0
+			border-left 25px
+			border-right 25px
+			border-style solid
+			border-color #ff3333
+			box-sizing border-box
 			.event_item
 				color #c8c8c8
 				font-size 14pt
@@ -226,40 +175,8 @@
 						padding-top 62px
 						padding-bottom 58px
 						hyphens auto
-					.cover_buy
-						border-radius 0 0 8px 8px
-						font-family 'Panama Regular'
-						text-transform uppercase
-						display none
-						background-color #00c641
-						color black
-						text-align center
-						box-sizing border-box
-						padding 10px
-						width 100%
-						position absolute
-						bottom 0
-						cursor pointer
-						&:hover
-							background-color #c8c8c8
-							color #ff3333
-				&:hover .cover_buy
-					display block
-				.event_schedule
-					margin-top 15px
-					font-family 'Panama Regular'
-					display flex
-					.schedule_date
-						&:after
-							display inline-block
-							margin-left 5px
-							margin-right 5px
-							content ' | '
-				.event_program
-					margin-top 5px
-					font-family 'Panama Regular'
 				.event_title
-					margin-top 5px
+					margin-top 15px
 					font-family 'Pragmatica Book'
 					text-transform uppercase
 
