@@ -1,4 +1,4 @@
-each program in programs.sort(function(a, b) {return (a._id.program ? a._id.program.date : -1) - (b._id.program ? b._id.program.date : -1) })
+each program in programs.sort(function(a, b) {return (b._id.program ? b._id.program.date : -1) - (a._id.program ? a._id.program.date : -1) })
 	.program_item
 		.program_title= !title ? __('События') : program._id.program ? program._id.program.i18n.title.get(locale) : __('Специальные события')
 		.program_events
