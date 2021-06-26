@@ -25,7 +25,7 @@ module.exports = function(Model) {
 	module.index = function(req, res) {
 		async.parallel({
 			programs: function(callback) {
-				Program.find().where('status').ne('hidden').exec(callback);
+				Program.find().where('status').ne('hidden').sort('-date').exec(callback);
 			},
 			places: function(callback) {
 				Place.find().where('status').ne('hidden').exec(callback);
