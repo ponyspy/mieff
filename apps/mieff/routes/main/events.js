@@ -50,7 +50,7 @@ module.exports = function(Model) {
 				programs: function(callback) {
 					if (!event.program) return callback(null, []);
 
-					Program.find({'_id': {'$ne': event.program._id}}).exec(callback);
+					Program.find({'status': {'$ne': 'hidden'}, '_id': {'$ne': event.program._id}}).exec(callback);
 				}
 			}, function(err, results) {
 				if (err) return next(err);
