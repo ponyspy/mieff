@@ -29,7 +29,7 @@ module.exports = function(Model) {
 			.populate({'path': 'partners', 'match': { 'status': { '$ne': 'hidden' } }, 'select': 'title status _short_id type link logo' })
 			.populate({'path': 'members.list', 'match': { 'status': { '$ne': 'hidden' } }, 'select': 'name photo sex roles status _short_id' })
 			.populate({'path': 'program', 'match': { 'status': { '$ne': 'hidden' } }, 'select': 'title status _short_id' })
-			.populate({'path': 'events', 'match': { 'status': { '$ne': 'hidden' } }, 'select': 'title poster status _short_id' })
+			.populate({'path': 'events', 'match': { 'status': { '$ne': 'hidden' } }, 'select': 'title s_title poster status _short_id' })
 			.populate({'path': 'schedule.place', 'match': { 'status': { '$ne': 'hidden' } }, 'select': 'title status _short_id' })
 			.exec(function(err, event) {
 			if (!event || err) return next(err);
