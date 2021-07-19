@@ -28,7 +28,7 @@ module.exports = function(Model) {
 				Program.find().where('status').ne('hidden').sort('-date').exec(callback);
 			},
 			places: function(callback) {
-				Place.find().where('status').ne('hidden').exec(callback);
+				Place.find().where('status').ne('hidden').sort('-date').exec(callback);
 			},
 			dates: function(callback) {
 				Event.aggregate([
