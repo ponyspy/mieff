@@ -16,7 +16,7 @@ module.exports = function(Model) {
 		Member.findOne({ '_short_id': id }).where('status').nin(['hidden', 'special']).exec(function(err, member) {
 			if (!member || err) return next(err);
 
-			Event.find({'members.list': member._id}).where('status').ne('hidden').populate('program').exec(function(err, events) {
+			Event.find({'members.list': member._id, 'type': {'$ne': 'block'}}).where('status').ne('hidden').populate('program').exec(function(err, events) {
 				res.render('main/member.pug', { member: member, events: events });
 			});
 		});
