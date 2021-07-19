@@ -89,7 +89,7 @@ module.exports = function(Model) {
 		Event.aggregate([
 			{ $unwind: '$schedule' },
 			{ $match: { 'status': {
-				$ne: 'hidden'
+				$nin: ['hidden', 'special']
 			}}},
 			{ $match: { $or: dates || [{ 'schedule.date': {'$ne': 'none'}}] }},
 			{	$match: { 'type': req.body.context && req.body.context.type ? { '$in': req.body.context.type } : {'$ne': 'none'} }},
