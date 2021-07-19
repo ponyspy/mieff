@@ -76,13 +76,13 @@ module.exports = function(Model) {
 
 			async.parallel({
 				programs: function(callback) {
-					Program.find({'_id': {'$ne': program._id} }).where('status').ne('hidden').exec(callback);
+					Program.find({'_id': {'$ne': program._id} }).where('status').ne('hidden').sort('-date').exec(callback);
 				},
 				blocks: function(callback) {
-					Event.find({'program': program._id, 'type': 'block' }).where('status').ne('hidden').exec(callback);
+					Event.find({'program': program._id, 'type': 'block' }).where('status').ne('hidden').sort('-date').exec(callback);
 				},
 				places: function(callback) {
-					Place.find().where('status').ne('hidden').exec(callback);
+					Place.find().where('status').ne('hidden').sort('-date').exec(callback);
 				},
 				dates: function(callback) {
 					Event.aggregate([
