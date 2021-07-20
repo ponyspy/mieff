@@ -40,8 +40,8 @@ block content
 						.nav_all= __('Все')
 					.nav_items
 						each date in dates
-							- var date = moment(date.year + '-' + date.month + '-' + date.day, 'YY-MM-DD')
-							.nav_item(data-val=date.format('YY-MM-DD'))= date.format('DD.MM')
+							- var date = moment(date.year + '-' + date.month + '-' + date.day, 'YYYY-MM-DD')
+							.nav_item(data-val=date.format('YYYY-MM-DD'))= date.format('DD.MM')
 
 				.nav_column.place
 					.nav_head
