@@ -47,10 +47,10 @@ module.exports = function(Model) {
 			},
 			dates: function(callback) {
 				Event.aggregate([
-					{ $unwind: '$schedule' },
 					{ $match: { 'status': {
-						$ne: 'hidden'
+						$nin: ['hidden', 'special']
 					}}},
+					{ $unwind: '$schedule' },
 					{ $group: {
 						_id: {
 							month: { $month: "$schedule.date" },
@@ -87,10 +87,10 @@ module.exports = function(Model) {
 		});
 
 		Event.aggregate([
-			{ $unwind: '$schedule' },
 			{ $match: { 'status': {
 				$nin: ['hidden', 'special']
 			}}},
+			{ $unwind: '$schedule' },
 			{ $match: { $or: dates || [{ 'schedule.date': {'$ne': 'none'}}] }},
 			{	$match: { 'type': req.body.context && req.body.context.type ? { '$in': req.body.context.type } : {'$ne': 'none'} }},
 			{	$match: { 'schedule.place': req.body.context && req.body.context.place ? { '$in': to_Objectid(req.body.context.place) } : {'$ne': 'none'} }},
