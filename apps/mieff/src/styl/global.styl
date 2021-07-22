@@ -2,6 +2,9 @@
 @media screen and (max-width: 840px)
 	@import 'mobile/_global.styl'
 
+html
+	background-color black;
+
 body
 	margin 0
 	padding 0
@@ -9,7 +12,8 @@ body
 	// font-smoothing: antialiased;
 	// -moz-osx-font-smoothing: grayscale;
 	&.bw_filter
-		filter: grayscale()
+		.title_block, .content_block, .footer_block
+			filter: grayscale(100%)
 	&.stop_scroll
 		height 100%
 		overflow hidden
