@@ -1,5 +1,15 @@
 $(function() {
 
+	if (localStorage.bw) $('body').addClass('bw_filter');
+
+	$('.bw_block').on('click', function(e) {
+		$('body').toggleClass('bw_filter');
+
+		localStorage.getItem('bw')
+			? localStorage.removeItem('bw')
+			: localStorage.setItem('bw', true);
+	});
+
 	$('.menu_drop').on('click', function(e) {
 		$('body').toggleClass('stop_scroll');
 		$('.title_block, .menu_drop').toggleClass('open');

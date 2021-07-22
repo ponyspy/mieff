@@ -8,6 +8,8 @@ body
 	background-color black
 	// font-smoothing: antialiased;
 	// -moz-osx-font-smoothing: grayscale;
+	&.bw_filter
+		filter: grayscale()
 	&.stop_scroll
 		height 100%
 		overflow hidden
@@ -131,6 +133,19 @@ body
 		padding-right 20px
 		text-align right
 		font-family 'Panama Regular'
+
+	.bw_block
+		// flex 1
+		padding-right 20px
+		text-align right
+		font-family 'Panama Regular'
+		color #c8c8c8
+		text-decoration none
+		font-size 14pt
+		line-height 16pt
+		cursor pointer
+		&:hover
+			color #00c641
 
 
 .support_block
