@@ -20,6 +20,8 @@ block content
 	.form_block
 		.title= content_title
 		form(action='', method='post', enctype="multipart/form-data")
+			.form_title OG изображение:
+			input(type='file', name='og_image', accept='image/jpeg')
 			.form_title Баннер изображение:
 			input(type='file', name='main_banner_image', accept='image/jpeg')
 			.form_title Баннер ссылка:

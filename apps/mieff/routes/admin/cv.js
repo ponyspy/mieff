@@ -58,6 +58,15 @@ exports.edit_form = function(req, res) {
 				fs.rename(file.path, __glob_root + '/public/cdn/images/main_banner_image' + '.' + mime.getExtension(file.mimetype), callback);
 			});
 		},
+		og_image: function(callback) {
+			if (!files['og_image']) return callback(null);
+
+			var file = files['og_image'][0];
+
+			mkdirp(__glob_root + '/public/cdn/images', function() {
+				fs.rename(file.path, __glob_root + '/public/cdn/images/og_image' + '.' + mime.getExtension(file.mimetype), callback);
+			});
+		},
 		main_banner_link: function(callback) {
 			if (!post.main_banner_link) return callback(null);
 
