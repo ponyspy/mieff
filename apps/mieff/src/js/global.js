@@ -15,6 +15,11 @@ $(function() {
 		$('.title_block, .menu_drop').toggleClass('open');
 	});
 
+	$('.menu_block').find('a').on('click', function(e) {
+		$('body').removeClass('stop_scroll');
+		$('.title_block, .menu_drop').removeClass('open');
+	});
+
 	$(document)
 		.on('mouseup touchend', function(e) {
 			if ($(e.target).closest('.widget_inner').length) return;
