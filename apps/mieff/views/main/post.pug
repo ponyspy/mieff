@@ -16,7 +16,8 @@ block content
 	if post_item.cover
 		.post_cover(style='background-image: url(' + post_item.cover + ')')
 
-	.post_main_title= post_item.i18n.title.get(locale)
+	if post_item.i18n.title.get(locale)
+		.post_main_title= post_item.i18n.title.get(locale)
 
 	.post_body
 		.post_description!= post_item.i18n.description.get(locale)
