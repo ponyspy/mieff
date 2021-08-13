@@ -11,11 +11,12 @@ block header_include
 
 
 block content
-	.post_main_title= post_item.i18n.title.get(locale)
 	.post_main_date= moment(post_item.date).locale(locale).format('DD.MM.YYYY')
 
 	if post_item.cover
 		.post_cover(style='background-image: url(' + post_item.cover + ')')
+
+	.post_main_title= post_item.i18n.title.get(locale)
 
 	.post_body
 		.post_description!= post_item.i18n.description.get(locale)
