@@ -24,7 +24,9 @@ block content
 	else
 		.opencall_description: .description_inner!= desc
 
-		.opencall_application: a.application_button(href='/opencall/application')= __('Заполнить анкету')
+		//- .opencall_application: a.application_button(href='/opencall/application')= __('Заполнить анкету')
+		br
+		br
 
 		if members && members.length > 0
 			.opencall_team
